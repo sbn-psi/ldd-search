@@ -893,6 +893,198 @@
     </DD_Value_Domain>
   </DD_Attribute>
   
+  <DD_Attribute>
+    <name>analysis_method</name>
+    <version_id>1.0</version_id>
+    <local_identifier>analysis_method</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Primary method used to analyze the data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Statistical</value>
+        <value_meaning>Statistical analysis methods</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Spectral</value>
+        <value_meaning>Spectral analysis methods</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Machine_Learning</value>
+        <value_meaning>Machine learning or AI based analysis</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Image_Processing</value>
+        <value_meaning>Image processing techniques</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Modeling</value>
+        <value_meaning>Computer modeling or simulation</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Manual</value>
+        <value_meaning>Manual analysis by researchers</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any analysis method not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>software_used</name>
+    <version_id>1.0</version_id>
+    <local_identifier>software_used</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Primary software tools used for data analysis.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Text_Preserved</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>processing_steps</name>
+    <version_id>1.0</version_id>
+    <local_identifier>processing_steps</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Description of processing steps applied to the data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Text_Preserved</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>uncertainty_measurements</name>
+    <version_id>1.0</version_id>
+    <local_identifier>uncertainty_measurements</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Description of uncertainty or error measurements associated with the data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Text_Preserved</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>quality_indicators</name>
+    <version_id>1.0</version_id>
+    <local_identifier>quality_indicators</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Indicators of data quality or reliability.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>High</value>
+        <value_meaning>High quality data with minimal errors</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Medium</value>
+        <value_meaning>Medium quality data with some uncertainties</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Low</value>
+        <value_meaning>Lower quality data with significant uncertainties</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Variable</value>
+        <value_meaning>Quality varies across the dataset</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Unassessed</value>
+        <value_meaning>Quality has not been formally assessed</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Quality indicator not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>research_goals</name>
+    <version_id>1.0</version_id>
+    <local_identifier>research_goals</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Primary research goals or objectives of the study.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Text_Preserved</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>related_publications</name>
+    <version_id>1.0</version_id>
+    <local_identifier>related_publications</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Publications related to or derived from the data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Text_Preserved</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>keywords</name>
+    <version_id>1.0</version_id>
+    <local_identifier>keywords</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Keywords that describe the data and research focus.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Text_Preserved</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>principal_investigator</name>
+    <version_id>1.0</version_id>
+    <local_identifier>principal_investigator</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Name of the principal investigator or lead researcher.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>institution</name>
+    <version_id>1.0</version_id>
+    <local_identifier>institution</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Institution or organization associated with the research.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
   <DD_Class>
     <name>Target_Object</name>
     <version_id>1.0</version_id>
