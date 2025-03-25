@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:search  Version:1.0.0.0 - Tue Mar 25 23:43:54 UTC 2025 -->
+  <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.21.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.0.0.0 - search: - Search LDD                                            -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://pds.nasa.gov/pds4/search/v1"
+    xmlns:search="http://pds.nasa.gov/pds4/search/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.0.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+_TBD_Ingest_LDD
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="Analysis_Properties" type="search:Analysis_Properties"> </xs:element>
+  <xs:element name="Data_Collection" type="search:Data_Collection"> </xs:element>
+  <xs:element name="Environmental_Context" type="search:Environmental_Context"> </xs:element>
+  <xs:element name="Mission_Context" type="search:Mission_Context"> </xs:element>
+  <xs:element name="Physical_Properties" type="search:Physical_Properties"> </xs:element>
+  <xs:element name="Planetary_Data_Dictionary" type="search:Planetary_Data_Dictionary"> </xs:element>
+  <xs:element name="Research_Context" type="search:Research_Context"> </xs:element>
+  <xs:element name="Scientific_Discipline" type="search:Scientific_Discipline"> </xs:element>
+  <xs:element name="Target_Object" type="search:Target_Object"> </xs:element>
+
+  <xs:complexType name="Analysis_Properties">
+    <xs:annotation>
+      <xs:documentation>Information about the analysis methods and
+        properties of the data.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="analysis_method" type="search:analysis_method" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="software_used" type="search:software_used" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="processing_steps" type="search:processing_steps" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="uncertainty_measurements" type="search:uncertainty_measurements" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="quality_indicators" type="search:quality_indicators" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="search:analysis_method = ('Image_Processing', 'Machine_Learning', 'Manual', 'Modeling', 'Other', 'Spectral', 'Statistical')"/> -->
+    <!-- <xs:assert test="search:quality_indicators = ('High', 'Low', 'Medium', 'Other', 'Unassessed', 'Variable')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Data_Collection">
+    <xs:annotation>
+      <xs:documentation>Information about how the data was collected and
+        its format.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="collection_method" type="search:collection_method" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="instrument_type" type="search:instrument_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="data_type" type="search:data_type" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="search:collection_method = ('Laboratory', 'Lander', 'Orbiter', 'Other', 'Rover', 'Sample_Return', 'Telescope')"/> -->
+    <!-- <xs:assert test="search:instrument_type = ('Camera', 'Lidar', 'Magnetometer', 'Other', 'Radar', 'Seismometer', 'Spectrometer')"/> -->
+    <!-- <xs:assert test="search:data_type = ('Image', 'Map', 'Model_Output', 'Other', 'Spectrum', 'Time_Series')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Environmental_Context">
+    <xs:annotation>
+      <xs:documentation>Information about the environmental conditions
+        at the study location.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="temperature_regime" type="search:temperature_regime" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="pressure_conditions" type="search:pressure_conditions" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="radiation_environment" type="search:radiation_environment" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="atmospheric_presence" type="search:atmospheric_presence" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="search:temperature_regime = ('Cold', 'Cryogenic', 'Extreme_Heat', 'Hot', 'Other', 'Temperate', 'Variable')"/> -->
+    <!-- <xs:assert test="search:pressure_conditions = ('Earth_Like', 'Extreme', 'High', 'Other', 'Vacuum', 'Variable', 'Very_Low')"/> -->
+    <!-- <xs:assert test="search:radiation_environment = ('Extreme', 'High', 'Low', 'Moderate', 'Other', 'Shielded')"/> -->
+    <!-- <xs:assert test="search:atmospheric_presence = ('Earth_Like', 'Gas_Giant', 'None', 'Other', 'Thick', 'Thin', 'Very_Thin')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Mission_Context">
+    <xs:annotation>
+      <xs:documentation>Information about the mission context of the
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="mission_name" type="search:mission_name" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="mission_phase" type="search:mission_phase" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="funding_source" type="search:funding_source" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="collection_date" type="search:collection_date" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="processing_level" type="search:processing_level" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="search:processing_level = ('Calibrated', 'Derived_Product', 'Mosaic', 'Other', 'Raw')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Physical_Properties">
+    <xs:annotation>
+      <xs:documentation>Information about the physical properties of the
+        object under study.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="material_type" type="search:material_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="feature_type" type="search:feature_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="process_type" type="search:process_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="composition" type="search:composition" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="search:material_type = ('Dust', 'Gas', 'Ice', 'Liquid', 'Other', 'Regolith', 'Rock')"/> -->
+    <!-- <xs:assert test="search:feature_type = ('Cloud', 'Crater', 'Mare', 'Mountain', 'Other', 'Valley', 'Volcano')"/> -->
+    <!-- <xs:assert test="search:process_type = ('Atmospheric', 'Erosional', 'Impact', 'Other', 'Tectonic', 'Volcanic')"/> -->
+    <!-- <xs:assert test="search:composition = ('Gaseous', 'Icy', 'Metal', 'Mixed', 'Organic', 'Other', 'Silicate')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Planetary_Data_Dictionary">
+    <xs:annotation>
+      <xs:documentation>A comprehensive metadata dictionary for
+        planetary science data.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="search:Target_Object" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element ref="search:Scientific_Discipline" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element ref="search:Data_Collection" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element ref="search:Physical_Properties" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element ref="search:Mission_Context" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element ref="search:Environmental_Context" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element ref="search:Analysis_Properties" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element ref="search:Research_Context" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Research_Context">
+    <xs:annotation>
+      <xs:documentation>Information about the research context and
+        associated metadata.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="research_goals" type="search:research_goals" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="related_publications" type="search:related_publications" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="keywords" type="search:keywords" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="principal_investigator" type="search:principal_investigator" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="institution" type="search:institution" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Scientific_Discipline">
+    <xs:annotation>
+      <xs:documentation>Information about the scientific discipline and
+        research context.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="primary_field" type="search:primary_field" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="investigation_type" type="search:investigation_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="study_focus" type="search:study_focus" minOccurs="1" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="search:primary_field = ('Astrobiology', 'Astronomy', 'Atmospheric_Science', 'Dynamics', 'Geology', 'Geophysics', 'Laboratory_Studies', 'Magnetospheres', 'Other', 'Space_Physics')"/> -->
+    <!-- <xs:assert test="search:investigation_type = ('Modeling', 'Observation', 'Other', 'Remote_Sensing', 'Sample_Analysis')"/> -->
+    <!-- <xs:assert test="search:study_focus = ('Atmosphere', 'Composition', 'Interior', 'Magnetosphere', 'Orbital_Dynamics', 'Other', 'Surface')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Target_Object">
+    <xs:annotation>
+      <xs:documentation>Information about the celestial body being
+        studied.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="body_type" type="search:body_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="object_name" type="search:object_name" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="parent_body" nillable="true" type="search:parent_body" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="search:body_type = ('Asteroid', 'Comet', 'Exoplanet', 'Moon', 'Other', 'Planet')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="analysis_method">
+    <xs:annotation>
+      <xs:documentation>Primary method used to analyze the
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="atmospheric_presence">
+    <xs:annotation>
+      <xs:documentation>Presence and nature of atmosphere at the study
+        location.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="body_type">
+    <xs:annotation>
+      <xs:documentation>Classification of the celestial body being
+        studied.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="collection_date">
+    <xs:annotation>
+      <xs:documentation>Date or time period when the data was
+        collected.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Date_Time_YMD">
+  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSS(Z)" -->
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="collection_method">
+    <xs:annotation>
+      <xs:documentation>Method used to collect the
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="composition">
+    <xs:annotation>
+      <xs:documentation>Primary composition of the material being
+        studied.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_type">
+    <xs:annotation>
+      <xs:documentation>Format or type of the collected
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="feature_type">
+    <xs:annotation>
+      <xs:documentation>Type of geological or physical feature being
+        studied.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="funding_source">
+    <xs:annotation>
+      <xs:documentation>Primary source of funding for the mission or
+        research.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="institution">
+    <xs:annotation>
+      <xs:documentation>Institution or organization associated with the
+        research.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="instrument_type">
+    <xs:annotation>
+      <xs:documentation>Type of instrument used to collect the
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="investigation_type">
+    <xs:annotation>
+      <xs:documentation>Method of scientific investigation
+        used.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="keywords">
+    <xs:annotation>
+      <xs:documentation>Keywords that describe the data and research
+        focus.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Preserved">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="material_type">
+    <xs:annotation>
+      <xs:documentation>Physical type of material being
+        studied.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mission_name">
+    <xs:annotation>
+      <xs:documentation>Name of the mission associated with the
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mission_phase">
+    <xs:annotation>
+      <xs:documentation>Phase of the mission during which the data was
+        collected.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="object_name">
+    <xs:annotation>
+      <xs:documentation>Specific name of the celestial body being
+        studied.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="parent_body">
+    <xs:annotation>
+      <xs:documentation>For moons/satellites, specifies the parent
+        planet or body.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pds:ASCII_Short_String_Collapsed">
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="pressure_conditions">
+    <xs:annotation>
+      <xs:documentation>Pressure conditions at the study
+        location.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="primary_field">
+    <xs:annotation>
+      <xs:documentation>Primary scientific field of
+        study.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="principal_investigator">
+    <xs:annotation>
+      <xs:documentation>Name of the principal investigator or lead
+        researcher.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="process_type">
+    <xs:annotation>
+<xs:documentation>Type of process being studied.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="processing_level">
+    <xs:annotation>
+      <xs:documentation>Level of processing applied to the raw
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="processing_steps">
+    <xs:annotation>
+      <xs:documentation>Description of processing steps applied to the
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Preserved">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="quality_indicators">
+    <xs:annotation>
+      <xs:documentation>Indicators of data quality or
+        reliability.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="radiation_environment">
+    <xs:annotation>
+      <xs:documentation>Radiation conditions at the study
+        location.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="related_publications">
+    <xs:annotation>
+      <xs:documentation>Publications related to or derived from the
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Preserved">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="research_goals">
+    <xs:annotation>
+      <xs:documentation>Primary research goals or objectives of the
+        study.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Preserved">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="software_used">
+    <xs:annotation>
+      <xs:documentation>Primary software tools used for data
+        analysis.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Preserved">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="study_focus">
+    <xs:annotation>
+      <xs:documentation>Primary focus area of the scientific
+        study.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="temperature_regime">
+    <xs:annotation>
+      <xs:documentation>Temperature conditions at the study
+        location.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="uncertainty_measurements">
+    <xs:annotation>
+      <xs:documentation>Description of uncertainty or error measurements
+        associated with the data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Text_Preserved">
+     <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
