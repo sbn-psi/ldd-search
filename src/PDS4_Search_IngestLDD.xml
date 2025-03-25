@@ -1,0 +1,1216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model
+    href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.sch"
+    schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd">
+  
+  <name>Search LDD</name>
+  <ldd_version_id>1.0.0.0</ldd_version_id>
+  <dictionary_type>Discipline</dictionary_type>
+  <full_name>Drum, Mike</full_name>
+  <steward_id>drum</steward_id>
+  <namespace_id>search</namespace_id>
+  <last_modification_date_time>2030-04-10T18:00:00Z</last_modification_date_time>
+  
+  <DD_Attribute>
+    <name>body_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>body_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Classification of the celestial body being studied.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Planet</value>
+        <value_meaning>A planetary body orbiting a star</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Moon</value>
+        <value_meaning>A natural satellite orbiting a planet</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Asteroid</value>
+        <value_meaning>A small rocky body orbiting the sun</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Comet</value>
+        <value_meaning>An icy small solar system body</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Exoplanet</value>
+        <value_meaning>A planet outside our solar system</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any body type not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>object_name</name>
+    <version_id>1.0</version_id>
+    <local_identifier>object_name</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Specific name of the celestial body being studied.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>parent_body</name>
+    <version_id>1.0</version_id>
+    <local_identifier>parent_body</local_identifier>
+    <nillable_flag>true</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>For moons/satellites, specifies the parent planet or body.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>primary_field</name>
+    <version_id>1.0</version_id>
+    <local_identifier>primary_field</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Primary scientific field of study.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Geology</value>
+        <value_meaning>Study of planetary surfaces and geological processes</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Geophysics</value>
+        <value_meaning>Physical properties and processes of planetary bodies</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Atmospheric_Science</value>
+        <value_meaning>Study of planetary atmospheres</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Astrobiology</value>
+        <value_meaning>Study of life in the universe</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Astronomy</value>
+        <value_meaning>Study of celestial objects and phenomena</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Dynamics</value>
+        <value_meaning>Study of motion and forces in planetary systems</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Laboratory_Studies</value>
+        <value_meaning>Laboratory-based analysis and experiments</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Magnetospheres</value>
+        <value_meaning>Study of planetary magnetic fields and their interactions</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Space_Physics</value>
+        <value_meaning>Physics of space environments</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any field not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>investigation_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>investigation_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Method of scientific investigation used.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Remote_Sensing</value>
+        <value_meaning>Collection of data from a distance</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Sample_Analysis</value>
+        <value_meaning>Direct analysis of physical samples</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Modeling</value>
+        <value_meaning>Computer-based simulation or modeling</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Observation</value>
+        <value_meaning>Direct observation of phenomena</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any investigation type not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>collection_method</name>
+    <version_id>1.0</version_id>
+    <local_identifier>collection_method</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Method used to collect the data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Orbiter</value>
+        <value_meaning>Data collected by an orbiting spacecraft</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Lander</value>
+        <value_meaning>Data collected by a surface lander</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Rover</value>
+        <value_meaning>Data collected by a mobile surface rover</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Telescope</value>
+        <value_meaning>Data collected by Earth-based or space telescopes</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Sample_Return</value>
+        <value_meaning>Analysis of returned physical samples</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Laboratory</value>
+        <value_meaning>Data collected in laboratory settings</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any collection method not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>instrument_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>instrument_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Type of instrument used to collect the data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Spectrometer</value>
+        <value_meaning>Instrument that measures spectra</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Camera</value>
+        <value_meaning>Imaging device</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Radar</value>
+        <value_meaning>Radio detection and ranging instrument</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Lidar</value>
+        <value_meaning>Light detection and ranging instrument</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Seismometer</value>
+        <value_meaning>Instrument that measures ground motion</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Magnetometer</value>
+        <value_meaning>Instrument that measures magnetic fields</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any instrument type not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>data_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>data_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Format or type of the collected data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Image</value>
+        <value_meaning>Visual representation data</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Spectrum</value>
+        <value_meaning>Spectral measurement data</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Time_Series</value>
+        <value_meaning>Sequential data collected over time</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Map</value>
+        <value_meaning>Spatial representation data</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Model_Output</value>
+        <value_meaning>Results from computational models</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any data type not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>material_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>material_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Physical type of material being studied.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Rock</value>
+        <value_meaning>Solid mineral material</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Ice</value>
+        <value_meaning>Frozen water or other volatiles</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Gas</value>
+        <value_meaning>Gaseous material</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Dust</value>
+        <value_meaning>Fine particulate material</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Regolith</value>
+        <value_meaning>Surface layer of loose material</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Liquid</value>
+        <value_meaning>Liquid state material</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any material type not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>feature_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>feature_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Type of geological or physical feature being studied.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Crater</value>
+        <value_meaning>Impact depression on a surface</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Mountain</value>
+        <value_meaning>Elevated landform</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Valley</value>
+        <value_meaning>Elongated depression</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Mare</value>
+        <value_meaning>Dark plains on the Moon</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Volcano</value>
+        <value_meaning>Volcanic landform</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Cloud</value>
+        <value_meaning>Atmospheric cloud formation</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any feature type not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>process_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>process_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Type of process being studied.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Impact</value>
+        <value_meaning>Collision processes</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Volcanic</value>
+        <value_meaning>Volcanic activity</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Tectonic</value>
+        <value_meaning>Crustal deformation processes</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Atmospheric</value>
+        <value_meaning>Atmospheric processes</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Erosional</value>
+        <value_meaning>Surface degradation processes</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any process type not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>size_category</name>
+    <version_id>1.0</version_id>
+    <local_identifier>size_category</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Size classification of the celestial body.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Small_Body</value>
+        <value_meaning>Asteroids, comets, and other small solar system bodies</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Terrestrial</value>
+        <value_meaning>Rocky planets with solid surfaces like Earth, Mars</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Gas_Giant</value>
+        <value_meaning>Large planets composed mainly of hydrogen and helium</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Ice_Giant</value>
+        <value_meaning>Planets composed mainly of ices, like Uranus and Neptune</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Dwarf_Planet</value>
+        <value_meaning>Celestial bodies that orbit the Sun and have sufficient mass for gravity to make them round</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any size category not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>location</name>
+    <version_id>1.0</version_id>
+    <local_identifier>location</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Location of the celestial body within the cosmos.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Inner_Solar_System</value>
+        <value_meaning>Within the asteroid belt (Mercury, Venus, Earth, Mars)</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Outer_Solar_System</value>
+        <value_meaning>Beyond the asteroid belt (Jupiter, Saturn, Uranus, Neptune)</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Kuiper_Belt</value>
+        <value_meaning>The region beyond Neptune's orbit</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Oort_Cloud</value>
+        <value_meaning>The distant shell of icy objects surrounding the solar system</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Exoplanetary</value>
+        <value_meaning>Outside our solar system</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any location not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>study_focus</name>
+    <version_id>1.0</version_id>
+    <local_identifier>study_focus</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Primary focus area of the scientific study.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Surface</value>
+        <value_meaning>Study focused on surface features or properties</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Interior</value>
+        <value_meaning>Study focused on internal structure or processes</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Atmosphere</value>
+        <value_meaning>Study focused on atmospheric properties or dynamics</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Magnetosphere</value>
+        <value_meaning>Study focused on magnetic field properties or interactions</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Orbital_Dynamics</value>
+        <value_meaning>Study focused on orbital properties or behaviors</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Composition</value>
+        <value_meaning>Study focused on chemical or mineral composition</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any focus not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>resolution_scale</name>
+    <version_id>1.0</version_id>
+    <local_identifier>resolution_scale</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Spatial scale or resolution of the collected data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Global</value>
+        <value_meaning>Data covering an entire celestial body</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Regional</value>
+        <value_meaning>Data covering a significant region of a celestial body</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Local</value>
+        <value_meaning>Data covering a small, localized area</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Microscopic</value>
+        <value_meaning>Data at microscopic scale</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any resolution scale not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>temporal_coverage</name>
+    <version_id>1.0</version_id>
+    <local_identifier>temporal_coverage</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Temporal span or coverage of the collected data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Historic</value>
+        <value_meaning>Data from past events or periods</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Current</value>
+        <value_meaning>Contemporary or recent data</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Time_Series</value>
+        <value_meaning>Data collected over an extended time period</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Single_Event</value>
+        <value_meaning>Data from a single, discrete event</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any temporal coverage not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>composition</name>
+    <version_id>1.0</version_id>
+    <local_identifier>composition</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Primary composition of the material being studied.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Silicate</value>
+        <value_meaning>Composed primarily of silicate minerals</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Metal</value>
+        <value_meaning>Composed primarily of metallic elements</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Organic</value>
+        <value_meaning>Composed primarily of organic compounds</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Icy</value>
+        <value_meaning>Composed primarily of water or other volatile ices</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Gaseous</value>
+        <value_meaning>Composed primarily of gas</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Mixed</value>
+        <value_meaning>Composed of a mixture of different materials</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any composition not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>mission_name</name>
+    <version_id>1.0</version_id>
+    <local_identifier>mission_name</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Name of the mission associated with the data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>mission_phase</name>
+    <version_id>1.0</version_id>
+    <local_identifier>mission_phase</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Phase of the mission during which the data was collected.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>funding_source</name>
+    <version_id>1.0</version_id>
+    <local_identifier>funding_source</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Primary source of funding for the mission or research.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>collection_date</name>
+    <version_id>1.0</version_id>
+    <local_identifier>collection_date</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Date or time period when the data was collected.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Date_Time_YMD</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>processing_level</name>
+    <version_id>1.0</version_id>
+    <local_identifier>processing_level</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Level of processing applied to the raw data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Raw</value>
+        <value_meaning>Unprocessed data directly from the instrument</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Calibrated</value>
+        <value_meaning>Data that has been calibrated but not further processed</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Derived_Product</value>
+        <value_meaning>Higher-level data product derived from processed data</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Mosaic</value>
+        <value_meaning>Combined data from multiple observations or sources</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any processing level not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Attribute>
+    <name>temperature_regime</name>
+    <version_id>1.0</version_id>
+    <local_identifier>temperature_regime</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Temperature conditions at the study location.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Cryogenic</value>
+        <value_meaning>Extremely low temperatures, typically below 120K</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Cold</value>
+        <value_meaning>Below freezing but not extreme</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Temperate</value>
+        <value_meaning>Moderate temperatures, similar to Earth temperate regions</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Hot</value>
+        <value_meaning>High temperatures but below extreme</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Extreme_Heat</value>
+        <value_meaning>Very high temperatures like Venus surface</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Variable</value>
+        <value_meaning>Wide temperature variations or cycles</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any temperature regime not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>pressure_conditions</name>
+    <version_id>1.0</version_id>
+    <local_identifier>pressure_conditions</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Pressure conditions at the study location.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Vacuum</value>
+        <value_meaning>Essentially no atmospheric pressure</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Very_Low</value>
+        <value_meaning>Minimal atmospheric pressure like Mars</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Earth_Like</value>
+        <value_meaning>Similar to Earth's atmospheric pressure</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>High</value>
+        <value_meaning>Higher than Earth's atmospheric pressure</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Extreme</value>
+        <value_meaning>Very high pressure like Venus surface or gas giant interiors</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Variable</value>
+        <value_meaning>Significant pressure variations or gradients</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any pressure condition not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>radiation_environment</name>
+    <version_id>1.0</version_id>
+    <local_identifier>radiation_environment</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Radiation conditions at the study location.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>Low</value>
+        <value_meaning>Minimal radiation exposure like Earth surface</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Moderate</value>
+        <value_meaning>Similar to Earth orbit or Mars surface</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>High</value>
+        <value_meaning>Significant radiation like Jupiter radiation belts</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Extreme</value>
+        <value_meaning>Very high radiation levels</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Shielded</value>
+        <value_meaning>Protected or shielded from external radiation</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any radiation environment not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+
+  <DD_Attribute>
+    <name>atmospheric_presence</name>
+    <version_id>1.0</version_id>
+    <local_identifier>atmospheric_presence</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Presence and nature of atmosphere at the study location.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>true</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+      <DD_Permissible_Value>
+        <value>None</value>
+        <value_meaning>No significant atmosphere</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Very_Thin</value>
+        <value_meaning>Minimal atmosphere like Mercury or Moon</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Thin</value>
+        <value_meaning>Tenuous atmosphere like Mars</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Earth_Like</value>
+        <value_meaning>Similar to Earth's atmosphere</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Thick</value>
+        <value_meaning>Dense atmosphere like Venus or Titan</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Gas_Giant</value>
+        <value_meaning>Massive, deep atmosphere of a gas giant</value_meaning>
+      </DD_Permissible_Value>
+      <DD_Permissible_Value>
+        <value>Other</value>
+        <value_meaning>Any atmospheric presence not covered by other values</value_meaning>
+      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  
+  <DD_Class>
+    <name>Target_Object</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Target_Object</local_identifier>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Information about the celestial body being studied.</definition>
+    <element_flag>true</element_flag>
+    <DD_Association>
+      <identifier_reference>body_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>object_name</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>parent_body</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  
+  <DD_Class>
+    <name>Scientific_Discipline</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Scientific_Discipline</local_identifier>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Information about the scientific discipline and research context.</definition>
+    <element_flag>true</element_flag>
+    <DD_Association>
+      <identifier_reference>primary_field</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>investigation_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>study_focus</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+
+  <DD_Class>
+    <name>Data_Collection</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Data_Collection</local_identifier>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Information about how the data was collected and its format.</definition>
+    <element_flag>true</element_flag>
+    <DD_Association>
+      <identifier_reference>collection_method</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>instrument_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>data_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+
+  <DD_Class>
+    <name>Physical_Properties</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Physical_Properties</local_identifier>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Information about the physical properties of the object under study.</definition>
+    <element_flag>true</element_flag>
+    <DD_Association>
+      <identifier_reference>material_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>feature_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>process_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>composition</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+
+  <DD_Class>
+    <name>Mission_Context</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Mission_Context</local_identifier>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Information about the mission context of the data.</definition>
+    <element_flag>true</element_flag>
+    <DD_Association>
+      <identifier_reference>mission_name</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>mission_phase</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>funding_source</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>collection_date</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>processing_level</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+
+  <DD_Class>
+    <name>Environmental_Context</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Environmental_Context</local_identifier>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Information about the environmental conditions at the study location.</definition>
+    <element_flag>true</element_flag>
+    <DD_Association>
+      <identifier_reference>temperature_regime</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>pressure_conditions</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>radiation_environment</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>atmospheric_presence</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+
+  <DD_Class>
+    <name>Analysis_Properties</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Analysis_Properties</local_identifier>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Information about the analysis methods and properties of the data.</definition>
+    <element_flag>true</element_flag>
+    <DD_Association>
+      <identifier_reference>analysis_method</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>software_used</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>processing_steps</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>uncertainty_measurements</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>quality_indicators</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+
+  <DD_Class>
+    <name>Research_Context</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Research_Context</local_identifier>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>Information about the research context and associated metadata.</definition>
+    <element_flag>true</element_flag>
+    <DD_Association>
+      <identifier_reference>research_goals</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>related_publications</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>keywords</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>principal_investigator</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>institution</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  
+  <DD_Class>
+    <name>Planetary_Data_Dictionary</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Planetary_Data_Dictionary</local_identifier>
+    <submitter_name>Jane Doe</submitter_name>
+    <definition>A comprehensive metadata dictionary for planetary science data.</definition>
+    <element_flag>true</element_flag>
+    <DD_Association>
+      <identifier_reference>Target_Object</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Scientific_Discipline</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Data_Collection</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>1</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Physical_Properties</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Mission_Context</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Environmental_Context</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Analysis_Properties</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Research_Context</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>1</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+</Ingest_LDD>
