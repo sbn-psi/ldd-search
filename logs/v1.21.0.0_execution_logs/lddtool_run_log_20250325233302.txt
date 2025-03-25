@@ -3,29 +3,9 @@
 >>  INFO IM Version Id: 1.21.0.0
 >>  INFO IM Namespace Id: pds
 >>  INFO IM Label Version Id: 1.27
->>  INFO Date: Tue Mar 25 19:09:24 UTC 2025
+>>  INFO Date: Tue Mar 25 23:33:03 UTC 2025
 >>  INFO PARENT_DIR: /tmp/lddtool-15.2.4/Data/
 
->>> ERROR Class:0001_NASA_PDS_1.search.Analysis_Properties  Association:search:analysis_method  Attribute: search:analysis_method - Missing Attribute
->>> ERROR Association: search:analysis_method - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.search.Analysis_Properties  Association:search:software_used  Attribute: search:software_used - Missing Attribute
->>> ERROR Association: search:software_used - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.search.Analysis_Properties  Association:search:processing_steps  Attribute: search:processing_steps - Missing Attribute
->>> ERROR Association: search:processing_steps - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.search.Analysis_Properties  Association:search:uncertainty_measurements  Attribute: search:uncertainty_measurements - Missing Attribute
->>> ERROR Association: search:uncertainty_measurements - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.search.Analysis_Properties  Association:search:quality_indicators  Attribute: search:quality_indicators - Missing Attribute
->>> ERROR Association: search:quality_indicators - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.search.Research_Context  Association:search:research_goals  Attribute: search:research_goals - Missing Attribute
->>> ERROR Association: search:research_goals - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.search.Research_Context  Association:search:related_publications  Attribute: search:related_publications - Missing Attribute
->>> ERROR Association: search:related_publications - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.search.Research_Context  Association:search:keywords  Attribute: search:keywords - Missing Attribute
->>> ERROR Association: search:keywords - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.search.Research_Context  Association:search:principal_investigator  Attribute: search:principal_investigator - Missing Attribute
->>> ERROR Association: search:principal_investigator - Could not find referenced attribute - Reference Type: attribute_of
->>> ERROR Class:0001_NASA_PDS_1.search.Research_Context  Association:search:institution  Attribute: search:institution - Missing Attribute
->>> ERROR Association: search:institution - Could not find referenced attribute - Reference Type: attribute_of
 >>> INFO Init:  - Config.Properties Namespace Id Using:pds
 >>> INFO Init:  - LDD Dictionary_Type is Discipline
 >>> INFO Attribute: <parent_body> - A 'nillable' attribute was found that is not a required attribute in at least one class.
@@ -56,7 +36,7 @@
 
  -- LDDTool Execution Summary --
      13 warning(s)
-     20 error(s)
+     0 error(s)
      0 fatal error(s)
 
 Input:
