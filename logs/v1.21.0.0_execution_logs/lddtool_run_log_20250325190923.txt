@@ -1,0 +1,79 @@
+
+>>  INFO LDDTOOL Version: 15.2.4
+>>  INFO IM Version Id: 1.21.0.0
+>>  INFO IM Namespace Id: pds
+>>  INFO IM Label Version Id: 1.27
+>>  INFO Date: Tue Mar 25 19:09:24 UTC 2025
+>>  INFO PARENT_DIR: /tmp/lddtool-15.2.4/Data/
+
+>>> ERROR Class:0001_NASA_PDS_1.search.Analysis_Properties  Association:search:analysis_method  Attribute: search:analysis_method - Missing Attribute
+>>> ERROR Association: search:analysis_method - Could not find referenced attribute - Reference Type: attribute_of
+>>> ERROR Class:0001_NASA_PDS_1.search.Analysis_Properties  Association:search:software_used  Attribute: search:software_used - Missing Attribute
+>>> ERROR Association: search:software_used - Could not find referenced attribute - Reference Type: attribute_of
+>>> ERROR Class:0001_NASA_PDS_1.search.Analysis_Properties  Association:search:processing_steps  Attribute: search:processing_steps - Missing Attribute
+>>> ERROR Association: search:processing_steps - Could not find referenced attribute - Reference Type: attribute_of
+>>> ERROR Class:0001_NASA_PDS_1.search.Analysis_Properties  Association:search:uncertainty_measurements  Attribute: search:uncertainty_measurements - Missing Attribute
+>>> ERROR Association: search:uncertainty_measurements - Could not find referenced attribute - Reference Type: attribute_of
+>>> ERROR Class:0001_NASA_PDS_1.search.Analysis_Properties  Association:search:quality_indicators  Attribute: search:quality_indicators - Missing Attribute
+>>> ERROR Association: search:quality_indicators - Could not find referenced attribute - Reference Type: attribute_of
+>>> ERROR Class:0001_NASA_PDS_1.search.Research_Context  Association:search:research_goals  Attribute: search:research_goals - Missing Attribute
+>>> ERROR Association: search:research_goals - Could not find referenced attribute - Reference Type: attribute_of
+>>> ERROR Class:0001_NASA_PDS_1.search.Research_Context  Association:search:related_publications  Attribute: search:related_publications - Missing Attribute
+>>> ERROR Association: search:related_publications - Could not find referenced attribute - Reference Type: attribute_of
+>>> ERROR Class:0001_NASA_PDS_1.search.Research_Context  Association:search:keywords  Attribute: search:keywords - Missing Attribute
+>>> ERROR Association: search:keywords - Could not find referenced attribute - Reference Type: attribute_of
+>>> ERROR Class:0001_NASA_PDS_1.search.Research_Context  Association:search:principal_investigator  Attribute: search:principal_investigator - Missing Attribute
+>>> ERROR Association: search:principal_investigator - Could not find referenced attribute - Reference Type: attribute_of
+>>> ERROR Class:0001_NASA_PDS_1.search.Research_Context  Association:search:institution  Attribute: search:institution - Missing Attribute
+>>> ERROR Association: search:institution - Could not find referenced attribute - Reference Type: attribute_of
+>>> INFO Init:  - Config.Properties Namespace Id Using:pds
+>>> INFO Init:  - LDD Dictionary_Type is Discipline
+>>> INFO Attribute: <parent_body> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <instrument_type> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <data_type> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <data_type> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <data_type> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <data_type> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <data_type> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <data_type> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <data_type> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <mission_name> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <funding_source> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> INFO Attribute: <processing_level> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> WARNING Init:  - Config.Properties Namespace Id Not Found:search
+>>> WARNING Attribute: <location> - This local attribute was not used in an Association.
+>>> WARNING Attribute: <resolution_scale> - This local attribute was not used in an Association.
+>>> WARNING Attribute: <size_category> - This local attribute was not used in an Association.
+>>> WARNING Attribute: <temporal_coverage> - This local attribute was not used in an Association.
+>>> WARNING Class: <Target_Object> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
+>>> WARNING Class: <Scientific_Discipline> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
+>>> WARNING Class: <Data_Collection> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
+>>> WARNING Class: <Physical_Properties> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
+>>> WARNING Class: <Mission_Context> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
+>>> WARNING Class: <Environmental_Context> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
+>>> WARNING Class: <Analysis_Properties> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
+>>> WARNING Class: <Research_Context> - An exposed class was found nested within another exposed class. Nested exposed classes should only be present if there is a specific requirement to expose the additional class.
+
+ -- LDDTool Execution Summary --
+     13 warning(s)
+     20 error(s)
+     0 fatal error(s)
+
+Input:
+
+     - IM Version: 1L00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - IM Version: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-search/ldd-search/src/PDS4_Search_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_SEARCH_1L00_1000.xsd
+     - ./PDS4_SEARCH_1L00_1000.sch
+     - ./PDS4_SEARCH_1L00_1000.xml
+     - ./export/PDS4_PDS_1L00.JSON
+
+>>  INFO Exit(0)
