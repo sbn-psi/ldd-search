@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:search  Version:1.0.0.0 - Tue Mar 25 23:43:54 UTC 2025 -->
+  <!-- PDS4 XML/Schema for Name Space Id:search  Version:1.0.0.0 - Fri Apr 04 18:21:14 UTC 2025 -->
   <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.21.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.0.0.0 - search: - Search LDD                                            -->
+  <!-- 1.0.0.0 - search: - Search                                                -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/search/v1"
@@ -25,10 +25,6 @@ _TBD_Ingest_LDD
  
   <xs:element name="Analysis_Properties" type="search:Analysis_Properties"> </xs:element>
   <xs:element name="Data_Collection" type="search:Data_Collection"> </xs:element>
-  <xs:element name="Environmental_Context" type="search:Environmental_Context"> </xs:element>
-  <xs:element name="Mission_Context" type="search:Mission_Context"> </xs:element>
-  <xs:element name="Physical_Properties" type="search:Physical_Properties"> </xs:element>
-  <xs:element name="Planetary_Data_Dictionary" type="search:Planetary_Data_Dictionary"> </xs:element>
   <xs:element name="Research_Context" type="search:Research_Context"> </xs:element>
   <xs:element name="Scientific_Discipline" type="search:Scientific_Discipline"> </xs:element>
   <xs:element name="Target_Object" type="search:Target_Object"> </xs:element>
@@ -51,20 +47,67 @@ _TBD_Ingest_LDD
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
+  <xs:complexType name="Body_Type">
+    <xs:annotation>
+      <xs:documentation>Classification of the celestial
+        body.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="asteroid_type" type="search:asteroid_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="tno_type" type="search:tno_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="centaur_type" type="search:centaur_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="kbo_type" type="search:kbo_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="oort_cloud_type" type="search:oort_cloud_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="comet_type" type="search:comet_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="satellite_type" type="search:satellite_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="planet_type" type="search:planet_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="feature_type" type="search:feature_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="atmospheric_layer" type="search:atmospheric_layer" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="field_type" type="search:field_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="dust_type" type="search:dust_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="ring_section" type="search:ring_section" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="ring_division" type="search:ring_division" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="ring_feature" type="search:ring_feature" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="solar_component" type="search:solar_component" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="search:asteroid_type = ('Active', 'Main_Belt', 'Near_Earth', 'Other', 'Trojan')"/> -->
+    <!-- <xs:assert test="search:tno_type = ('Classical', 'Detached', 'Other', 'Resonant', 'Scattered')"/> -->
+    <!-- <xs:assert test="search:centaur_type = ('Active', 'Inactive', 'Other')"/> -->
+    <!-- <xs:assert test="search:kbo_type = ('Classical', 'Other', 'Resonant', 'Scattered')"/> -->
+    <!-- <xs:assert test="search:oort_cloud_type = ('Inner', 'Other', 'Outer')"/> -->
+    <!-- <xs:assert test="search:comet_type = ('Halley_Type', 'Jupiter_Family', 'Long_Period', 'Other', 'Single_Pass')"/> -->
+    <!-- <xs:assert test="search:satellite_type = ('Captured', 'Galilean', 'Icy', 'Irregular', 'Other', 'Shepherding')"/> -->
+    <!-- <xs:assert test="search:planet_type = ('Gas_Giant', 'Interior', 'Other', 'Terrestrial')"/> -->
+    <!-- <xs:assert test="search:feature_type = ('Cloud', 'Crater', 'Mare', 'Mountain', 'Other', 'Valley', 'Volcano')"/> -->
+    <!-- <xs:assert test="search:atmospheric_layer = ('Exosphere', 'Ionosphere', 'Other', 'Stratosphere', 'Troposphere')"/> -->
+    <!-- <xs:assert test="search:field_type = ('Cosmic_Ray', 'Electromagnetic_Wave', 'Gamma_Ray', 'Other', 'Particle', 'X_Ray')"/> -->
+    <!-- <xs:assert test="search:dust_type = ('Interplanetary_Dust', 'Meteoroid', 'Other')"/> -->
+    <!-- <xs:assert test="search:ring_section = ('A_Ring', 'B_Ring', 'C_Ring', 'D_Ring', 'E_Ring', 'F_Ring', 'G_Ring', 'Other')"/> -->
+    <!-- <xs:assert test="search:ring_division = ('Cassini_Division', 'Encke_Division', 'Keeler_Gap', 'Other')"/> -->
+    <!-- <xs:assert test="search:ring_feature = ('Other', 'Spiral_Bending_Wave', 'Spiral_Density_Wave', 'Spoke')"/> -->
+    <!-- <xs:assert test="search:solar_component = ('Chromosphere', 'Convective_Zone', 'Core', 'Corona', 'Heliosphere', 'Other', 'Photosphere', 'Radiative_Zone', 'Solar_Wind')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
   <xs:complexType name="Data_Collection">
     <xs:annotation>
       <xs:documentation>Information about how the data was collected and
         its format.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="collection_method" type="search:collection_method" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="instrument_type" type="search:instrument_type" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="data_type" type="search:data_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="collection_method" type="search:collection_method" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="instrument_type" type="search:instrument_type" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="data_category" type="search:data_category" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="data_format" type="search:data_format" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="temporal_epoch" type="search:temporal_epoch" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="search:collection_method = ('Laboratory', 'Lander', 'Orbiter', 'Other', 'Rover', 'Sample_Return', 'Telescope')"/> -->
     <!-- <xs:assert test="search:instrument_type = ('Camera', 'Lidar', 'Magnetometer', 'Other', 'Radar', 'Seismometer', 'Spectrometer')"/> -->
-    <!-- <xs:assert test="search:data_type = ('Image', 'Map', 'Model_Output', 'Other', 'Spectrum', 'Time_Series')"/> -->
+    <!-- <xs:assert test="search:data_category = ('Altimetry', 'Database', 'Image', 'Map', 'Model_Output', 'Other', 'Parameter_Data', 'Photometry')"/> -->
+    <!-- <xs:assert test="search:data_format = ('Crater', 'Crater_Type', 'Gazetteer', 'Geologic_Map', 'Gravity_Map', 'Light_Curve', 'Mosaic', 'Photometric_Properties', 'Physical_Properties', 'Shape_Model_DTM', 'Spectral', 'Spectral_Map', 'Taxonomies', 'Thermal_Map', 'Time_Series')"/> -->
+    <!-- <xs:assert test="search:temporal_epoch = ('Amazonian', 'Archean', 'Azaccan', 'Copernican', 'Eratosthenian', 'Hesperian', 'Imbrian', 'Kerwanan', 'Nectarian', 'Noachian', 'Other', 'Paleozoic', 'Pre-Kerwanan', 'Proterozoic', 'Yalodean')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
@@ -87,23 +130,6 @@ _TBD_Ingest_LDD
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
-  <xs:complexType name="Mission_Context">
-    <xs:annotation>
-      <xs:documentation>Information about the mission context of the
-        data.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element name="mission_name" type="search:mission_name" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="mission_phase" type="search:mission_phase" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="funding_source" type="search:funding_source" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="collection_date" type="search:collection_date" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="processing_level" type="search:processing_level" minOccurs="1" maxOccurs="1"> </xs:element>
-    </xs:sequence>
-    <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="search:processing_level = ('Calibrated', 'Derived_Product', 'Mosaic', 'Other', 'Raw')"/> -->
-    <!-- End assert statements for schematron - Enumerated Values -->
-  </xs:complexType>
-
   <xs:complexType name="Physical_Properties">
     <xs:annotation>
       <xs:documentation>Information about the physical properties of the
@@ -111,9 +137,10 @@ _TBD_Ingest_LDD
     </xs:annotation>
     <xs:sequence>
       <xs:element name="material_type" type="search:material_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="feature_name" type="search:feature_name" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="feature_type" type="search:feature_type" minOccurs="0" maxOccurs="1"> </xs:element>
       <xs:element name="process_type" type="search:process_type" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element name="composition" type="search:composition" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="composition" type="search:composition" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
     <!-- <xs:assert test="search:material_type = ('Dust', 'Gas', 'Ice', 'Liquid', 'Other', 'Regolith', 'Rock')"/> -->
@@ -121,23 +148,6 @@ _TBD_Ingest_LDD
     <!-- <xs:assert test="search:process_type = ('Atmospheric', 'Erosional', 'Impact', 'Other', 'Tectonic', 'Volcanic')"/> -->
     <!-- <xs:assert test="search:composition = ('Gaseous', 'Icy', 'Metal', 'Mixed', 'Organic', 'Other', 'Silicate')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
-  </xs:complexType>
-
-  <xs:complexType name="Planetary_Data_Dictionary">
-    <xs:annotation>
-      <xs:documentation>A comprehensive metadata dictionary for
-        planetary science data.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element ref="search:Target_Object" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element ref="search:Scientific_Discipline" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element ref="search:Data_Collection" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element ref="search:Physical_Properties" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element ref="search:Mission_Context" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element ref="search:Environmental_Context" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element ref="search:Analysis_Properties" minOccurs="0" maxOccurs="1"> </xs:element>
-      <xs:element ref="search:Research_Context" minOccurs="0" maxOccurs="1"> </xs:element>
-    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="Research_Context">
@@ -161,28 +171,29 @@ _TBD_Ingest_LDD
     </xs:annotation>
     <xs:sequence>
       <xs:element name="primary_field" type="search:primary_field" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="investigation_type" type="search:investigation_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="investigation_technique" type="search:investigation_technique" minOccurs="1" maxOccurs="1"> </xs:element>
       <xs:element name="study_focus" type="search:study_focus" minOccurs="1" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="search:primary_field = ('Astrobiology', 'Astronomy', 'Atmospheric_Science', 'Dynamics', 'Geology', 'Geophysics', 'Laboratory_Studies', 'Magnetospheres', 'Other', 'Space_Physics')"/> -->
-    <!-- <xs:assert test="search:investigation_type = ('Modeling', 'Observation', 'Other', 'Remote_Sensing', 'Sample_Analysis')"/> -->
+    <!-- <xs:assert test="search:primary_field = ('Astrobiology', 'Astronomy_Exoplanets', 'Astronomy_Observation', 'Astronomy_Radar', 'Astronomy_Spectroscopy', 'Atmospheric_Study', 'Dynamics', 'Geology_Crater_Counting', 'Geology_Geophysics', 'Geology_Interior_Studies', 'Geology_Seismology', 'Geology_Surface', 'Laboratory_Age_Dating', 'Laboratory_Analytic_Chemistry', 'Laboratory_Cosmochemistry', 'Laboratory_Geochemistry', 'Laboratory_Spectral_Analysis', 'Magnetospheres', 'Modeling', 'Other', 'Space_Physics')"/> -->
+    <!-- <xs:assert test="search:investigation_technique = ('Geochemistry', 'Gravimetry', 'ICPMS', 'Mapping', 'Modeling', 'Other', 'Radar', 'SEM', 'Seismology', 'Spectroscopy', 'TEM')"/> -->
     <!-- <xs:assert test="search:study_focus = ('Atmosphere', 'Composition', 'Interior', 'Magnetosphere', 'Orbital_Dynamics', 'Other', 'Surface')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
   <xs:complexType name="Target_Object">
     <xs:annotation>
-      <xs:documentation>Information about the celestial body being
-        studied.</xs:documentation>
+      <xs:documentation>Information about the target of observation,
+        whether it is a celestial body, feature, or other
+        object.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="body_type" type="search:body_type" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="object_name" type="search:object_name" minOccurs="1" maxOccurs="1"> </xs:element>
-      <xs:element name="parent_body" nillable="true" type="search:parent_body" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="object_name" type="search:object_name" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="parent_body" nillable="true" type="search:parent_body" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="scope" nillable="true" type="search:scope" minOccurs="0" maxOccurs="1"> </xs:element>
     </xs:sequence>
     <!-- Begin assert statements for schematron - Enumerated Values -->
-    <!-- <xs:assert test="search:body_type = ('Asteroid', 'Comet', 'Exoplanet', 'Moon', 'Other', 'Planet')"/> -->
+    <!-- <xs:assert test="search:scope = ('Global', 'Local', 'Other', 'Regional')"/> -->
     <!-- End assert statements for schematron - Enumerated Values -->
   </xs:complexType>
 
@@ -205,6 +216,26 @@ _TBD_Ingest_LDD
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="asteroid_type">
+    <xs:annotation>
+<xs:documentation>Type of asteroid.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="atmospheric_layer">
+    <xs:annotation>
+<xs:documentation>Layer of the atmosphere.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="atmospheric_presence">
     <xs:annotation>
       <xs:documentation>Presence and nature of atmosphere at the study
@@ -216,10 +247,9 @@ _TBD_Ingest_LDD
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="body_type">
+  <xs:simpleType name="centaur_type">
     <xs:annotation>
-      <xs:documentation>Classification of the celestial body being
-        studied.</xs:documentation>
+<xs:documentation>Type of centaur object.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -227,20 +257,20 @@ _TBD_Ingest_LDD
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="collection_date">
-    <xs:annotation>
-      <xs:documentation>Date or time period when the data was
-        collected.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Date_Time_YMD">
-  <!-- format="YYYY-MM-DDTHH:MM:SS.SSSSSS(Z)" -->
-	   </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="collection_method">
     <xs:annotation>
       <xs:documentation>Method used to collect the
         data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="comet_type">
+    <xs:annotation>
+<xs:documentation>Type of comet.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -259,10 +289,41 @@ _TBD_Ingest_LDD
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="data_type">
+  <xs:simpleType name="data_category">
     <xs:annotation>
-      <xs:documentation>Format or type of the collected
+      <xs:documentation>General category of the collected
         data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_format">
+    <xs:annotation>
+<xs:documentation>Format of the collected data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dust_type">
+    <xs:annotation>
+<xs:documentation>Type of dust or meteoroid.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="feature_name">
+    <xs:annotation>
+      <xs:documentation>Name of the feature being
+        studied.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -281,10 +342,9 @@ _TBD_Ingest_LDD
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="funding_source">
+  <xs:simpleType name="field_type">
     <xs:annotation>
-      <xs:documentation>Primary source of funding for the mission or
-        research.</xs:documentation>
+<xs:documentation>Type of field or radiation.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -314,10 +374,20 @@ _TBD_Ingest_LDD
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="investigation_type">
+  <xs:simpleType name="investigation_technique">
     <xs:annotation>
       <xs:documentation>Method of scientific investigation
         used.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="kbo_type">
+    <xs:annotation>
+<xs:documentation>Type of Kuiper belt object.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -346,32 +416,20 @@ _TBD_Ingest_LDD
 	   </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="mission_name">
-    <xs:annotation>
-      <xs:documentation>Name of the mission associated with the
-        data.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="mission_phase">
-    <xs:annotation>
-      <xs:documentation>Phase of the mission during which the data was
-        collected.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
   <xs:simpleType name="object_name">
     <xs:annotation>
-      <xs:documentation>Specific name of the celestial body being
-        studied.</xs:documentation>
+      <xs:documentation>Specific name of the celestial body (whether it
+        is the target of observation or not)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="oort_cloud_type">
+    <xs:annotation>
+<xs:documentation>Type of Oort cloud object.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -390,6 +448,16 @@ _TBD_Ingest_LDD
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+
+  <xs:simpleType name="planet_type">
+    <xs:annotation>
+<xs:documentation>Type of planet.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="pressure_conditions">
     <xs:annotation>
@@ -427,17 +495,6 @@ _TBD_Ingest_LDD
   <xs:simpleType name="process_type">
     <xs:annotation>
 <xs:documentation>Type of process being studied.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
-     <xs:minLength value="1"/>
-     <xs:maxLength value="255"/>
-	   </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="processing_level">
-    <xs:annotation>
-      <xs:documentation>Level of processing applied to the raw
-        data.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>
@@ -497,6 +554,60 @@ _TBD_Ingest_LDD
 	   </xs:restriction>
   </xs:simpleType>
 
+  <xs:simpleType name="ring_division">
+    <xs:annotation>
+      <xs:documentation>Division between ring
+        sections.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ring_feature">
+    <xs:annotation>
+      <xs:documentation>Feature within a planetary
+        ring.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ring_section">
+    <xs:annotation>
+<xs:documentation>Section of a planetary ring.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="satellite_type">
+    <xs:annotation>
+<xs:documentation>Type of natural satellite.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="scope">
+    <xs:annotation>
+      <xs:documentation>The scope of the data
+        collection.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="pds:ASCII_Short_String_Collapsed">
+        <xs:attribute name="nilReason" type="pds:nil_reason" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
   <xs:simpleType name="software_used">
     <xs:annotation>
       <xs:documentation>Primary software tools used for data
@@ -504,6 +615,16 @@ _TBD_Ingest_LDD
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Text_Preserved">
      <xs:minLength value="1"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="solar_component">
+    <xs:annotation>
+<xs:documentation>Component of the Sun.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
 	   </xs:restriction>
   </xs:simpleType>
 
@@ -522,6 +643,28 @@ _TBD_Ingest_LDD
     <xs:annotation>
       <xs:documentation>Temperature conditions at the study
         location.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="temporal_epoch">
+    <xs:annotation>
+      <xs:documentation>The temporal epoch of the data
+        collection.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tno_type">
+    <xs:annotation>
+      <xs:documentation>Type of trans-Neptunian
+        object.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Collapsed">
      <xs:minLength value="1"/>

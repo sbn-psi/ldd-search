@@ -1,0 +1,43 @@
+
+>>  INFO LDDTOOL Version: 15.2.4
+>>  INFO IM Version Id: 1.21.0.0
+>>  INFO IM Namespace Id: pds
+>>  INFO IM Label Version Id: 1.27
+>>  INFO Date: Fri Apr 04 18:21:14 UTC 2025
+>>  INFO PARENT_DIR: /tmp/lddtool-15.2.4/Data/
+
+>>> ERROR Association: Body_Type - Invalid reference type: subclass_of
+>>> ERROR Association: Physical_Properties - Invalid reference type: subclass_of
+>>> ERROR Association: Environmental_Context - Invalid reference type: subclass_of
+>>> ERROR Class:0001_NASA_PDS_1.search.Body_Type  Association:search:body_type  Attribute: search:body_type - Missing Attribute
+>>> ERROR Association: search:body_type - Could not find referenced attribute - Reference Type: attribute_of
+>>> INFO Init:  - Config.Properties Namespace Id Using:pds
+>>> INFO Init:  - LDD Dictionary_Type is Discipline
+>>> INFO Attribute: <parent_body> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <scope> - A 'nillable' attribute was found that is not a required attribute in at least one class.
+>>> INFO Attribute: <instrument_type> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> WARNING Init:  - Config.Properties Namespace Id Not Found:search
+
+ -- LDDTool Execution Summary --
+     1 warning(s)
+     5 error(s)
+     0 fatal error(s)
+
+Input:
+
+     - IM Version: 1L00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - IM Version: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-search/ldd-search/src/PDS4_Search_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_SEARCH_1L00_1000.xsd
+     - ./PDS4_SEARCH_1L00_1000.sch
+     - ./PDS4_SEARCH_1L00_1000.xml
+     - ./export/PDS4_PDS_1L00.JSON
+
+>>  INFO Exit(0)
