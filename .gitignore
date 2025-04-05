@@ -46,3 +46,6 @@ target/
 
 # Sphinx stuff
 docs/build/
+
+venv/
+categories.md

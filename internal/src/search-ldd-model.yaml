@@ -1,0 +1,430 @@
+Scientific_Discipline:
+  definition: Information about the scientific discipline and research context.
+  children:
+    - Primary_Field:
+        definition: Primary scientific field of study.
+        values:
+          Astrobiology: Study of life in the universe
+          Astronomy_Observation: Observation of celestial objects
+          Astronomy_Radar: Radar observations of celestial objects
+          Astronomy_Exoplanets: Study of exoplanets
+          Astronomy_Spectroscopy: Spectroscopy of celestial objects
+          Geology_Geophysics: Geophysics of the Earth and other planets
+          Geology_Seismology: Seismology of the Earth and other planets
+          Geology_Surface: Surface studies of the Earth and other planets
+          Geology_Crater_Counting: Crater counting of the Earth and other planets
+          Geology_Interior_Studies: Interior studies of the Earth and other planets
+          Dynamics: Dynamics of the Earth and other planets
+          Laboratory_Geochemistry: Geochemistry of physical samples
+          Laboratory_Cosmochemistry: Cosmochemistry of physical samples
+          Laboratory_Age_Dating: Age dating of physical samples
+          Laboratory_Analytic_Chemistry: Analytic chemistry of physical samples
+          Laboratory_Spectral_Analysis: Spectral analysis of physical samples
+          Atmospheric_Study: Atmospheric studies of the Earth and other planets
+          Modeling: Modeling of the Earth and other planets
+          Magnetospheres: Magnetospheres of the Earth and other planets
+          Space_Physics: Space physics of the Earth and other planets
+          Other: Any field not covered by other values
+    - Investigation_Technique:
+        definition: Method of scientific investigation used.
+        values:
+          Spectroscopy: Collection of spectra
+          Modeling: Computer-based simulation or modeling
+          Mapping: Collection of maps
+          Radar: Collection of radar data
+          Seismology: Collection of seismic data
+          Gravimetry: Collection of gravity data
+          Geochemistry: Collection of geochemical data
+          SEM: Collection of scanning electron microscopy data
+          TEM: Collection of transmission electron microscopy data
+          ICPMS: Collection of inductively coupled plasma mass spectrometry data
+          Other: Any investigation technique not covered by other values
+    - Study_Focus:
+        definition: Specific area of study within the scientific discipline.
+        values:
+          Surface: Study focused on surface features or properties
+          Interior: Study focused on internal structure or processes
+          Atmosphere: Study focused on atmospheric properties or dynamics
+          Magnetosphere: Study focused on magnetic field properties or interactions
+          Orbital_Dynamics: Study focused on orbital properties or behaviors
+          Composition: Study focused on chemical or mineral composition
+          Other: Any focus not covered by other values
+
+Target_Object:
+  definition: Information about the target of observation, whether it is a celestial body, feature, or other object.
+  children:
+    - Object_Name:
+        definition: Name of the object
+    - Parent_Body:
+        definition: Parent body of the object
+    - Scope:
+        definition: Scope of the data collection
+        values:
+          Global: Data collected from the entire object
+          Regional: Data collected from a large region of the object
+          Local: Data collected from a small location on the object
+          Other: Any scope not covered by other values
+    - Object_Type:
+        definition: Type of the object
+        children:
+          - Small_Body:
+              definition: Small body
+              children:
+                - Asteroid:
+                    definition: Asteroid
+                    values:
+                      Near_Earth: Asteroids with orbits that bring them close to Earth
+                      Trojan: Asteroids that share an orbit with a planet
+                      Active: Asteroids that show comet-like activity
+                      Main_Belt: Asteroids in the main asteroid belt
+                      Other: Any asteroid type not covered by other values
+                - TNO:
+                    definition: Trans-Neptunian Object
+                    values:
+                      Classical: Objects in the classical Kuiper belt
+                      Resonant: Objects in orbital resonance with Neptune
+                      Scattered: Objects scattered by Neptune
+                      Detached: Objects with orbits not strongly influenced by Neptune
+                      Other: Any TNO type not covered by other values
+                - Centaur:
+                    definition: Centaur
+                    values:
+                      Active: Centaurs showing comet-like activity
+                      Inactive: Centaurs without comet-like activity
+                      Other: Any centaur type not covered by other values
+                - KBO:
+                    definition: Kuiper Belt Object
+                    values:
+                      Classical: Objects in the classical Kuiper belt
+                      Resonant: Objects in orbital resonance with Neptune
+                      Scattered: Objects scattered by Neptune
+                      Other: Any KBO type not covered by other values
+                - Oort_Cloud:
+                    definition: Oort Cloud Object
+                    values:
+                      Inner: Objects in the inner Oort cloud
+                      Outer: Objects in the outer Oort cloud
+                      Other: Any Oort cloud type not covered by other values
+                - Comet:
+                    definition: Comet
+                    values:
+                      Jupiter_Family: Comets that orbit Jupiter
+                      Single_Pass: Comets that pass through the inner solar system
+                      Other: Any comet type not covered by other values
+                - Satellite:
+                    definition: Satellite
+                    values:
+                      Icy_Moons: Icy moons of a planet
+                      Galilean_Moons: Galilean moons of Jupiter
+                      Irregular_Moons: Irregular moons of a planet
+                      Captured_Moons: Captured moons of a planet
+                      Shepherding_Moon: Shepherding moon of a planet
+                      Other: Any satellite type not covered by other values
+          - Planet:
+              definition: Planet
+              values:
+                Gas_Giant: Large planets composed mainly of gas
+                Terrestrial: Rocky planets similar to Earth
+                Interior: Planets closer to the Sun than Earth
+                Other: Any planet type not covered by other values
+          - Feature:
+              definition: Feature
+              children:
+                - Name:
+                    definition: Name of the feature
+                - Type:
+                    definition: Type of the feature
+                    values:
+                      Crater: Impact depression on a surface
+                      Mountain: Elevated landform
+                      Valley: Elongated depression
+                      Mare: Dark plains on the Moon
+                      Volcano: Volcanic landform
+                      Cloud: Atmospheric cloud formation
+                      Other: Any feature type not covered by other values
+          - Atmosphere:
+              definition: Atmosphere of a celestial body
+              children:
+                - Layer:
+                    definition: Layer of the atmosphere
+                    values:
+                      Troposphere: Lowest layer of the atmosphere
+                      Stratosphere: Layer above the troposphere
+                      Ionosphere: Layer containing ions
+                      Exosphere: Outermost layer of the atmosphere
+                      Other: Any atmospheric layer not covered by other values
+                - Study_Type:
+                    definition: Type of study of the atmosphere
+                    values:
+                      Temperature_Profile: Temperature profile of the atmosphere
+                      Scale_Height: Scale height of the atmosphere
+                      Density_Profile: Density profile of the atmosphere
+          - Fields:
+              definition: Fields of an object
+              values:
+                Particles: Particles in the atmosphere
+                Cosmic_Rays: Cosmic rays in the atmosphere
+                X-Rays: X-rays in the atmosphere
+                Gamma-Rays: Gamma-rays in the atmosphere
+                Electromagnetic_Waves: Electromagnetic waves in the atmosphere
+          - Dust:
+              definition: Dust
+              values:
+                Meteoroids: Dust from meteoroids
+                Other: Other dust
+          - Rings:
+              definition: Rings of an object
+              children:
+                - Ring_Type:
+                    definition: Type of ring
+                    values:
+                      D: D ring
+                      C: C ring
+                      B: B ring
+                      A: A ring
+                      F: F ring
+                      G: G ring
+                      E: E ring
+                - Ring_Division:
+                    definition: Division of the ring
+                    values:
+                      Cassini_Division: Cassini Division
+                      Encke: Encke Division
+                      Keeler: Keeler Division
+                - Ring_Feature:
+                    definition: Feature of the ring
+                    values:
+                      Spiral_Bending_Waves: Spiral Bending Waves
+                      Spokes: Spokes
+                      Spiral_Density_Waves: Spiral Density Waves
+          - Solar_Component:  
+              definition: Solar component
+              values:
+                Corona: Corona
+                Solar_Wind: Solar Wind
+                Exoplanets: Exoplanets
+                Heliosphere: Heliosphere
+                Core: Core
+                Radiative_Zone: Radiative Zone
+                Convective_Zone: Convective Zone
+                Photosphere: Photosphere
+                Chromosphere: Chromosphere
+                Other: Any solar component not covered by other values
+          - Exoplanet:
+              definition: Name of an exoplanet
+    - Physical_Properties:
+        definition: Information about the physical properties of the object under study.
+        children:
+          - Material_Type:
+              definition: Material type of the object
+              values:
+                Rock: Solid mineral material
+                Ice: Frozen water or other volatiles
+                Gas: Gaseous material
+                Dust: Fine particulate material
+                Regolith: Surface layer of loose material
+                Liquid: Liquid state material
+                Other: Any material type not covered by other values
+          - Process_Type:
+              definition: Type of process being studied.
+              values:
+                Impact: Collision processes
+                Volcanic: Volcanic activity
+                Tectonic: Crustal deformation processes
+                Atmospheric: Atmospheric processes
+                Erosional: Surface degradation processes
+                Other: Any process type not covered by other values
+          - Composition:
+              definition: Primary composition of the material being studied.
+              values:
+                Silicate: Composed primarily of silicate minerals
+                Metal: Composed primarily of metallic elements
+                Organic: Composed primarily of organic compounds
+                Icy: Composed primarily of water or other volatile ices
+                Gaseous: Composed primarily of gas
+                Mixed: Composed of a mixture of different materials
+                Other: Any composition not covered by other values
+    - Environmental_Context:
+        definition: Information about the environmental conditions at the study location.
+        children:
+          - Temperature_Regime:
+              definition: Temperature conditions at the study location.
+              values:
+                Cryogenic: Extremely low temperatures, typically below 120K
+                Cold: Below freezing but not extreme
+                Temperate: Near-surface temperatures typical of Earth
+                Warm: Above freezing and below boiling point
+                Hot: Above boiling point
+                Other: Any temperature regime not covered by other values
+          - Pressure_Conditions:
+              definition: Pressure conditions at the study location.
+              values:
+                Vacuum: Essentially no atmospheric pressure
+                Very_Low: Minimal atmospheric pressure like Mars
+                Earth_Like: Similar to Earth's atmospheric pressure
+                High: Higher than Earth's atmospheric pressure
+                Extreme: Very high pressure like Venus surface or gas giant interiors
+                Variable: Significant pressure variations or gradients
+                Other: Any pressure condition not covered by other values
+          - Radiation_Environment:
+              definition: Radiation conditions at the study location.
+              values:
+                Low: Minimal radiation exposure like Earth surface
+                Moderate: Similar to Earth orbit or Mars surface
+                High: Significant radiation like Jupiter radiation belts
+                Extreme: Very high radiation levels
+                Shielded: Protected or shielded from external radiation
+                Other: Any radiation environment not covered by other values
+          - Atmospheric_Presence:
+              definition: Presence and nature of atmosphere at the study location.
+              values:
+                None: No atmosphere present
+                Trace: Very low atmospheric pressure
+                Low: Atmospheric pressure similar to Earth's
+                High: Atmospheric pressure similar to Earth's
+                Extreme: Very high atmospheric pressure like Venus surface
+                Variable: Significant atmospheric pressure variations or gradients
+                Other: Any atmospheric presence not covered by other values
+
+Data_Collection:
+  definition: Information about how the data was collected and its format.
+  children:
+    - Collection_Method:
+        definition: Method used to collect the data.
+        values:
+          Orbiter: Data collected by an orbiting spacecraft
+          Lander: Data collected by a surface lander
+          Rover: Data collected by a mobile surface rover
+          Telescope: Data collected by Earth-based or space telescopes
+          Sample_Return: Analysis of returned physical samples
+          Laboratory: Data collected in laboratory settings
+          Other: Any collection method not covered by other values
+    - Instrument_Type:
+        definition: Type of instrument used to collect the data.
+        values:
+          Spectrometer: Instrument that measures spectra
+          Camera: Imaging device
+          Radar: Radio detection and ranging instrument
+          Lidar: Light detection and ranging instrument
+          Seismometer: Instrument that measures ground motion
+          Magnetometer: Instrument that measures magnetic fields
+          Other: Any instrument type not covered by other values
+    - Data_Category:
+        definition: General category of the collected data.
+        values:
+          Altimetry: Elevation data
+          Image: Visual representation data
+          Photometry: Photometric measurement data
+          Map: Spatial representation data
+          Model_Output: Results from computational models
+          Database: Flat rendering of existing data base
+          Parameter_Data: Numerical data
+          Other: Any data category not covered by other values
+    - Data_Format:
+        definition: Format of the collected data.
+        values:
+          Shape_Model_DTM: A 3D model of the surface of the object
+          Geologic_Map: A map of the geologic features of the object
+          Thermal_Map: A map of the thermal properties of the object
+          Mosaic: A composite image of the object
+          Spectral_Map: A map of the spectral properties of the object
+          Gazetteer: A list of feature names
+          Time_Series: Sequential data collected over time
+          Crater: A list of craters on the object
+          Light_Curve: A list of light curves on the object
+          Spectral: A list of spectra on the object
+          Physical_Properties: A list of physical properties of the object
+          Photometric_Properties: A list of photometric properties of the object
+          Gravity_Map: A map of the gravity of the object
+          Taxonomies: A list of taxonomies of the object
+          Crater_Type: A list of irregular crater types on the object
+          Other: Any data format not covered by other values
+    - Temporal_Epoch:
+        definition: The temporal epoch of the data collection.
+        children:
+          - Earth:
+              definition: Temporal epoch of the Earth
+              values:
+                Archean: Earth's earliest known epoch
+                Proterozoic: Earth's Proterozoic Eon
+                Paleozoic: Earth's Paleozoic Era
+          - Moon:
+              definition: Temporal epoch of the Moon
+              values:
+                Nectarian: Moon's Pre-Nactarian Epoch
+          - Mars:
+              definition: Temporal epoch of Mars
+              values:
+                Noachian: Mars's Noachian Epoch
+                Hesperian: Mars's Hesperian Epoch
+                Amazonian: Mars's Amazonian Epoch
+
+Analysis_Properties:
+  definition: Information about the analysis methods and properties of the data.
+  children:
+    - Analysis_Method:
+        definition: Method used to analyze the data.
+        values:
+          Spectroscopy: Collection of spectra
+          Modeling: Computer-based simulation or modeling
+          Mapping: Collection of maps
+          Radar: Collection of radar data
+          Seismology: Collection of seismic data
+          Gravimetry: Collection of gravity data
+          Geochemistry: Collection of geochemical data
+          SEM: Collection of scanning electron microscopy data
+          TEM: Collection of transmission electron microscopy data
+          ICPMS: Collection of inductively coupled plasma mass spectrometry data
+          Other: Any analysis method not covered by other values
+    - Software_Used:
+        definition: Software used to analyze the data.
+        values:
+          Spectroscopy: Collection of spectra
+          Modeling: Computer-based simulation or modeling
+          Mapping: Collection of maps
+          Radar: Collection of radar data
+          Seismology: Collection of seismic data
+          Gravimetry: Collection of gravity data
+          Geochemistry: Collection of geochemical data
+          SEM: Collection of scanning electron microscopy data
+          TEM: Collection of transmission electron microscopy data
+          ICPMS: Collection of inductively coupled plasma mass spectrometry data
+          Other: Any software not covered by other values
+    - Processing_Steps:
+        definition: Processing steps used to analyze the data.
+        values:
+          Filtering: Filtering of the data
+          Smoothing: Smoothing of the data
+          Deconvolution: Deconvolution of the data
+          Other: Any processing step not covered by other values
+    - Uncertainty_Measurements:
+        definition: Uncertainty measurements of the data.
+        values:
+          Standard_Deviation: Standard deviation of the data
+          Standard_Error: Standard error of the data
+          Confidence_Interval: Confidence interval of the data
+          Other: Any uncertainty measurement not covered by other values
+    - Quality_Indicators:
+        definition: Quality indicators of the data.
+        values:
+          Accuracy: Accuracy of the data
+          Precision: Precision of the data
+          Other: Any quality indicator not covered by other values
+
+Research_Context:
+  definition: Information about the research context and associated metadata.
+  children:
+    - Research_Goals:
+        definition: Research goals of the study
+        values:
+          Accuracy: Accuracy of the data
+          Precision: Precision of the data
+          Other: Any research goal not covered by other values
+    - Related_Publications:
+        definition: Related publications of the study
+    - Keywords:
+        definition: Keywords of the study
+    - Principal_Investigator:
+        definition: Principal investigator of the study
+    - Institution:
+        definition: Institution of the study
