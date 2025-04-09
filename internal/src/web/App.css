@@ -34,11 +34,45 @@
   padding: 10px;
   border: 1px solid #eee;
   border-radius: 4px;
+  transition: border-color 0.2s;
 }
 
-.class-header, .attribute-header {
+.class-item.selected, .attribute-item.selected {
+  border-color: #2c3e50;
+}
+
+.class-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+  position: relative;
+}
+
+/* Show expansion arrow for class items in attributes panel */
+.attributes-panel .class-header::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #666;
+  transition: transform 0.2s;
+}
+
+.attributes-panel .class-item.selected .class-header::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.attribute-header {
+  display: flex;
+  align-items: center;
+  padding: 6px;
 }
 
 .class-name, .attribute-name, .value-name {
