@@ -6,9 +6,32 @@ steward_id: drum
 namespace_id: search
 last_modification_date_time: '2030-04-10T18:00:00Z'
 attributes:
-  Primary_Field:
+  Study_Focus:
     version_id: '1.0'
-    local_identifier: Primary_Field
+    local_identifier: Study_Focus
+    nillable_flag: false
+    submitter_name: Mike Drum
+    definition: High-level research focus.
+    value_domain:
+      enumeration_flag: true
+      value_data_type: ASCII_Short_String_Collapsed
+      unit_of_measure_type: Units_of_None
+      permissible_values:
+        Surface: Study focused on planetary geology such as features or properties
+        Interior: Study focused on internal structure or processes
+        Atmosphere: Study focused on atmospheric properties or dynamics
+        Magnetosphere: Study focused on magnetic field properties or interactions
+        Orbital_Dynamics: Study focused on orbital properties or behaviors
+        Composition: Study focused on chemical or mineral composition
+        Plasma: Study of plasma and ionospheres
+        Space Weather: Study of the change in surfaces due to space weather effects
+        Planetary Protection: Study focused on planetary protection
+        Rings: Study focused on ring and ring-moon systems
+        Resources: In-situ resource characterization and utilization
+        Other: Any focus not covered by other values
+  Scientific_fields:
+    version_id: '1.0'
+    local_identifier: Scientific_fields
     nillable_flag: false
     submitter_name: Mike Drum
     definition: What are the different scientific fields of study.
@@ -59,35 +82,14 @@ attributes:
         Seismology: Collection of seismic data
         Ground based observation: Data that was derived from Earth-based telescopes
         Gravimetry: Collection of gravity data
-        Remove Sensing: Various data collected via remote sensing techinques
+        Remove Sensing: Various data collected via remote sensing techniques
+        LiDAR: Light Detection and Ranging
         Geochemistry: Collection of geochemical/cosmochmical data
         Laboratory: Various laboratory work
+        Data analysis: General analysis of data
         Artificial Intelligence: AI and machine learning techniques
         ICPMS: Collection of inductively coupled plasma mass spectrometry data
         Other: Any investigation technique not covered by other values
-  Study_Focus:
-    version_id: '1.0'
-    local_identifier: Study_Focus
-    nillable_flag: false
-    submitter_name: Mike Drum
-    definition: Specific area of study within the scientific discipline.
-    value_domain:
-      enumeration_flag: true
-      value_data_type: ASCII_Short_String_Collapsed
-      unit_of_measure_type: Units_of_None
-      permissible_values:
-        Surface: Study focused on planetary geology such as features or properties
-        Interior: Study focused on internal structure or processes
-        Atmosphere: Study focused on atmospheric properties or dynamics
-        Magnetosphere: Study focused on magnetic field properties or interactions
-        Orbital_Dynamics: Study focused on orbital properties or behaviors
-        Composition: Study focused on chemical or mineral composition
-        Plasma: Study of plasma and ionospheres
-        Space Weather: Study of the change in surfaces due to space weather effects
-        Planetary Protection: Study focused on planetary protection
-        Planetary Rings: Study focused on ring and ring-moon systems
-        Planetary Resources: In-situ resource characterization and utilization
-        Other: Any focus not covered by other values
   Object_Name:
     version_id: '1.0'
     local_identifier: Object_Name
@@ -708,107 +710,17 @@ attributes:
         Pre-Kerwan: ~4,560 to 4,000 million years ago
         Kerwan: 4,000 to 2,500 million years ago
         Ernutet: ~ 2.500 to 0 million years ago
-  Analysis_Method:
-    version_id: '1.0'
-    local_identifier: Analysis_Method
-    nillable_flag: false
-    submitter_name: Mike Drum
-    definition: Method used to analyze the data.
-    value_domain:
-      enumeration_flag: true
-      value_data_type: ASCII_Short_String_Collapsed
-      unit_of_measure_type: Units_of_None
-      permissible_values:
-        Spectroscopy: Collection of spectra
-        Modeling: Computer-based simulation or modeling
-        Mapping: Collection of maps
-        Radar: Collection of radar data
-        Seismology: Collection of seismic data
-        Gravimetry: Collection of gravity data
-        Geochemistry: Collection of geochemical data
-        SEM: Collection of scanning electron microscopy data
-        TEM: Collection of transmission electron microscopy data
-        ICPMS: Collection of inductively coupled plasma mass spectrometry data
-        Other: Any analysis method not covered by other values
-  Software_Used:
-    version_id: '1.0'
-    local_identifier: Software_Used
-    nillable_flag: false
-    submitter_name: Mike Drum
-    definition: Software used to analyze the data.
-    value_domain:
-      enumeration_flag: true
-      value_data_type: ASCII_Short_String_Collapsed
-      unit_of_measure_type: Units_of_None
-      permissible_values:
-        Spectroscopy: Collection of spectra
-        Modeling: Computer-based simulation or modeling
-        Mapping: Collection of maps
-        Radar: Collection of radar data
-        Seismology: Collection of seismic data
-        Gravimetry: Collection of gravity data
-        Geochemistry: Collection of geochemical data
-        SEM: Collection of scanning electron microscopy data
-        TEM: Collection of transmission electron microscopy data
-        ICPMS: Collection of inductively coupled plasma mass spectrometry data
-        Other: Any software not covered by other values
-  Processing_Steps:
-    version_id: '1.0'
-    local_identifier: Processing_Steps
-    nillable_flag: false
-    submitter_name: Mike Drum
-    definition: Processing steps used to analyze the data.
-    value_domain:
-      enumeration_flag: true
-      value_data_type: ASCII_Short_String_Collapsed
-      unit_of_measure_type: Units_of_None
-      permissible_values:
-        Filtering: Filtering of the data
-        Smoothing: Smoothing of the data
-        Deconvolution: Deconvolution of the data
-        Other: Any processing step not covered by other values
-  Uncertainty_Measurements:
-    version_id: '1.0'
-    local_identifier: Uncertainty_Measurements
-    nillable_flag: false
-    submitter_name: Mike Drum
-    definition: Uncertainty measurements of the data.
-    value_domain:
-      enumeration_flag: true
-      value_data_type: ASCII_Short_String_Collapsed
-      unit_of_measure_type: Units_of_None
-      permissible_values:
-        Standard_Deviation: Standard deviation of the data
-        Standard_Error: Standard error of the data
-        Confidence_Interval: Confidence interval of the data
-        Other: Any uncertainty measurement not covered by other values
-  Quality_Indicators:
-    version_id: '1.0'
-    local_identifier: Quality_Indicators
-    nillable_flag: false
-    submitter_name: Mike Drum
-    definition: Quality indicators of the data.
-    value_domain:
-      enumeration_flag: true
-      value_data_type: ASCII_Short_String_Collapsed
-      unit_of_measure_type: Units_of_None
-      permissible_values:
-        Accuracy: Accuracy of the data
-        Precision: Precision of the data
-        Other: Any quality indicator not covered by other values
   Research_Goals:
     version_id: '1.0'
     local_identifier: Research_Goals
     nillable_flag: false
     submitter_name: Mike Drum
-    definition: Research goals of the study
+    definition: What was the goal of the research endeavor
     value_domain:
       enumeration_flag: true
       value_data_type: ASCII_Short_String_Collapsed
       unit_of_measure_type: Units_of_None
       permissible_values:
-        Accuracy: Accuracy of the data
-        Precision: Precision of the data
         Other: Any research goal not covered by other values
   Related_Publications:
     version_id: '1.0'
@@ -825,7 +737,7 @@ attributes:
     local_identifier: Keywords
     nillable_flag: false
     submitter_name: Mike Drum
-    definition: Keywords of the study
+    definition: Suggested keywords to describe your study
     value_domain:
       enumeration_flag: false
       value_data_type: ASCII_Short_String_Collapsed
@@ -835,7 +747,7 @@ attributes:
     local_identifier: Principal_Investigator
     nillable_flag: false
     submitter_name: Mike Drum
-    definition: Principal investigator of the study
+    definition: Principal investigator of the project if different from the data set
     value_domain:
       enumeration_flag: false
       value_data_type: ASCII_Short_String_Collapsed
@@ -850,6 +762,98 @@ attributes:
       enumeration_flag: false
       value_data_type: ASCII_Short_String_Collapsed
       unit_of_measure_type: Units_of_None
+  Data Visualization:
+    version_id: '1.0'
+    local_identifier: Data Visualization
+    nillable_flag: false
+    submitter_name: Mike Drum
+    definition: Visualization software which may include analysis tools
+    value_domain:
+      enumeration_flag: true
+      value_data_type: ASCII_Short_String_Collapsed
+      unit_of_measure_type: Units_of_None
+      permissible_values:
+        JMARS: Java Mission-planning and Analysis for Remote Sensing
+        ISIS3: Integrated Software for Imagers and Spectrometers
+        IDL: Interactive Data Language
+        ENVI: Environment for Visualizing Images
+        ArcGIS: Geographic Information System (GIS) developed by ESRI
+        QGIS: Quantum Geographic Information System
+        R: Data analysis tool
+        MATLAB: Matrix Laboratory
+        SBMT: Small Body Mapping Tool
+        Python: To include SciPy, NumPyu, AstroPy, SpiceyPy
+        IRAF: Image Reduction and Analysis Facility
+        DS9: FITS Image Display
+        Other: Any visualization software
+  Modeling:
+    version_id: '1.0'
+    local_identifier: Modeling
+    nillable_flag: false
+    submitter_name: Mike Drum
+    definition: Key modeling software
+    value_domain:
+      enumeration_flag: true
+      value_data_type: ASCII_Short_String_Collapsed
+      unit_of_measure_type: Units_of_None
+      permissible_values:
+        GISS ROCKE-3D: Java Mission-planning and Analysis for Remote Sensing
+        GEODYN: Integrated Software for Imagers and Spectrometers
+        Melts: Magmatic Equilibrium Liquidus Temperature Software for cosmochemistry
+        COMSOL Multiphyics: Simulating physical processes
+        FLASH: FLASH/ Athena/PLUTO
+        iSALE: Shock physics code for impact cratering, planetary interior
+        HYDRA: multi-material Eulerian code
+        SPH: Smoothed Particle Hydrodynamics
+        CTH: Collide, Track, Hydrodynamics
+        LSDYNA: Finite element analysis (FEA) code
+        SPLAT: SPectral Luminance and Temperature
+        MYSTIC: Radiative transfer modeling
+        Other: Any visualization software
+  Orbital Mechanics & Mission Support:
+    version_id: '1.0'
+    local_identifier: Orbital Mechanics & Mission Support
+    nillable_flag: false
+    submitter_name: Mike Drum
+    definition: Software used for navigation or modeling
+    value_domain:
+      enumeration_flag: true
+      value_data_type: ASCII_Short_String_Collapsed
+      unit_of_measure_type: Units_of_None
+      permissible_values:
+        GMAT: General Mission Analysis Tool
+        STK: Satellite/System Tool Kit
+        SPICE: SPICE Toolkit from NAIF
+        Orekit: Orbital mechanics and space flight dynamics
+        Simulink: Add-on for MatLAB
+        Celestia: Astronomy, orbital visualization
+        Rebound: N-body simulations
+        Other: Any visualization software
+  Digital Terrain Modeling:
+    version_id: '1.0'
+    local_identifier: Digital Terrain Modeling
+    nillable_flag: false
+    submitter_name: Mike Drum
+    definition: Key modeling software
+    value_domain:
+      enumeration_flag: true
+      value_data_type: ASCII_Short_String_Collapsed
+      unit_of_measure_type: Units_of_None
+      permissible_values:
+        SPC: Sterophotoclinometry
+        Ames Stereo Pipeline: Ames Pipeline
+        SOCET Set: SOCET Set
+        Other: Any visualization software
+  Other:
+    version_id: '1.0'
+    local_identifier: Other
+    nillable_flag: false
+    submitter_name: Mike Drum
+    definition: Any software not covered by other values
+    value_domain:
+      enumeration_flag: false
+      value_data_type: ASCII_Short_String_Collapsed
+      unit_of_measure_type: Units_of_None
 classes:
   Scientific_Discipline:
     version_id: '1.0'
@@ -858,15 +862,15 @@ classes:
     definition: Information about the scientific discipline and research context.
     element_flag: true
     associations:
-    - identifier_reference: Primary_Field
+    - identifier_reference: Study_Focus
+      reference_type: attribute_of
+      minimum_occurrences: 0
+      maximum_occurrences: 1
+    - identifier_reference: Scientific_fields
       reference_type: attribute_of
       minimum_occurrences: 0
       maximum_occurrences: 1
     - identifier_reference: Investigation_Technique
-      reference_type: attribute_of
-      minimum_occurrences: 0
-      maximum_occurrences: 1
-    - identifier_reference: Study_Focus
       reference_type: attribute_of
       minimum_occurrences: 0
       maximum_occurrences: 1
@@ -1125,33 +1129,6 @@ classes:
       reference_type: attribute_of
       minimum_occurrences: 0
       maximum_occurrences: 1
-  Analysis_Properties:
-    version_id: '1.0'
-    local_identifier: Analysis_Properties
-    submitter_name: Mike Drum
-    definition: Information about the analysis methods and properties of the data.
-    element_flag: true
-    associations:
-    - identifier_reference: Analysis_Method
-      reference_type: attribute_of
-      minimum_occurrences: 0
-      maximum_occurrences: 1
-    - identifier_reference: Software_Used
-      reference_type: attribute_of
-      minimum_occurrences: 0
-      maximum_occurrences: 1
-    - identifier_reference: Processing_Steps
-      reference_type: attribute_of
-      minimum_occurrences: 0
-      maximum_occurrences: 1
-    - identifier_reference: Uncertainty_Measurements
-      reference_type: attribute_of
-      minimum_occurrences: 0
-      maximum_occurrences: 1
-    - identifier_reference: Quality_Indicators
-      reference_type: attribute_of
-      minimum_occurrences: 0
-      maximum_occurrences: 1
   Research_Context:
     version_id: '1.0'
     local_identifier: Research_Context
@@ -1176,6 +1153,37 @@ classes:
       minimum_occurrences: 0
       maximum_occurrences: 1
     - identifier_reference: Institution
+      reference_type: attribute_of
+      minimum_occurrences: 0
+      maximum_occurrences: 1
+    - identifier_reference: Software_Used
+      reference_type: subclass_of
+      minimum_occurrences: 0
+      maximum_occurrences: 1
+  Software_Used:
+    version_id: '1.0'
+    local_identifier: Software_Used
+    submitter_name: Mike Drum
+    definition: Software used to analyze the data.
+    element_flag: false
+    associations:
+    - identifier_reference: Data Visualization
+      reference_type: attribute_of
+      minimum_occurrences: 0
+      maximum_occurrences: 1
+    - identifier_reference: Modeling
+      reference_type: attribute_of
+      minimum_occurrences: 0
+      maximum_occurrences: 1
+    - identifier_reference: Orbital Mechanics & Mission Support
+      reference_type: attribute_of
+      minimum_occurrences: 0
+      maximum_occurrences: 1
+    - identifier_reference: Digital Terrain Modeling
+      reference_type: attribute_of
+      minimum_occurrences: 0
+      maximum_occurrences: 1
+    - identifier_reference: Other
       reference_type: attribute_of
       minimum_occurrences: 0
       maximum_occurrences: 1

@@ -1,7 +1,22 @@
 Scientific_Discipline:
   definition: Information about the scientific discipline and research context.
   children:
-    - Primary_Field:
+    - Study_Focus:
+        definition: High-level research focus.
+        values:
+          Surface: Study focused on planetary geology such as features or properties
+          Interior: Study focused on internal structure or processes
+          Atmosphere: Study focused on atmospheric properties or dynamics
+          Magnetosphere: Study focused on magnetic field properties or interactions
+          Orbital_Dynamics: Study focused on orbital properties or behaviors
+          Composition: Study focused on chemical or mineral composition
+          Plasma: Study of plasma and ionospheres
+          Space Weather: Study of the change in surfaces due to space weather effects
+          Planetary Protection: Study focused on planetary protection
+          Rings: Study focused on ring and ring-moon systems
+          Resources: In-situ resource characterization and utilization
+          Other: Any focus not covered by other values
+    - Scientific_fields:
         definition: What are the different scientific fields of study.
         values:
           Astrobiology: Study of life in the universe
@@ -38,27 +53,14 @@ Scientific_Discipline:
           Seismology: Collection of seismic data
           Ground based observation: Data that was derived from Earth-based telescopes
           Gravimetry: Collection of gravity data
-          Remove Sensing: Various data collected via remote sensing techinques
+          Remove Sensing: Various data collected via remote sensing techniques
+          LiDAR: Light Detection and Ranging
           Geochemistry: Collection of geochemical/cosmochmical data
           Laboratory:  Various laboratory work
+          Data analysis: General analysis of data
           Artificial Intelligence: AI and machine learning techniques
           ICPMS: Collection of inductively coupled plasma mass spectrometry data
           Other: Any investigation technique not covered by other values
-    - Study_Focus:
-        definition: Specific area of study within the scientific discipline.
-        values:
-          Surface: Study focused on planetary geology such as features or properties
-          Interior: Study focused on internal structure or processes
-          Atmosphere: Study focused on atmospheric properties or dynamics
-          Magnetosphere: Study focused on magnetic field properties or interactions
-          Orbital_Dynamics: Study focused on orbital properties or behaviors
-          Composition: Study focused on chemical or mineral composition
-          Plasma: Study of plasma and ionospheres
-          Space Weather: Study of the change in surfaces due to space weather effects
-          Planetary Protection: Study focused on planetary protection
-          Planetary Rings: Study focused on ring and ring-moon systems
-          Planetary Resources: In-situ resource characterization and utilization
-          Other: Any focus not covered by other values
 
 Target_Object:
   definition: Information about the target of observation, whether it is a celestial body, feature, or other object.
@@ -407,72 +409,74 @@ Data_Collection:
                 Pre-Kerwan: ~4,560 to 4,000 million years ago
                 Kerwan:  4,000 to 2,500 million years ago
                 Ernutet: ~ 2.500 to 0 million years ago
-Analysis_Properties:
-  definition: Information about the analysis methods and properties of the data.
-  children:
-    - Analysis_Method:
-        definition: Method used to analyze the data.
-        values:
-          Spectroscopy: Collection of spectra
-          Modeling: Computer-based simulation or modeling
-          Mapping: Collection of maps
-          Radar: Collection of radar data
-          Seismology: Collection of seismic data
-          Gravimetry: Collection of gravity data
-          Geochemistry: Collection of geochemical data
-          SEM: Collection of scanning electron microscopy data
-          TEM: Collection of transmission electron microscopy data
-          ICPMS: Collection of inductively coupled plasma mass spectrometry data
-          Other: Any analysis method not covered by other values
-    - Software_Used:
-        definition: Software used to analyze the data.
-        values:
-          Spectroscopy: Collection of spectra
-          Modeling: Computer-based simulation or modeling
-          Mapping: Collection of maps
-          Radar: Collection of radar data
-          Seismology: Collection of seismic data
-          Gravimetry: Collection of gravity data
-          Geochemistry: Collection of geochemical data
-          SEM: Collection of scanning electron microscopy data
-          TEM: Collection of transmission electron microscopy data
-          ICPMS: Collection of inductively coupled plasma mass spectrometry data
-          Other: Any software not covered by other values
-    - Processing_Steps:
-        definition: Processing steps used to analyze the data.
-        values:
-          Filtering: Filtering of the data
-          Smoothing: Smoothing of the data
-          Deconvolution: Deconvolution of the data
-          Other: Any processing step not covered by other values
-    - Uncertainty_Measurements:
-        definition: Uncertainty measurements of the data.
-        values:
-          Standard_Deviation: Standard deviation of the data
-          Standard_Error: Standard error of the data
-          Confidence_Interval: Confidence interval of the data
-          Other: Any uncertainty measurement not covered by other values
-    - Quality_Indicators:
-        definition: Quality indicators of the data.
-        values:
-          Accuracy: Accuracy of the data
-          Precision: Precision of the data
-          Other: Any quality indicator not covered by other values
 
 Research_Context:
   definition: Information about the research context and associated metadata.
   children:
     - Research_Goals:
-        definition: Research goals of the study
+        definition: What was the goal of the research endeavor
         values:
-          Accuracy: Accuracy of the data
-          Precision: Precision of the data
           Other: Any research goal not covered by other values
     - Related_Publications:
         definition: Related publications of the study
     - Keywords:
-        definition: Keywords of the study
+        definition: Suggested keywords to describe your study
     - Principal_Investigator:
-        definition: Principal investigator of the study
+        definition: Principal investigator of the project if different from the data set
     - Institution:
         definition: Institution of the study
+    - Software_Used:
+        definition: Software used to analyze the data.
+        children:
+          - Data Visualization:
+              definition: Visualization software which may include analysis tools
+              values:
+                JMARS: Java Mission-planning and Analysis for Remote Sensing
+                ISIS3: Integrated Software for Imagers and Spectrometers
+                IDL: Interactive Data Language
+                ENVI: Environment for Visualizing Images
+                ArcGIS: Geographic Information System (GIS) developed by ESRI
+                QGIS: Quantum Geographic Information System 
+                R: Data analysis tool
+                MATLAB: Matrix Laboratory
+                SBMT: Small Body Mapping Tool
+                Python: To include SciPy, NumPyu, AstroPy, SpiceyPy
+                IRAF: Image Reduction and Analysis Facility
+                DS9: FITS Image Display
+                Other: Any visualization software
+          - Modeling:
+              definition: Key modeling software
+              values:
+                GISS ROCKE-3D: Java Mission-planning and Analysis for Remote Sensing
+                GEODYN: Integrated Software for Imagers and Spectrometers
+                Melts: Magmatic Equilibrium Liquidus Temperature Software for cosmochemistry
+                COMSOL Multiphyics: Simulating physical processes
+                FLASH: FLASH/ Athena/PLUTO
+                iSALE:  Shock physics code for impact cratering, planetary interior
+                HYDRA:  multi-material Eulerian code
+                SPH:  Smoothed Particle Hydrodynamics
+                CTH:  Collide, Track, Hydrodynamics
+                LSDYNA:  Finite element analysis (FEA) code
+                SPLAT:  SPectral Luminance and Temperature
+                MYSTIC:  Radiative transfer modeling
+                Other: Any visualization software
+          - Orbital Mechanics & Mission Support:
+              definition: Software used for navigation or modeling
+              values:
+                GMAT: General Mission Analysis Tool
+                STK: Satellite/System Tool Kit
+                SPICE: SPICE Toolkit from NAIF
+                Orekit: Orbital mechanics and space flight dynamics
+                Simulink: Add-on for MatLAB
+                Celestia: Astronomy, orbital visualization
+                Rebound: N-body simulations
+                Other: Any visualization software
+          - Digital Terrain Modeling:
+              definition: Key modeling software
+              values:
+                SPC: Sterophotoclinometry 
+                Ames Stereo Pipeline:  Ames Pipeline
+                SOCET Set:  SOCET Set
+                Other: Any visualization software
+          - Other: 
+              definition: Any software not covered by other values

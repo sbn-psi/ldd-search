@@ -41,16 +41,22 @@
   border-color: #2c3e50;
 }
 
-.class-header {
+.class-header, .attribute-header {
   display: flex;
   align-items: center;
-  cursor: pointer;
   padding: 8px;
   position: relative;
+  cursor: pointer;
 }
 
-/* Show expansion arrow for class items in attributes panel */
-.attributes-panel .class-header::after {
+.class-header:hover, .attribute-header:hover {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+/* Show expansion arrow for class items and attributes in attributes panel */
+.attributes-panel .class-header::after,
+.attribute-header::after {
   content: '';
   display: inline-block;
   width: 0;
@@ -65,14 +71,10 @@
   transition: transform 0.2s;
 }
 
-.attributes-panel .class-item.selected .class-header::after {
+/* Only rotate the arrow of the directly selected items */
+.attributes-panel .class-item.selected > .class-header::after,
+.attribute-item.selected > .attribute-header::after {
   transform: translateY(-50%) rotate(180deg);
-}
-
-.attribute-header {
-  display: flex;
-  align-items: center;
-  padding: 6px;
 }
 
 .class-name, .attribute-name, .value-name {
@@ -83,6 +85,7 @@
 .class-description, .attribute-description, .value-description {
   color: #666;
   font-weight: normal;
+  margin-right: 24px; /* Make room for the arrow */
 }
 
 .permissible-values {
@@ -98,6 +101,15 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
+  pointer-events: auto; /* Allow clicks on value option labels */
+}
+
+.value-option input[type="checkbox"] {
+  pointer-events: auto; /* Allow clicks on value checkboxes */
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
 }
 
 .other-option {
@@ -113,8 +125,10 @@ input[type="text"] {
   border-radius: 4px;
   width: 100%;
   max-width: 300px;
+  pointer-events: auto; /* Allow interaction with text inputs */
 }
 
+/* Remove the general checkbox styling since we're handling it specifically above */
 input[type="checkbox"], input[type="radio"] {
   margin-right: 10px;
   width: 16px;
@@ -126,12 +140,18 @@ h2 {
   margin-bottom: 20px;
 }
 
-label {
+.class-header label, .attribute-header label {
   display: flex;
   align-items: flex-start;
-  cursor: pointer;
   gap: 5px;
   flex-wrap: wrap;
+  flex: 1;
+  pointer-events: none; /* Only prevent clicks on class/attribute header labels */
+}
+
+.class-header input[type="checkbox"],
+.attribute-header input[type="checkbox"] {
+  pointer-events: none; /* Only prevent clicks on class/attribute header checkboxes */
 }
 
 .class-attributes {

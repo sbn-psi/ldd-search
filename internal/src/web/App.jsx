@@ -12,15 +12,23 @@ const NestedClass = ({ className, classData, level, selectedClasses, selectedAtt
   
   return (
     <div className={`class-item nested-class ${isSelected ? 'selected' : ''}`}>
-      <label className="class-header">
-        <input
-          type="checkbox"
-          checked={isSelected}
-          onChange={() => onClassSelect(className)}
-        />
-        <span className="class-name">{formatDisplayName(className)}</span>
-        <span className="class-description">{classData.definition}</span>
-      </label>
+      <div 
+        className="class-header"
+        onClick={(e) => {
+          e.stopPropagation();
+          onClassSelect(className);
+        }}
+      >
+        <label>
+          <input
+            type="checkbox"
+            checked={isSelected}
+            readOnly
+          />
+          <span className="class-name">{formatDisplayName(className)}</span>
+          <span className="class-description">{classData.definition}</span>
+        </label>
+      </div>
       
       {isSelected && (
         <div className={`class-content level-${level}`}>
@@ -33,12 +41,18 @@ const NestedClass = ({ className, classData, level, selectedClasses, selectedAtt
             
             return (
               <div key={attrName} className={`attribute-item ${isAttrSelected ? 'selected' : ''}`}>
-                <div className="attribute-header">
+                <div 
+                  className="attribute-header"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onAttributeSelect(className, attrName);
+                  }}
+                >
                   <label>
                     <input
                       type="checkbox"
                       checked={isAttrSelected || false}
-                      onChange={() => onAttributeSelect(className, attrName)}
+                      readOnly
                     />
                     <span className="attribute-name">{formatDisplayName(attrName)}</span>
                     <span className="attribute-description">{attrData.definition}</span>
@@ -47,7 +61,9 @@ const NestedClass = ({ className, classData, level, selectedClasses, selectedAtt
                 
                 {isAttrSelected && attrData.permissible_values && (
                   <div className="permissible-values">
-                    {Object.entries(attrData.permissible_values).map(([value, description]) => {
+                    {Object.entries(attrData.permissible_values)
+                      .filter(([value, description]) => value.toLowerCase() !== "other")
+                      .map(([value, description]) => {
                       const isChecked = attributeValues[`${className}.${attrName}`]?.includes(value) || false;
                       return (
                       <div key={value} className="value-option">
@@ -64,7 +80,7 @@ const NestedClass = ({ className, classData, level, selectedClasses, selectedAtt
                         </label>
                       </div>
                     )})}
-                    <div className="other-option">
+                    <div className="value-option">
                       <label>
                         <input
                           type="checkbox"
@@ -73,14 +89,14 @@ const NestedClass = ({ className, classData, level, selectedClasses, selectedAtt
                           checked={attributeValues[`${className}.${attrName}`]?.includes("other") || false}
                           onChange={(e) => onValueChange(className, attrName, "other", e.target.checked)}
                         />
-                        Other:
+                        <span className="value-name">Other</span>
+                        <input
+                          type="text"
+                          value={attributeValues[`${className}.${attrName}`]?.includes("other") ? (attributeValues[`${className}.${attrName}.other`] || "") : ""}
+                          onChange={(e) => onValueChange(className, attrName, "other", true, e.target.value)}
+                          disabled={!attributeValues[`${className}.${attrName}`]?.includes("other")}
+                        />
                       </label>
-                      <input
-                        type="text"
-                        value={attributeValues[`${className}.${attrName}`]?.includes("other") ? (attributeValues[`${className}.${attrName}.other`] || "") : ""}
-                        onChange={(e) => onValueChange(className, attrName, "other", true, e.target.value)}
-                        disabled={!attributeValues[`${className}.${attrName}`]?.includes("other")}
-                      />
                     </div>
                   </div>
                 )}
@@ -200,12 +216,18 @@ function App() {
             .filter(([_, classData]) => classData.element_flag === true)
             .map(([className, classData]) => (
               <div key={className} className={`class-item ${selectedClasses[className] ? 'selected' : ''}`}>
-                <div className="class-header">
+                <div 
+                  className="class-header"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleClassSelect(className);
+                  }}
+                >
                   <label>
                     <input
                       type="checkbox"
                       checked={selectedClasses[className] || false}
-                      onChange={() => handleClassSelect(className)}
+                      readOnly
                     />
                     <span className="class-name">{formatDisplayName(className)}</span>
                     <span className="class-description">{classData.definition}</span>
@@ -231,12 +253,18 @@ function App() {
                   
                   return (
                     <div key={attrName} className={`attribute-item ${isSelected ? 'selected' : ''}`}>
-                      <div className="attribute-header">
+                      <div 
+                        className="attribute-header"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleAttributeSelect(className, attrName);
+                        }}
+                      >
                         <label>
                           <input
                             type="checkbox"
                             checked={isSelected || false}
-                            onChange={() => handleAttributeSelect(className, attrName)}
+                            readOnly
                           />
                           <span className="attribute-name">{formatDisplayName(attrName)}</span>
                           <span className="attribute-description">{attrData.definition}</span>
@@ -245,10 +273,12 @@ function App() {
                       
                       {isSelected && attrData.permissible_values && (
                         <div className="permissible-values">
-                          {Object.entries(attrData.permissible_values).map(([value, description]) => {
-                            const isChecked = attributeValues[`${className}.${attrName}`]?.includes(value) || false;
-                            return (
-                            <div key={value} className="value-option">
+                          {Object.entries(attrData.permissible_values)
+                            .filter(([value, description]) => value.toLowerCase() !== "other")
+                            .map(([value, description]) => {
+                              const isChecked = attributeValues[`${className}.${attrName}`]?.includes(value) || false;
+                              return (
+                              <div key={value} className="value-option">
                               <label>
                                 <input
                                   type="checkbox"
@@ -262,7 +292,7 @@ function App() {
                               </label>
                             </div>
                           )})}
-                          <div className="other-option">
+                          <div className="value-option">
                             <label>
                               <input
                                 type="checkbox"
@@ -271,14 +301,14 @@ function App() {
                                 checked={attributeValues[`${className}.${attrName}`]?.includes("other") || false}
                                 onChange={(e) => handleValueChange(className, attrName, "other", e.target.checked)}
                               />
-                              Other:
+                              <span className="value-name">Other</span>
+                              <input
+                                type="text"
+                                value={attributeValues[`${className}.${attrName}`]?.includes("other") ? (attributeValues[`${className}.${attrName}.other`] || "") : ""}
+                                onChange={(e) => handleValueChange(className, attrName, "other", true, e.target.value)}
+                                disabled={!attributeValues[`${className}.${attrName}`]?.includes("other")}
+                              />
                             </label>
-                            <input
-                              type="text"
-                              value={attributeValues[`${className}.${attrName}`]?.includes("other") ? (attributeValues[`${className}.${attrName}.other`] || "") : ""}
-                              onChange={(e) => handleValueChange(className, attrName, "other", true, e.target.value)}
-                              disabled={!attributeValues[`${className}.${attrName}`]?.includes("other")}
-                            />
                           </div>
                         </div>
                       )}
