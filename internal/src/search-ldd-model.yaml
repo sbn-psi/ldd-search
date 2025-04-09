@@ -2,7 +2,7 @@ Scientific_Discipline:
   definition: Information about the scientific discipline and research context.
   children:
     - Primary_Field:
-        definition: Primary scientific field of study.
+        definition: What are the different scientific fields of study.
         values:
           Astrobiology: Study of life in the universe
           Astronomy_Observation: Observation of celestial objects
@@ -21,33 +21,43 @@ Scientific_Discipline:
           Laboratory_Analytic_Chemistry: Analytic chemistry of physical samples
           Laboratory_Spectral_Analysis: Spectral analysis of physical samples
           Atmospheric_Study: Atmospheric studies of the Earth and other planets
+          Impact: Measuring and categorizing impact craters and rates
+          Hydrology: Fluvial mechanics
+          Exoplanets: Detection and characterizing exoplanets
           Modeling: Modeling of the Earth and other planets
           Magnetospheres: Magnetospheres of the Earth and other planets
           Space_Physics: Space physics of the Earth and other planets
           Other: Any field not covered by other values
     - Investigation_Technique:
-        definition: Method of scientific investigation used.
+        definition: What method of scientific investigations are used.
         values:
           Spectroscopy: Collection of spectra
           Modeling: Computer-based simulation or modeling
           Mapping: Collection of maps
           Radar: Collection of radar data
           Seismology: Collection of seismic data
+          Ground based observation: Data that was derived from Earth-based telescopes
           Gravimetry: Collection of gravity data
-          Geochemistry: Collection of geochemical data
-          SEM: Collection of scanning electron microscopy data
-          TEM: Collection of transmission electron microscopy data
+          Remove Sensing: Various data collected via remote sensing techinques
+          Geochemistry: Collection of geochemical/cosmochmical data
+          Laboratory:  Various laboratory work
+          Artificial Intelligence: AI and machine learning techniques
           ICPMS: Collection of inductively coupled plasma mass spectrometry data
           Other: Any investigation technique not covered by other values
     - Study_Focus:
         definition: Specific area of study within the scientific discipline.
         values:
-          Surface: Study focused on surface features or properties
+          Surface: Study focused on planetary geology such as features or properties
           Interior: Study focused on internal structure or processes
           Atmosphere: Study focused on atmospheric properties or dynamics
           Magnetosphere: Study focused on magnetic field properties or interactions
           Orbital_Dynamics: Study focused on orbital properties or behaviors
           Composition: Study focused on chemical or mineral composition
+          Plasma: Study of plasma and ionospheres
+          Space Weather: Study of the change in surfaces due to space weather effects
+          Planetary Protection: Study focused on planetary protection
+          Planetary Rings: Study focused on ring and ring-moon systems
+          Planetary Resources: In-situ resource characterization and utilization
           Other: Any focus not covered by other values
 
 Target_Object:
@@ -65,7 +75,7 @@ Target_Object:
           Local: Data collected from a small location on the object
           Other: Any scope not covered by other values
     - Object_Type:
-        definition: Type of the object
+        definition: Select the categories within which the data would fit into
         children:
           - Small_Body:
               definition: Small body
@@ -77,6 +87,7 @@ Target_Object:
                       Trojan: Asteroids that share an orbit with a planet
                       Active: Asteroids that show comet-like activity
                       Main_Belt: Asteroids in the main asteroid belt
+                      PHA: Potential Hazardous Asteroid
                       Other: Any asteroid type not covered by other values
                 - TNO:
                     definition: Trans-Neptunian Object
@@ -159,7 +170,7 @@ Target_Object:
                       Temperature_Profile: Temperature profile of the atmosphere
                       Scale_Height: Scale height of the atmosphere
                       Density_Profile: Density profile of the atmosphere
-          - Fields:
+          - Particles and Fields:
               definition: Fields of an object
               values:
                 Particles: Particles in the atmosphere
@@ -171,6 +182,8 @@ Target_Object:
               definition: Dust
               values:
                 Meteoroids: Dust from meteoroids
+                IPD: Interplanetary Dust
+                Comet: Dust from comets
                 Other: Other dust
           - Rings:
               definition: Rings of an object
@@ -211,7 +224,17 @@ Target_Object:
                 Chromosphere: Chromosphere
                 Other: Any solar component not covered by other values
           - Exoplanet:
-              definition: Name of an exoplanet
+              definition: Type of an exoplanet
+              values:
+                Terrestrial: Rocky planets, up to 1.5 Earth radii
+                Gas Giants: Larger than 10 Earth radii
+                Ice Giants: 4-6 Earth radii
+                Super-Earths: 1.5 to 2 Earth radii
+                Mini-Neptunes: 2-04 Earth radii
+                Lava Worlds: Molten rock
+                Ocean Worlds: Global oceans
+                Rogue Planets: Planets not bound to a star
+                Other: Other categories
     - Physical_Properties:
         definition: Information about the physical properties of the object under study.
         children:
@@ -345,20 +368,45 @@ Data_Collection:
           - Earth:
               definition: Temporal epoch of the Earth
               values:
-                Archean: Earth's earliest known epoch
-                Proterozoic: Earth's Proterozoic Eon
-                Paleozoic: Earth's Paleozoic Era
+                Eoarchean: Earth's 4,031 to 3,600 million years ago
+                Paleoarchean: Earth's 3,600 to 3,200 million years ago
+                Mesoarchean: Earth's 3,200 to 2,800 million years ago
+                Neoarchean: Earth's 2,800 to 2,500 million years ago
+                Paleoproterozoic: Earth's 2,500 to 1,600 million years ago
+                Mesoproterozoic: Earth's 1,600 to 1,000 million years ago
+                Neoproterozoic: Earth's 1,000 to 538.8 million years ago
+                Paleozoic: Earth's 238.8 to 251.9 million years ago
+                Mesozoic: Earth's 251.9 to 66 million years ago
+                Cenozoic: Earth's 66-0 million years ago
+                Ohter: Earth's Paleozoic Era
           - Moon:
               definition: Temporal epoch of the Moon
               values:
-                Nectarian: Moon's Pre-Nactarian Epoch
+                Pre-Nectarian: Moon, 4,533 to 3,920 million years ago
+                Nectarian: Moon3,920 to 3,850 million years ago
+                Imbrian: Moon 3,850 to 3,200 millino years ago
+                Eratosthenian: Moon 3,200 to 1,100 million years ago
+                Copernican: Moon 1,100 to 0 million years ago
           - Mars:
               definition: Temporal epoch of Mars
               values:
-                Noachian: Mars's Noachian Epoch
-                Hesperian: Mars's Hesperian Epoch
-                Amazonian: Mars's Amazonian Epoch
-
+                Pre-Noachian: Mars 4,500 to 4,100 million years ago
+                Noachian: Mars 4,100 to 3,700 million years ago
+                Hesperian: Mars 3,700 to 3,000 million years ago
+                Amazonian: Mars 3,000 to 0 million years ago
+          - Vesta:
+              definition: Relative timescale for Vesta
+              values:
+                Pre-Veneneia: \> 4,100 million years ago
+                Veneneia: ~ 4,100 million years ago
+                Rheasilvia: ~ 3,900 million years ago
+                Marcia: ~3,500 million years ago
+          - Ceres:
+              definition: Relative timescale for Ceres
+              values:
+                Pre-Kerwan: ~4,560 to 4,000 million years ago
+                Kerwan:  4,000 to 2,500 million years ago
+                Ernutet: ~ 2.500 to 0 million years ago
 Analysis_Properties:
   definition: Information about the analysis methods and properties of the data.
   children:
