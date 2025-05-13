@@ -55,7 +55,6 @@
 
 .classes-panel {
   flex: 1;
-  /* border-right: 1px solid #ccc; */
   padding-right: 20px;
 }
 
@@ -223,15 +222,6 @@ h2 {
   transition: max-height 0.3s ease-out, opacity 0.2s ease-out;
   overflow: hidden;
 }
-
-/* Add CSS rules for nested classes */
-/* .nested-class {
-  margin-left: 20px;
-  border-left: 2px solid #e0e0e0;
-  padding-left: 10px;
-  margin-top: 10px;
-} */
-
 
 /* Apply indentation to the CONTENTS of the nested classes */
 .level-2 {
