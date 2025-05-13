@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "raw-loader": "^4.0.2"
+  },
+  "dependencies": {
+    "lz-string": "^1.5.0"
+  }
+}

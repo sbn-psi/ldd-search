@@ -47,5 +47,7 @@ target/
 # Sphinx stuff
 docs/build/
 
+# SBN stuff
 venv/
 categories.md
+node_modules/
