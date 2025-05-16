@@ -406,6 +406,7 @@ h2 {
 
 .url-container {
   display: flex;
+  justify-content: center;
   gap: 10px;
   max-width: 600px;
   margin: 0 auto;

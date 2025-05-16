@@ -9,7 +9,7 @@ import FormPage from './components/FormPage';
 import { compressState, expandCompressedState } from './components/utils/bitfield';
 
 // Get base URL from environment variable or default to current origin
-const BASE_URL = process.env.REACT_APP_BASE_URL || window.location.origin;
+const BASE_URL = import.meta.env.VITE_BASE_URL || window.location.origin;
 
 function App() {
   const [workflowState, setWorkflowState] = useState('form');
