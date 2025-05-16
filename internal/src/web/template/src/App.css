@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .App {
   text-align: left;
   max-width: 1200px;
@@ -14,6 +18,7 @@
   color: white;
   position: sticky;
   top: 0;
+  height: 100px;
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -43,7 +48,7 @@
 
 .App-content {
   flex: 1;
-  padding: 20px;
+  padding: 0 20px;
   overflow-y: auto;
 }
 
@@ -51,16 +56,118 @@
   display: flex;
   gap: 20px;
   margin-top: 0;
+  height: calc(100vh - 140px - 20px); /* Account for header (140px) and inner panel padding (20px) */
+  position: relative;
 }
 
 .classes-panel {
   flex: 1;
   padding-right: 20px;
+  padding-top: 20px;
+  position: sticky;
+  top: 0;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid #eee;
 }
 
 .attributes-panel {
   flex: 2;
   padding-left: 20px;
+  padding-top: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .classes-panel {
+    position: relative;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-right: 0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .attributes-panel {
+    padding-left: 0;
+  }
+
+  .class-item, .attribute-item {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+
+  .class-header, .attribute-header {
+    padding: 6px;
+  }
+
+  .class-name, .attribute-name {
+    font-size: 0.95em;
+  }
+
+  .class-description, .attribute-description {
+    font-size: 0.85em;
+    margin-right: 16px;
+  }
+
+  .permissible-values {
+    padding-left: 10px;
+  }
+
+  .value-option {
+    margin: 4px 0;
+  }
+
+  .value-option label {
+    font-size: 0.9em;
+  }
+
+  input[type="text"] {
+    max-width: 100%;
+    font-size: 0.9em;
+  }
+
+  .class-content.level-1 {
+    margin-left: 10px;
+  }
+
+  .class-content.level-2 {
+    margin-left: 20px;
+  }
+
+  .class-content.level-3 {
+    margin-left: 30px;
+  }
+
+  .class-content.level-4 {
+    margin-left: 40px;
+  }
+
+  /* Improve touch targets */
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  .class-header label, .attribute-header label {
+    padding: 4px 0;
+  }
+
+  /* Make buttons more touch-friendly */
+  button {
+    padding: 12px 20px;
+    font-size: 1.1em;
+  }
 }
 
 /* Add animation for expanding/collapsing sections */
@@ -129,8 +236,8 @@
 }
 
 /* Only rotate the arrow of the directly selected items */
-.attributes-panel .class-item.selected > .class-header::after,
-.attribute-item.selected > .attribute-header::after {
+.attributes-panel .class-item.expanded > .class-header::after,
+.attribute-item.expanded > .attribute-header::after {
   transform: translateY(-50%) rotate(180deg);
 }
 
@@ -451,4 +558,39 @@ h2 {
   border-radius: 4px;
   margin: 10px 0;
   text-align: center;
+}
+
+/* Add smooth transitions for expand/collapse */
+.class-content {
+  transition: max-height 0.3s ease-out, opacity 0.2s ease-out;
+  overflow: hidden;
+}
+
+.class-item.expanded .class-content {
+  max-height: 2000px; /* Adjust based on your content */
+  opacity: 1;
+}
+
+.class-item:not(.expanded) .class-content {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* Improve checkbox and label interaction */
+.class-header label, .attribute-header label {
+  cursor: pointer;
+  user-select: none;
+}
+
+.class-header input[type="checkbox"],
+.attribute-header input[type="checkbox"] {
+  cursor: pointer;
+}
+
+/* Add visual feedback for touch interactions */
+@media (hover: none) {
+  .class-header:active,
+  .attribute-header:active {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 } 

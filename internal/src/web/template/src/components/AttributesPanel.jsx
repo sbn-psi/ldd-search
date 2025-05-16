@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import NestedClass from './NestedClass';
 import { data } from '../data';
 
@@ -10,12 +10,97 @@ function AttributesPanel({
   onAttributeSelect,
   onValueChange
 }) {
+  const classRefs = useRef({});
+  const [lastAddedClass, setLastAddedClass] = useState(null);
+  const prevSelectedClasses = useRef(selectedClasses);
+  const [expandedAttributes, setExpandedAttributes] = useState(selectedAttributes);
+
+  // Track newly added classes and scroll to them
+  useEffect(() => {
+    const newClasses = Object.entries(selectedClasses)
+      .filter(([className, isSelected]) => 
+        isSelected && !prevSelectedClasses.current[className]
+      );
+
+    if (newClasses.length > 0) {
+      const [className] = newClasses[0];
+      setLastAddedClass(className);
+      
+      const element = classRefs.current[className];
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    prevSelectedClasses.current = selectedClasses;
+  }, [selectedClasses]);
+
+  useEffect(() => {
+    if(Object.keys(expandedAttributes).length === 0) {
+      setExpandedAttributes(selectedAttributes);
+    }
+  }, [selectedAttributes]);
+
+  // Check if an attribute has any selected values
+  const hasSelectedValues = (className, attrName) => {
+    const values = attributeValues[`${className}.${attrName}`];
+    if (Array.isArray(values)) {
+      return values.length > 0;
+    }
+    return !!values;
+  };
+
+  const handleAttributeHeaderClick = (className, attrName, e) => {
+    e.stopPropagation();
+    const isSelected = selectedAttributes[`${className}.${attrName}`];
+    const hasValues = hasSelectedValues(className, attrName);
+    
+    if (isSelected) {
+      if (hasValues) {
+        // If has values, toggle expansion
+        setExpandedAttributes(prev => ({
+          ...prev,
+          [`${className}.${attrName}`]: !prev[`${className}.${attrName}`]
+        }));
+      } else {
+        // If no values, unselect
+        onAttributeSelect(className, attrName);
+        setExpandedAttributes(prev => ({
+          ...prev,
+          [`${className}.${attrName}`]: false
+        }));
+      }
+    } else {
+      // If not selected, select and expand
+      onAttributeSelect(className, attrName);
+      setExpandedAttributes(prev => ({
+        ...prev,
+        [`${className}.${attrName}`]: true
+      }));
+    }
+  };
+
+  const handleAttributeChange = (className, attrName, e) => {
+    e.stopPropagation();
+    onAttributeSelect(className, attrName);
+    if (e.target.checked) {
+      setExpandedAttributes(prev => ({
+        ...prev,
+        [`${className}.${attrName}`]: true
+      }));
+    }
+  };
+
   return (
     <div className="attributes-panel">
       {Object.entries(data.classes)
         .filter(([className, classData]) => selectedClasses[className] && classData.element_flag === true)
         .map(([className, classData]) => (
-          <div key={className} className="class-attributes">
+          <div 
+            key={className} 
+            className="class-attributes"
+            ref={el => classRefs.current[className] = el}
+          >
             <h2>{className.replace(/_/g, ' ')}</h2>
             
             {/* Display direct attributes */}
@@ -24,15 +109,14 @@ function AttributesPanel({
               if (!attrData) return null;
               
               const isSelected = selectedAttributes[`${className}.${attrName}`];
+              const isExpanded = expandedAttributes[`${className}.${attrName}`];
+              const hasValues = hasSelectedValues(className, attrName);
               
               return (
-                <div key={attrName} className={`attribute-item ${isSelected ? 'selected' : ''}`}>
+                <div key={attrName} className={`attribute-item ${isSelected ? 'selected' : ''} ${isExpanded ? 'expanded' : ''}`}>
                   <div 
                     className="attribute-header"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onAttributeSelect(className, attrName);
-                    }}
+                    onClick={(e) => handleAttributeHeaderClick(className, attrName, e)}
                   >
                     <label>
                       <input
@@ -45,7 +129,7 @@ function AttributesPanel({
                     </label>
                   </div>
                   
-                  {isSelected && attrData.permissible_values && (
+                  {isSelected && isExpanded && attrData.permissible_values && (
                     <div className="permissible-values">
                       {Object.entries(attrData.permissible_values)
                         .filter(([value, description]) => value.toLowerCase() !== "other")
@@ -87,7 +171,7 @@ function AttributesPanel({
                     </div>
                   )}
                   
-                  {isSelected && !attrData.permissible_values && (
+                  {isSelected && isExpanded && !attrData.permissible_values && (
                     <input
                       type="text"
                       value={attributeValues[`${className}.${attrName}`] || ""}

@@ -8,9 +8,6 @@ import ReviewPage from './components/ReviewPage';
 import FormPage from './components/FormPage';
 import { compressState, expandCompressedState } from './components/utils/bitfield';
 
-// Get base URL from environment variable or default to current origin
-const BASE_URL = import.meta.env.VITE_BASE_URL || window.location.origin;
-
 function App() {
   const [workflowState, setWorkflowState] = useState('form');
   const [selectedClasses, setSelectedClasses] = useState({});
@@ -22,7 +19,7 @@ function App() {
   // Load state from URL parameters on initial load
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const compressedParam = params.get('compressed');
+    const compressedParam = params.get('data');
     if (compressedParam) {
       try {
         const decompressed = decompressFromEncodedURIComponent(compressedParam);
@@ -129,7 +126,9 @@ function App() {
     }, mapping);
     const compressedString = JSON.stringify(compressed);
     const encoded = compressToEncodedURIComponent(compressedString);
-    return `${BASE_URL}?compressed=${encoded}`;
+    const params = new URLSearchParams(window.location.search);
+    params.set('data', encoded);
+    return `${window.location.origin}${window.location.pathname}?${params.toString()}`;
   };
 
   const renderContent = () => {
