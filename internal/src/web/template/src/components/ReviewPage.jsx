@@ -3,6 +3,7 @@ import { QRCodeSVG } from 'qrcode.react';
 import { formatDisplayName } from '../utils/format';
 import { data } from '../data';
 import { rawContent } from '../raw-content';
+import DataDescription from './DataDescription';
 
 // Find all root classes (element_flag: true and selected)
 function getRootClasses(selectedClasses) {
@@ -95,6 +96,12 @@ const ReviewPage = ({
           ))}
         </div>
       </div>
+
+      <DataDescription
+        selectedClasses={selectedClasses}
+        selectedAttributes={selectedAttributes}
+        attributeValues={attributeValues}
+      />
 
       <div className="qr-section">
         <h3>Share Your Selections</h3>

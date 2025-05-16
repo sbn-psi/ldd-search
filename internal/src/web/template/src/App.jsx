@@ -6,7 +6,7 @@ import { data } from './data';
 import { rawContent } from './raw-content';
 import ReviewPage from './components/ReviewPage';
 import FormPage from './components/FormPage';
-import { compressState, expandCompressedState } from './components/utils/bitfield';
+import { compressState, expandCompressedState } from './utils/bitfield';
 
 function App() {
   const [workflowState, setWorkflowState] = useState('form');
