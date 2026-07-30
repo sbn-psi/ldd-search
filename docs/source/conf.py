@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Example Namespace'
+project = 'Search Discipline Dictionary'
 # copyright = overidden by CSS specified below
 author = 'NASA Planetary Data System'
 
@@ -67,8 +67,8 @@ html_logo = '_static/images/PDS_Planets.png'
 
 html_context = {
     'display_github': True,
-    "github_user": "pds-data-dictionaries",
-    "github_repo": "ldd-template",
+    "github_user": "sbn-psi",
+    "github_repo": "ldd-search",
     "github_version": "main/docs/source/"
 }
 

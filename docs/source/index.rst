@@ -1,14 +1,14 @@
-.. PDS Local Data Dictionaries documentation master file, created by
-   sphinx-quickstart on Thu Jul  2 18:01:19 2020.
+.. Search (search:) Discipline Dictionary documentation master file.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Example Namespace Documentation
-===================================
+Search (search:) Discipline Dictionary
+======================================
 
 .. include:: intro.md
+   :parser: myst_parser.sphinx_
 
-             
+
 .. toctree::
     :maxdepth: 3
     :caption: User Guide
@@ -16,9 +16,9 @@ Example Namespace Documentation
     user/user-guide
     search-form
 
-    
+
 .. toctree::
     :maxdepth: 3
     :caption: Detailed Documentation
 
-    detailed/example
+    detailed/reference
