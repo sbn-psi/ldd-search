@@ -53,7 +53,6 @@ categories.md
 node_modules/
 
 search_work
-logs
 generated_fragments
 generated_labels
 generated_schemas
