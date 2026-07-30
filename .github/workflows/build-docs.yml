@@ -7,6 +7,10 @@ on:
      paths:
        - 'docs/**'
        - 'src/**'
+       - 'internal/src/search-ldd-model.yaml'
+       - 'internal/src/web/**'
+       - 'internal/tools/build_web_form.py'
+       - 'internal/tools/compile_model.py'
 
    # Allows you to run this workflow manually from the Actions tab
    workflow_dispatch:
@@ -47,6 +51,10 @@ jobs:
         run: |
           # Install Sphinx
           pip install -r docs/requirements.txt
+
+      - name: Build Search LDD web form
+        run: python internal/tools/build_web_form.py
+
       - name: Make Sphinx
         id: make
         run: |

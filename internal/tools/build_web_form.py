@@ -224,7 +224,7 @@ export const rawContent = {json.dumps(raw_content)};
         (temp_dir / "src" / "raw-content.js").write_text(raw_js)
 
     # Install dependencies and build
-    subprocess.run(["npm", "install"], cwd=temp_dir, check=True)
+    subprocess.run(["npm", "ci"], cwd=temp_dir, check=True)
     subprocess.run(["npm", "run", "build"], cwd=temp_dir, check=True)
 
     # Copy the built file to the output directory

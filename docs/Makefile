@@ -14,6 +14,9 @@ help:
 
 github:
 	@make clean checklinks html
+	@test -f ../dist/web-form.html
+	@mkdir -p build/html/web-form
+	@cp ../dist/web-form.html build/html/web-form/index.html
 	@find .. -mindepth 1 -maxdepth 1 -type d -not -name "*git*" -not -name "*docs" -exec rm -fr {} \;
 	@cp -a build/html/. ..
 

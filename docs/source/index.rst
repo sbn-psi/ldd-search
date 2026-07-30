@@ -14,6 +14,7 @@ Example Namespace Documentation
     :caption: User Guide
 
     user/user-guide
+    search-form
 
     
 .. toctree::
