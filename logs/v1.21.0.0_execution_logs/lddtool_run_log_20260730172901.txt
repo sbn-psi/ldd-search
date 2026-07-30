@@ -1,0 +1,55 @@
+
+>>  INFO LDDTOOL Version: 16.1.3
+>>  INFO IM Version Id: 1.21.0.0
+>>  INFO IM Namespace Id: pds
+>>  INFO IM Label Version Id: 1.27
+>>  INFO Date: Thu Jul 30 17:29:01 UTC 2026
+>>  INFO PARENT_DIR: /tmp/lddtool-16.1.3/Data/
+
+>>> INFO Init:  - Config.Properties Namespace Id Using:pds
+>>> INFO Init:  - LDD Dictionary_Type is Discipline
+>>> INFO Attribute: <instrument_type> - This local attribute has a duplicate in the PDS4 data dictionary.
+>>> WARNING Init:  - Config.Properties Namespace Id Not Found:search
+>>> WARNING Attribute: <asteroid_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <trans_neptunian_object_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <centaur_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <kuiper_belt_object_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <oort_cloud_object_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <comet_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <satellite_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <planet_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <atmosphere_study_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <particles_and_fields_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <dust_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <ring_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <solar_component_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <exoplanet_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <feature_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <material_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <process_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <composition_type> - The 'type' attribute must have at least one permissible value.
+>>> WARNING Attribute: <instrument_type> - The 'type' attribute must have at least one permissible value.
+
+ -- LDDTool Execution Summary --
+     20 warning(s)
+     0 error(s)
+     0 fatal error(s)
+
+Input:
+
+     - IM Version: 1L00
+     - PDS4 Flag: true
+     - LDD Flag: true
+     - IM Version: true
+     - Export JSON Flag: true
+
+     - Ingest LDD(s): /home/runner/work/ldd-search/ldd-search/src/PDS4_Search_IngestLDD.xml
+
+Output:
+
+     - ./PDS4_SEARCH_1L00_1000.xsd
+     - ./PDS4_SEARCH_1L00_1000.sch
+     - ./PDS4_SEARCH_1L00_1000.xml
+     - ./export/PDS4_PDS_1L00.JSON
+
+>>  INFO Exit(0)

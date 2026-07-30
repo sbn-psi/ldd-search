@@ -1,0 +1,723 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        16.1.3
+   LDD Version Id:        1.0.0.0
+   LDD Label Version Id:  1.27
+   LDD Discipline (T/F):  true
+   LDD Namespace URL:     http://pds.nasa.gov/pds4/
+   LDD URN Prefix:        urn:nasa:pds:
+   Time                   Thu Jul 30 17:29:01 UTC 2026
+   Common Schema          [PDS4_PDS_1L00.xsd]
+   Common Schematron      [PDS4_PDS_1L00.sch]
+   IM Version Id:         1.21.0.0
+   IM Namespace Id:       pds
+   IM Label Version Id:   1.27
+   IM Object Model        [UpperModel.pont]
+   IM Data Dictionary     [dd11179.pins]
+   IM Glossary            [Glossary.pins]
+   IM Document Spec       [DMDocument.pins]
+
+Parameters:
+   Input File             [/home/runner/work/ldd-search/ldd-search/src/PDS4_Search_IngestLDD.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         true
+   Mission LDD            false
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                13
+   Attributes             52
+   Associations           61
+   Error messages         0
+   Warning messages       0
+   Information messages   0
+
+Detailed validation messages
+
+Parsed Input - Header:
+   LDD Name               Search
+   LDD Version            1.0.0.0
+   Full Name              Drum, Mike
+   Steward                drum
+   Namespace Id           search
+   Comment                _TBD_Ingest_LDD
+   Last Modification Time 2026-06-17T00:00:00Z
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   study_focus
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            High-level research focus.
+
+   name                   scientific_field
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            What are the different scientific fields of study.
+
+   name                   investigation_technique
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            What method of scientific investigations are used.
+
+   name                   object_name
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Name of the object
+
+   name                   parent_body
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Parent body of the object
+
+   name                   target_scope
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Scope of the data collection
+
+   name                   asteroid_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Asteroid
+
+   name                   trans_neptunian_object_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Trans-Neptunian Object
+
+   name                   centaur_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Centaur
+
+   name                   kuiper_belt_object_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Kuiper Belt Object
+
+   name                   oort_cloud_object_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Oort Cloud Object
+
+   name                   comet_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Comet
+
+   name                   satellite_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Satellite
+
+   name                   planet_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Planet
+
+   name                   atmospheric_layer
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Layer of the atmosphere
+
+   name                   atmosphere_study_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Type of study of the atmosphere
+
+   name                   particles_and_fields_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Fields of an object
+
+   name                   dust_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Dust
+
+   name                   ring_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Type of ring
+
+   name                   ring_division
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Division of the ring
+
+   name                   ring_feature
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Feature of the ring
+
+   name                   solar_component_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Solar component
+
+   name                   solar_system_context
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Solar system or planetary system as the target context
+
+   name                   exoplanet_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Type of an exoplanet
+
+   name                   feature_name
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Name of the feature
+
+   name                   feature_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Type of the feature
+
+   name                   material_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Material type of the object
+
+   name                   process_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Type of process being studied.
+
+   name                   composition_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Primary composition of the material being studied.
+
+   name                   temperature_regime
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Temperature conditions at the study location.
+
+   name                   pressure_conditions
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Pressure conditions at the study location.
+
+   name                   radiation_environment
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Radiation conditions at the study location.
+
+   name                   atmospheric_presence
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Presence and nature of atmosphere at the study location.
+
+   name                   collection_method
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Method used to collect the data.
+
+   name                   instrument_type
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Type of instrument used to collect the data.
+
+   name                   data_category
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            General category of the collected data.
+
+   name                   data_format
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Format of the collected data.
+
+   name                   earth_geologic_epoch
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Temporal epoch of the Earth
+
+   name                   moon_geologic_epoch
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Temporal epoch of the Moon
+
+   name                   mars_geologic_epoch
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Temporal epoch of Mars
+
+   name                   vesta_geologic_epoch
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Relative timescale for Vesta
+
+   name                   ceres_geologic_epoch
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Relative timescale for Ceres
+
+   name                   research_goals
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            What was the goal of the research endeavor
+
+   name                   related_publications
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Related publications of the study
+
+   name                   keywords
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Suggested keywords to describe your study
+
+   name                   principal_investigator
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Principal investigator of the project if different from the data set
+
+   name                   institution
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Institution of the study
+
+   name                   data_visualization_software
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Visualization software which may include analysis tools
+
+   name                   modeling_software
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Key modeling software
+
+   name                   orbital_mechanics_software
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Software used for navigation or modeling
+
+   name                   digital_terrain_modeling_software
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Key modeling software
+
+   name                   other_software
+   version                1.21
+   value data type        ASCII_Short_String_Collapsed
+   description            Any software not covered by other values
+
+Parsed Input - Classes:
+
+   name                   Scientific_Discipline
+   description            Information about the scientific discipline and research context.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:study_focus
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:scientific_field
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:investigation_technique
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+   name                   Target_Object
+   description            Information about the target of observation, whether it is a celestial body, feature, or other object.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:object_name
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:parent_body
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:target_scope
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:Object_Type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+      local identifier      search:Feature
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+      local identifier      search:Physical_Properties
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+      local identifier      search:Environmental_Context
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+   name                   Object_Type
+   description            Select the categories within which the data would fit into
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:planet_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:particles_and_fields_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:dust_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:solar_component_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:solar_system_context
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:exoplanet_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:Small_Body
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+      local identifier      search:Atmosphere
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+      local identifier      search:Rings
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+   name                   Small_Body
+   description            Small body
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:asteroid_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:trans_neptunian_object_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:centaur_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:kuiper_belt_object_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:oort_cloud_object_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:comet_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:satellite_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+   name                   Atmosphere
+   description            Atmosphere of a celestial body
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:atmospheric_layer
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:atmosphere_study_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+   name                   Rings
+   description            Rings of an object
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:ring_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:ring_division
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:ring_feature
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+   name                   Feature
+   description            Feature
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:feature_name
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:feature_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+   name                   Physical_Properties
+   description            Information about the physical properties of the object under study.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:material_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:process_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:composition_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+   name                   Environmental_Context
+   description            Information about the environmental conditions at the study location.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:temperature_regime
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:pressure_conditions
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:radiation_environment
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:atmospheric_presence
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+   name                   Data_Collection
+   description            Information about how the data was collected and its format.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:collection_method
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:instrument_type
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:data_category
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:data_format
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:Temporal_Epoch
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+   name                   Temporal_Epoch
+   description            The temporal epoch of the data collection.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:earth_geologic_epoch
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:moon_geologic_epoch
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:mars_geologic_epoch
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:vesta_geologic_epoch
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:ceres_geologic_epoch
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+   name                   Research_Context
+   description            Information about the research context and associated metadata.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:research_goals
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:related_publications
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:keywords
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:principal_investigator
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:institution
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:Software_Used
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        component_of
+
+   name                   Software_Used
+   description            Software used to analyze the data.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      search:data_visualization_software
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:modeling_software
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:orbital_mechanics_software
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:digital_terrain_modeling_software
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+      local identifier      search:other_software
+      minimum occurrences   0
+      maximum occurrences   *
+      reference type        attribute_of
+
+End of Report

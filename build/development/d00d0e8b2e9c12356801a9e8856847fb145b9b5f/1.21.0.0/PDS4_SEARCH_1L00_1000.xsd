@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:search  Version:1.0.0.0 - Thu Jul 30 17:29:01 UTC 2026 -->
+  <!-- Generated from the PDS4 Information Model Version 1.21.0.0 - System Build 14.0 -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.21.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.0.0.0 - search: - Search                                                -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://pds.nasa.gov/pds4/search/v1"
+    xmlns:search="http://pds.nasa.gov/pds4/search/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.0.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1L00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+_TBD_Ingest_LDD
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="Data_Collection" type="search:Data_Collection"> </xs:element>
+  <xs:element name="Research_Context" type="search:Research_Context"> </xs:element>
+  <xs:element name="Scientific_Discipline" type="search:Scientific_Discipline"> </xs:element>
+  <xs:element name="Target_Object" type="search:Target_Object"> </xs:element>
+
+  <xs:complexType name="Atmosphere">
+    <xs:annotation>
+<xs:documentation>Atmosphere of a celestial body</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="atmospheric_layer" type="search:atmospheric_layer" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="atmosphere_study_type" type="search:atmosphere_study_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Data_Collection">
+    <xs:annotation>
+      <xs:documentation>Information about how the data was collected and
+        its format.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="collection_method" type="search:collection_method" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="instrument_type" type="search:instrument_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="data_category" type="search:data_category" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="data_format" type="search:data_format" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Temporal_Epoch" type="search:Temporal_Epoch" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Environmental_Context">
+    <xs:annotation>
+      <xs:documentation>Information about the environmental conditions
+        at the study location.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="temperature_regime" type="search:temperature_regime" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="pressure_conditions" type="search:pressure_conditions" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="radiation_environment" type="search:radiation_environment" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="atmospheric_presence" type="search:atmospheric_presence" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Feature">
+    <xs:annotation>
+<xs:documentation>Feature</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="feature_name" type="search:feature_name" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="feature_type" type="search:feature_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Object_Type">
+    <xs:annotation>
+      <xs:documentation>Select the categories within which the data
+        would fit into</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="planet_type" type="search:planet_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="particles_and_fields_type" type="search:particles_and_fields_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="dust_type" type="search:dust_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="solar_component_type" type="search:solar_component_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="solar_system_context" type="search:solar_system_context" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="exoplanet_type" type="search:exoplanet_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Small_Body" type="search:Small_Body" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Atmosphere" type="search:Atmosphere" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Rings" type="search:Rings" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Physical_Properties">
+    <xs:annotation>
+      <xs:documentation>Information about the physical properties of the
+        object under study.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="material_type" type="search:material_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="process_type" type="search:process_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="composition_type" type="search:composition_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Research_Context">
+    <xs:annotation>
+      <xs:documentation>Information about the research context and
+        associated metadata.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="research_goals" type="search:research_goals" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="related_publications" type="search:related_publications" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="keywords" type="search:keywords" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="principal_investigator" type="search:principal_investigator" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="institution" type="search:institution" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Software_Used" type="search:Software_Used" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Rings">
+    <xs:annotation>
+<xs:documentation>Rings of an object</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ring_type" type="search:ring_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="ring_division" type="search:ring_division" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="ring_feature" type="search:ring_feature" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Scientific_Discipline">
+    <xs:annotation>
+      <xs:documentation>Information about the scientific discipline and
+        research context.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="study_focus" type="search:study_focus" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="scientific_field" type="search:scientific_field" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="investigation_technique" type="search:investigation_technique" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Small_Body">
+    <xs:annotation>
+<xs:documentation>Small body</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="asteroid_type" type="search:asteroid_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="trans_neptunian_object_type" type="search:trans_neptunian_object_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="centaur_type" type="search:centaur_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="kuiper_belt_object_type" type="search:kuiper_belt_object_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="oort_cloud_object_type" type="search:oort_cloud_object_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="comet_type" type="search:comet_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="satellite_type" type="search:satellite_type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Software_Used">
+    <xs:annotation>
+      <xs:documentation>Software used to analyze the
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="data_visualization_software" type="search:data_visualization_software" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="modeling_software" type="search:modeling_software" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="orbital_mechanics_software" type="search:orbital_mechanics_software" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="digital_terrain_modeling_software" type="search:digital_terrain_modeling_software" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="other_software" type="search:other_software" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Target_Object">
+    <xs:annotation>
+      <xs:documentation>Information about the target of observation,
+        whether it is a celestial body, feature, or other
+        object.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="object_name" type="search:object_name" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="parent_body" type="search:parent_body" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="target_scope" type="search:target_scope" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Object_Type" type="search:Object_Type" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Feature" type="search:Feature" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Physical_Properties" type="search:Physical_Properties" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="Environmental_Context" type="search:Environmental_Context" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Temporal_Epoch">
+    <xs:annotation>
+      <xs:documentation>The temporal epoch of the data
+        collection.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="earth_geologic_epoch" type="search:earth_geologic_epoch" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="moon_geologic_epoch" type="search:moon_geologic_epoch" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="mars_geologic_epoch" type="search:mars_geologic_epoch" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="vesta_geologic_epoch" type="search:vesta_geologic_epoch" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+      <xs:element name="ceres_geologic_epoch" type="search:ceres_geologic_epoch" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="asteroid_type">
+    <xs:annotation>
+<xs:documentation>Asteroid</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="atmosphere_study_type">
+    <xs:annotation>
+      <xs:documentation>Type of study of the
+        atmosphere</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="atmospheric_layer">
+    <xs:annotation>
+<xs:documentation>Layer of the atmosphere</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="atmospheric_presence">
+    <xs:annotation>
+      <xs:documentation>Presence and nature of atmosphere at the study
+        location.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="centaur_type">
+    <xs:annotation>
+<xs:documentation>Centaur</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ceres_geologic_epoch">
+    <xs:annotation>
+<xs:documentation>Relative timescale for Ceres</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="collection_method">
+    <xs:annotation>
+      <xs:documentation>Method used to collect the
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="comet_type">
+    <xs:annotation>
+<xs:documentation>Comet</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="composition_type">
+    <xs:annotation>
+      <xs:documentation>Primary composition of the material being
+        studied.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_category">
+    <xs:annotation>
+      <xs:documentation>General category of the collected
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_format">
+    <xs:annotation>
+<xs:documentation>Format of the collected data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="data_visualization_software">
+    <xs:annotation>
+      <xs:documentation>Visualization software which may include
+        analysis tools</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="digital_terrain_modeling_software">
+    <xs:annotation>
+<xs:documentation>Key modeling software</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dust_type">
+    <xs:annotation>
+<xs:documentation>Dust</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="earth_geologic_epoch">
+    <xs:annotation>
+<xs:documentation>Temporal epoch of the Earth</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="exoplanet_type">
+    <xs:annotation>
+<xs:documentation>Type of an exoplanet</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="feature_name">
+    <xs:annotation>
+<xs:documentation>Name of the feature</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="feature_type">
+    <xs:annotation>
+<xs:documentation>Type of the feature</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="institution">
+    <xs:annotation>
+<xs:documentation>Institution of the study</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="instrument_type">
+    <xs:annotation>
+      <xs:documentation>Type of instrument used to collect the
+        data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="investigation_technique">
+    <xs:annotation>
+      <xs:documentation>What method of scientific investigations are
+        used.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="keywords">
+    <xs:annotation>
+      <xs:documentation>Suggested keywords to describe your
+        study</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="kuiper_belt_object_type">
+    <xs:annotation>
+<xs:documentation>Kuiper Belt Object</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mars_geologic_epoch">
+    <xs:annotation>
+<xs:documentation>Temporal epoch of Mars</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="material_type">
+    <xs:annotation>
+<xs:documentation>Material type of the object</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="modeling_software">
+    <xs:annotation>
+<xs:documentation>Key modeling software</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="moon_geologic_epoch">
+    <xs:annotation>
+<xs:documentation>Temporal epoch of the Moon</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="object_name">
+    <xs:annotation>
+<xs:documentation>Name of the object</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="oort_cloud_object_type">
+    <xs:annotation>
+<xs:documentation>Oort Cloud Object</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="orbital_mechanics_software">
+    <xs:annotation>
+      <xs:documentation>Software used for navigation or
+        modeling</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="other_software">
+    <xs:annotation>
+      <xs:documentation>Any software not covered by other
+        values</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="parent_body">
+    <xs:annotation>
+<xs:documentation>Parent body of the object</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="particles_and_fields_type">
+    <xs:annotation>
+<xs:documentation>Fields of an object</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="planet_type">
+    <xs:annotation>
+<xs:documentation>Planet</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="pressure_conditions">
+    <xs:annotation>
+      <xs:documentation>Pressure conditions at the study
+        location.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="principal_investigator">
+    <xs:annotation>
+      <xs:documentation>Principal investigator of the project if
+        different from the data set</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="process_type">
+    <xs:annotation>
+<xs:documentation>Type of process being studied.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="radiation_environment">
+    <xs:annotation>
+      <xs:documentation>Radiation conditions at the study
+        location.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="related_publications">
+    <xs:annotation>
+      <xs:documentation>Related publications of the
+        study</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="research_goals">
+    <xs:annotation>
+      <xs:documentation>What was the goal of the research
+        endeavor</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ring_division">
+    <xs:annotation>
+<xs:documentation>Division of the ring</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ring_feature">
+    <xs:annotation>
+<xs:documentation>Feature of the ring</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ring_type">
+    <xs:annotation>
+<xs:documentation>Type of ring</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="satellite_type">
+    <xs:annotation>
+<xs:documentation>Satellite</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="scientific_field">
+    <xs:annotation>
+      <xs:documentation>What are the different scientific fields of
+        study.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="solar_component_type">
+    <xs:annotation>
+<xs:documentation>Solar component</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="solar_system_context">
+    <xs:annotation>
+      <xs:documentation>Solar system or planetary system as the target
+        context</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="study_focus">
+    <xs:annotation>
+<xs:documentation>High-level research focus.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="target_scope">
+    <xs:annotation>
+<xs:documentation>Scope of the data collection</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="temperature_regime">
+    <xs:annotation>
+      <xs:documentation>Temperature conditions at the study
+        location.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="trans_neptunian_object_type">
+    <xs:annotation>
+<xs:documentation>Trans-Neptunian Object</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vesta_geologic_epoch">
+    <xs:annotation>
+<xs:documentation>Relative timescale for Vesta</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
