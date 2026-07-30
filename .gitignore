@@ -51,3 +51,12 @@ docs/build/
 venv/
 categories.md
 node_modules/
+
+search_work
+logs
+generated_fragments
+generated_labels
+generated_schemas
+archive_labels
+bundle_labels
+bundle_context_refs
