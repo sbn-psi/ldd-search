@@ -7,14 +7,53 @@
   <full_name>Drum, Mike</full_name>
   <steward_id>drum</steward_id>
   <namespace_id>search</namespace_id>
-  <last_modification_date_time>2030-04-10T18:00:00Z</last_modification_date_time>
+  <last_modification_date_time>2026-06-17T00:00:00Z</last_modification_date_time>
+  <DD_Attribute>
+    <name>study_focus</name>
+    <version_id>1.0</version_id>
+    <local_identifier>study_focus</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>High-level research focus.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>scientific_field</name>
+    <version_id>1.0</version_id>
+    <local_identifier>scientific_field</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>What are the different scientific fields of study.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>investigation_technique</name>
+    <version_id>1.0</version_id>
+    <local_identifier>investigation_technique</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>What method of scientific investigations are used.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
   <DD_Attribute>
     <name>object_name</name>
     <version_id>1.0</version_id>
     <local_identifier>object_name</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Specific name of the celestial body (whether it is the target of observation or not)</definition>
+    <definition>Name of the object</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -25,9 +64,9 @@
     <name>parent_body</name>
     <version_id>1.0</version_id>
     <local_identifier>parent_body</local_identifier>
-    <nillable_flag>true</nillable_flag>
+    <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>For moons/satellites, specifies the parent planet or body.</definition>
+    <definition>Parent body of the object</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -35,1011 +74,12 @@
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
-    <name>scope</name>
+    <name>target_scope</name>
     <version_id>1.0</version_id>
-    <local_identifier>scope</local_identifier>
-    <nillable_flag>true</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>The scope of the data collection.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Global</value>
-        <value_meaning>Data collected from the entire object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Regional</value>
-        <value_meaning>Data collected from a large region of the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Local</value>
-        <value_meaning>Data collected from a small location on the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any scope not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>primary_field</name>
-    <version_id>1.0</version_id>
-    <local_identifier>primary_field</local_identifier>
+    <local_identifier>target_scope</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Primary scientific field of study.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Astrobiology</value>
-        <value_meaning>Study of life in the universe</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Astronomy_Observation</value>
-        <value_meaning>Observation of celestial objects</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Astronomy_Radar</value>
-        <value_meaning>Radar observations of celestial objects</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Astronomy_Exoplanets</value>
-        <value_meaning>Study of exoplanets</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Astronomy_Spectroscopy</value>
-        <value_meaning>Spectroscopy of celestial objects</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Geology_Geophysics</value>
-        <value_meaning>Geophysics of the Earth and other planets</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Geology_Seismology</value>
-        <value_meaning>Seismology of the Earth and other planets</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Geology_Surface</value>
-        <value_meaning>Surface studies of the Earth and other planets</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Geology_Crater_Counting</value>
-        <value_meaning>Crater counting of the Earth and other planets</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Geology_Interior_Studies</value>
-        <value_meaning>Interior studies of the Earth and other planets</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Dynamics</value>
-        <value_meaning>Dynamics of the Earth and other planets</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Laboratory_Geochemistry</value>
-        <value_meaning>Geochemistry of physical samples</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Laboratory_Cosmochemistry</value>
-        <value_meaning>Cosmochemistry of physical samples</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Laboratory_Age_Dating</value>
-        <value_meaning>Age dating of physical samples</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Laboratory_Analytic_Chemistry</value>
-        <value_meaning>Analytic chemistry of physical samples</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Laboratory_Spectral_Analysis</value>
-        <value_meaning>Spectral analysis of physical samples</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Atmospheric_Study</value>
-        <value_meaning>Atmospheric studies of the Earth and other planets</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Modeling</value>
-        <value_meaning>Modeling of the Earth and other planets</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Magnetospheres</value>
-        <value_meaning>Magnetospheres of the Earth and other planets</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Space_Physics</value>
-        <value_meaning>Space physics of the Earth and other planets</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any field not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>investigation_technique</name>
-    <version_id>1.0</version_id>
-    <local_identifier>investigation_technique</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Method of scientific investigation used.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Spectroscopy</value>
-        <value_meaning>Collection of spectra</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Modeling</value>
-        <value_meaning>Computer-based simulation or modeling</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Mapping</value>
-        <value_meaning>Collection of maps</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Radar</value>
-        <value_meaning>Collection of radar data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Seismology</value>
-        <value_meaning>Collection of seismic data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Gravimetry</value>
-        <value_meaning>Collection of gravity data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Geochemistry</value>
-        <value_meaning>Collection of geochemical data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>SEM</value>
-        <value_meaning>Collection of scanning electron microscopy data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>TEM</value>
-        <value_meaning>Collection of transmission electron microscopy data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>ICPMS</value>
-        <value_meaning>Collection of inductively coupled plasma mass spectrometry data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any investigation technique not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>study_focus</name>
-    <version_id>1.0</version_id>
-    <local_identifier>study_focus</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Primary focus area of the scientific study.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Surface</value>
-        <value_meaning>Study focused on surface features or properties</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Interior</value>
-        <value_meaning>Study focused on internal structure or processes</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Atmosphere</value>
-        <value_meaning>Study focused on atmospheric properties or dynamics</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Magnetosphere</value>
-        <value_meaning>Study focused on magnetic field properties or interactions</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Orbital_Dynamics</value>
-        <value_meaning>Study focused on orbital properties or behaviors</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Composition</value>
-        <value_meaning>Study focused on chemical or mineral composition</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any focus not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>collection_method</name>
-    <version_id>1.0</version_id>
-    <local_identifier>collection_method</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Method used to collect the data.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Orbiter</value>
-        <value_meaning>Data collected by an orbiting spacecraft</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Lander</value>
-        <value_meaning>Data collected by a surface lander</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Rover</value>
-        <value_meaning>Data collected by a mobile surface rover</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Telescope</value>
-        <value_meaning>Data collected by Earth-based or space telescopes</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Sample_Return</value>
-        <value_meaning>Analysis of returned physical samples</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Laboratory</value>
-        <value_meaning>Data collected in laboratory settings</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any collection method not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>instrument_type</name>
-    <version_id>1.0</version_id>
-    <local_identifier>instrument_type</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of instrument used to collect the data.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Spectrometer</value>
-        <value_meaning>Instrument that measures spectra</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Camera</value>
-        <value_meaning>Imaging device</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Radar</value>
-        <value_meaning>Radio detection and ranging instrument</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Lidar</value>
-        <value_meaning>Light detection and ranging instrument</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Seismometer</value>
-        <value_meaning>Instrument that measures ground motion</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Magnetometer</value>
-        <value_meaning>Instrument that measures magnetic fields</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any instrument type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>data_category</name>
-    <version_id>1.0</version_id>
-    <local_identifier>data_category</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>General category of the collected data.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Altimetry</value>
-        <value_meaning>Elevation data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Image</value>
-        <value_meaning>Visual representation data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Photometry</value>
-        <value_meaning>Photometric measurement data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Map</value>
-        <value_meaning>Spatial representation data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Model_Output</value>
-        <value_meaning>Results from computational models</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Database</value>
-        <value_meaning>Flat rendering of existing data base</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Parameter_Data</value>
-        <value_meaning>Numerical data</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any data type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>data_format</name>
-    <version_id>1.0</version_id>
-    <local_identifier>data_format</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Format of the collected data.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Shape_Model_DTM</value>
-        <value_meaning>A 3D model of the surface of the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Geologic_Map</value>
-        <value_meaning>A map of the geologic features of the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Thermal_Map</value>
-        <value_meaning>A map of the thermal properties of the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Mosaic</value>
-        <value_meaning>A composite image of the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Spectral_Map</value>
-        <value_meaning>A map of the spectral properties of the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Gazetteer</value>
-        <value_meaning>A list of feature names</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Time_Series</value>
-        <value_meaning>Sequential data collected over time</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Crater</value>
-        <value_meaning>A list of craters on the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Light_Curve</value>
-        <value_meaning>A list of light curves on the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Spectral</value>
-        <value_meaning>A list of spectra on the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Physical_Properties</value>
-        <value_meaning>A list of physical properties of the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Photometric_Properties</value>
-        <value_meaning>A list of photometric properties of the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Gravity_Map</value>
-        <value_meaning>A map of the gravity of the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Taxonomies</value>
-        <value_meaning>A list of taxonomies of the object</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Crater_Type</value>
-        <value_meaning>A list of irregular crater types on the object</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>temporal_epoch</name>
-    <version_id>1.0</version_id>
-    <local_identifier>temporal_epoch</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>The temporal epoch of the data collection.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Archean</value>
-        <value_meaning>Earth's earliest known epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Proterozoic</value>
-        <value_meaning>Earth's Proterozoic Eon</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Paleozoic</value>
-        <value_meaning>Earth's Paleozoic Era</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Nectarian</value>
-        <value_meaning>Moon's Pre-Nactarian Epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Imbrian</value>
-        <value_meaning>Moon's Nectarian Epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Eratosthenian</value>
-        <value_meaning>Moon's Imbrian Epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Copernican</value>
-        <value_meaning>Moon's Eratosthenian Epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Noachian</value>
-        <value_meaning>Mars's Noachian Epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Hesperian</value>
-        <value_meaning>Mars's Hesperian Epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Amazonian</value>
-        <value_meaning>Mars's Amazonian Epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Pre-Kerwanan</value>
-        <value_meaning>Ceres's Pre-Kerwanan Epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Kerwanan</value>
-        <value_meaning>Ceres's Kerwanan Epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Yalodean</value>
-        <value_meaning>Ceres's Yalodean Epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Azaccan</value>
-        <value_meaning>Ceres's Azaccan Epoch</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any temporal epoch not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>material_type</name>
-    <version_id>1.0</version_id>
-    <local_identifier>material_type</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Physical type of material being studied.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Rock</value>
-        <value_meaning>Solid mineral material</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Ice</value>
-        <value_meaning>Frozen water or other volatiles</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Gas</value>
-        <value_meaning>Gaseous material</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Dust</value>
-        <value_meaning>Fine particulate material</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Regolith</value>
-        <value_meaning>Surface layer of loose material</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Liquid</value>
-        <value_meaning>Liquid state material</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any material type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>feature_type</name>
-    <version_id>1.0</version_id>
-    <local_identifier>feature_type</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of geological or physical feature being studied.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Crater</value>
-        <value_meaning>Impact depression on a surface</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Mountain</value>
-        <value_meaning>Elevated landform</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Valley</value>
-        <value_meaning>Elongated depression</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Mare</value>
-        <value_meaning>Dark plains on the Moon</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Volcano</value>
-        <value_meaning>Volcanic landform</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Cloud</value>
-        <value_meaning>Atmospheric cloud formation</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any feature type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>process_type</name>
-    <version_id>1.0</version_id>
-    <local_identifier>process_type</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of process being studied.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Impact</value>
-        <value_meaning>Collision processes</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Volcanic</value>
-        <value_meaning>Volcanic activity</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Tectonic</value>
-        <value_meaning>Crustal deformation processes</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Atmospheric</value>
-        <value_meaning>Atmospheric processes</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Erosional</value>
-        <value_meaning>Surface degradation processes</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any process type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>composition</name>
-    <version_id>1.0</version_id>
-    <local_identifier>composition</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Primary composition of the material being studied.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Silicate</value>
-        <value_meaning>Composed primarily of silicate minerals</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Metal</value>
-        <value_meaning>Composed primarily of metallic elements</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Organic</value>
-        <value_meaning>Composed primarily of organic compounds</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Icy</value>
-        <value_meaning>Composed primarily of water or other volatile ices</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Gaseous</value>
-        <value_meaning>Composed primarily of gas</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Mixed</value>
-        <value_meaning>Composed of a mixture of different materials</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any composition not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>temperature_regime</name>
-    <version_id>1.0</version_id>
-    <local_identifier>temperature_regime</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Temperature conditions at the study location.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Cryogenic</value>
-        <value_meaning>Extremely low temperatures, typically below 120K</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Cold</value>
-        <value_meaning>Below freezing but not extreme</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Temperate</value>
-        <value_meaning>Moderate temperatures, similar to Earth temperate regions</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Hot</value>
-        <value_meaning>High temperatures but below extreme</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Extreme_Heat</value>
-        <value_meaning>Very high temperatures like Venus surface</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Variable</value>
-        <value_meaning>Wide temperature variations or cycles</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any temperature regime not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>pressure_conditions</name>
-    <version_id>1.0</version_id>
-    <local_identifier>pressure_conditions</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Pressure conditions at the study location.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Vacuum</value>
-        <value_meaning>Essentially no atmospheric pressure</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Very_Low</value>
-        <value_meaning>Minimal atmospheric pressure like Mars</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Earth_Like</value>
-        <value_meaning>Similar to Earth's atmospheric pressure</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>High</value>
-        <value_meaning>Higher than Earth's atmospheric pressure</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Extreme</value>
-        <value_meaning>Very high pressure like Venus surface or gas giant interiors</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Variable</value>
-        <value_meaning>Significant pressure variations or gradients</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any pressure condition not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>radiation_environment</name>
-    <version_id>1.0</version_id>
-    <local_identifier>radiation_environment</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Radiation conditions at the study location.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Low</value>
-        <value_meaning>Minimal radiation exposure like Earth surface</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Moderate</value>
-        <value_meaning>Similar to Earth orbit or Mars surface</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>High</value>
-        <value_meaning>Significant radiation like Jupiter radiation belts</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Extreme</value>
-        <value_meaning>Very high radiation levels</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Shielded</value>
-        <value_meaning>Protected or shielded from external radiation</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any radiation environment not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>atmospheric_presence</name>
-    <version_id>1.0</version_id>
-    <local_identifier>atmospheric_presence</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Presence and nature of atmosphere at the study location.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>None</value>
-        <value_meaning>No significant atmosphere</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Very_Thin</value>
-        <value_meaning>Minimal atmosphere like Mercury or Moon</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Thin</value>
-        <value_meaning>Tenuous atmosphere like Mars</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Earth_Like</value>
-        <value_meaning>Similar to Earth's atmosphere</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Thick</value>
-        <value_meaning>Dense atmosphere like Venus or Titan</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Gas_Giant</value>
-        <value_meaning>Massive, deep atmosphere of a gas giant</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any atmospheric presence not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>analysis_method</name>
-    <version_id>1.0</version_id>
-    <local_identifier>analysis_method</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Primary method used to analyze the data.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Statistical</value>
-        <value_meaning>Statistical analysis methods</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Spectral</value>
-        <value_meaning>Spectral analysis methods</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Machine_Learning</value>
-        <value_meaning>Machine learning or AI based analysis</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Image_Processing</value>
-        <value_meaning>Image processing techniques</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Modeling</value>
-        <value_meaning>Computer modeling or simulation</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Manual</value>
-        <value_meaning>Manual analysis by researchers</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any analysis method not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>software_used</name>
-    <version_id>1.0</version_id>
-    <local_identifier>software_used</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Primary software tools used for data analysis.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Text_Preserved</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>processing_steps</name>
-    <version_id>1.0</version_id>
-    <local_identifier>processing_steps</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Description of processing steps applied to the data.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Text_Preserved</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>uncertainty_measurements</name>
-    <version_id>1.0</version_id>
-    <local_identifier>uncertainty_measurements</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Description of uncertainty or error measurements associated with the data.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Text_Preserved</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>quality_indicators</name>
-    <version_id>1.0</version_id>
-    <local_identifier>quality_indicators</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Indicators of data quality or reliability.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>High</value>
-        <value_meaning>High quality data with minimal errors</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Medium</value>
-        <value_meaning>Medium quality data with some uncertainties</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Low</value>
-        <value_meaning>Lower quality data with significant uncertainties</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Variable</value>
-        <value_meaning>Quality varies across the dataset</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Unassessed</value>
-        <value_meaning>Quality has not been formally assessed</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Quality indicator not covered by other values</value_meaning>
-      </DD_Permissible_Value>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>research_goals</name>
-    <version_id>1.0</version_id>
-    <local_identifier>research_goals</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Primary research goals or objectives of the study.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Text_Preserved</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>related_publications</name>
-    <version_id>1.0</version_id>
-    <local_identifier>related_publications</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Publications related to or derived from the data.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Text_Preserved</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>keywords</name>
-    <version_id>1.0</version_id>
-    <local_identifier>keywords</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Keywords that describe the data and research focus.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Text_Preserved</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>principal_investigator</name>
-    <version_id>1.0</version_id>
-    <local_identifier>principal_investigator</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Name of the principal investigator or lead researcher.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>institution</name>
-    <version_id>1.0</version_id>
-    <local_identifier>institution</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Institution or organization associated with the research.</definition>
-    <DD_Value_Domain>
-      <enumeration_flag>false</enumeration_flag>
-      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
-      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-    </DD_Value_Domain>
-  </DD_Attribute>
-  <DD_Attribute>
-    <name>feature_name</name>
-    <version_id>1.0</version_id>
-    <local_identifier>feature_name</local_identifier>
-    <nillable_flag>false</nillable_flag>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Name of the feature being studied.</definition>
+    <definition>Scope of the data collection</definition>
     <DD_Value_Domain>
       <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
@@ -1052,64 +92,24 @@
     <local_identifier>asteroid_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of asteroid.</definition>
+    <definition>Asteroid</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Near_Earth</value>
-        <value_meaning>Asteroids with orbits that bring them close to Earth</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Trojan</value>
-        <value_meaning>Asteroids that share an orbit with a planet</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Active</value>
-        <value_meaning>Asteroids that show comet-like activity</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Main_Belt</value>
-        <value_meaning>Asteroids in the main asteroid belt</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any asteroid type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
-    <name>tno_type</name>
+    <name>trans_neptunian_object_type</name>
     <version_id>1.0</version_id>
-    <local_identifier>tno_type</local_identifier>
+    <local_identifier>trans_neptunian_object_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of trans-Neptunian object.</definition>
+    <definition>Trans-Neptunian Object</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Classical</value>
-        <value_meaning>Objects in the classical Kuiper belt</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Resonant</value>
-        <value_meaning>Objects in orbital resonance with Neptune</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Scattered</value>
-        <value_meaning>Objects scattered by Neptune</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Detached</value>
-        <value_meaning>Objects with orbits not strongly influenced by Neptune</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any TNO type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
@@ -1118,77 +118,37 @@
     <local_identifier>centaur_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of centaur object.</definition>
+    <definition>Centaur</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Active</value>
-        <value_meaning>Centaurs showing comet-like activity</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Inactive</value>
-        <value_meaning>Centaurs without comet-like activity</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any centaur type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
-    <name>kbo_type</name>
+    <name>kuiper_belt_object_type</name>
     <version_id>1.0</version_id>
-    <local_identifier>kbo_type</local_identifier>
+    <local_identifier>kuiper_belt_object_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of Kuiper belt object.</definition>
+    <definition>Kuiper Belt Object</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Classical</value>
-        <value_meaning>Objects in the classical Kuiper belt</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Resonant</value>
-        <value_meaning>Objects in orbital resonance with Neptune</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Scattered</value>
-        <value_meaning>Objects scattered by Neptune</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any KBO type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
-    <name>oort_cloud_type</name>
+    <name>oort_cloud_object_type</name>
     <version_id>1.0</version_id>
-    <local_identifier>oort_cloud_type</local_identifier>
+    <local_identifier>oort_cloud_object_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of Oort cloud object.</definition>
+    <definition>Oort Cloud Object</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Inner</value>
-        <value_meaning>Objects in the inner Oort cloud</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Outer</value>
-        <value_meaning>Objects in the outer Oort cloud</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any Oort cloud object type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
@@ -1197,31 +157,11 @@
     <local_identifier>comet_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of comet.</definition>
+    <definition>Comet</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Jupiter_Family</value>
-        <value_meaning>Comets with short orbital periods</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Halley_Type</value>
-        <value_meaning>Comets with intermediate orbital periods</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Long_Period</value>
-        <value_meaning>Comets with long orbital periods</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Single_Pass</value>
-        <value_meaning>Comets that pass through the solar system once</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any comet type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
@@ -1230,35 +170,11 @@
     <local_identifier>satellite_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of natural satellite.</definition>
+    <definition>Satellite</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Icy</value>
-        <value_meaning>Satellites with significant ice content</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Galilean</value>
-        <value_meaning>The four largest moons of Jupiter</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Irregular</value>
-        <value_meaning>Satellites with irregular orbits</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Captured</value>
-        <value_meaning>Satellites captured by a planet</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Shepherding</value>
-        <value_meaning>Satellites that maintain ring structure</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any satellite type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
@@ -1267,27 +183,11 @@
     <local_identifier>planet_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of planet.</definition>
+    <definition>Planet</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Gas_Giant</value>
-        <value_meaning>Large planets composed mainly of gas</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Terrestrial</value>
-        <value_meaning>Rocky planets similar to Earth</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Interior</value>
-        <value_meaning>Planets closer to the Sun than Earth</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any planet type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
@@ -1296,68 +196,37 @@
     <local_identifier>atmospheric_layer</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Layer of the atmosphere.</definition>
+    <definition>Layer of the atmosphere</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Troposphere</value>
-        <value_meaning>Lowest layer of the atmosphere</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Stratosphere</value>
-        <value_meaning>Layer above the troposphere</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Ionosphere</value>
-        <value_meaning>Layer containing ions</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Exosphere</value>
-        <value_meaning>Outermost layer of the atmosphere</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any atmospheric layer not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
-    <name>field_type</name>
+    <name>atmosphere_study_type</name>
     <version_id>1.0</version_id>
-    <local_identifier>field_type</local_identifier>
+    <local_identifier>atmosphere_study_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of field or radiation.</definition>
+    <definition>Type of study of the atmosphere</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Particle</value>
-        <value_meaning>Field of particles</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Cosmic_Ray</value>
-        <value_meaning>Cosmic radiation</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>X_Ray</value>
-        <value_meaning>X-ray radiation</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Gamma_Ray</value>
-        <value_meaning>Gamma radiation</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Electromagnetic_Wave</value>
-        <value_meaning>Electromagnetic waves</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any field type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>particles_and_fields_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>particles_and_fields_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Fields of an object</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
@@ -1366,68 +235,24 @@
     <local_identifier>dust_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Type of dust or meteoroid.</definition>
+    <definition>Dust</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Meteoroid</value>
-        <value_meaning>Small rocky or metallic body</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Interplanetary_Dust</value>
-        <value_meaning>Dust particles in interplanetary space</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any dust type not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
-    <name>ring_section</name>
+    <name>ring_type</name>
     <version_id>1.0</version_id>
-    <local_identifier>ring_section</local_identifier>
+    <local_identifier>ring_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Section of a planetary ring.</definition>
+    <definition>Type of ring</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>D_Ring</value>
-        <value_meaning>Innermost ring section</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>C_Ring</value>
-        <value_meaning>Second innermost ring section</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>B_Ring</value>
-        <value_meaning>Middle ring section</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>A_Ring</value>
-        <value_meaning>Second outermost ring section</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>F_Ring</value>
-        <value_meaning>Outer ring section</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>G_Ring</value>
-        <value_meaning>Second outermost ring section</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>E_Ring</value>
-        <value_meaning>Outermost ring section</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any ring section not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
@@ -1436,27 +261,11 @@
     <local_identifier>ring_division</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Division between ring sections.</definition>
+    <definition>Division of the ring</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Cassini_Division</value>
-        <value_meaning>Division between A and B rings</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Encke_Division</value>
-        <value_meaning>Division in the A ring</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Keeler_Gap</value>
-        <value_meaning>Gap in the A ring</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any ring division not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
@@ -1465,76 +274,414 @@
     <local_identifier>ring_feature</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Feature within a planetary ring.</definition>
+    <definition>Feature of the ring</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Spoke</value>
-        <value_meaning>Radial feature in Saturn's rings</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Spiral_Density_Wave</value>
-        <value_meaning>Spiral wave in ring density</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Spiral_Bending_Wave</value>
-        <value_meaning>Spiral wave in ring plane</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any ring feature not covered by other values</value_meaning>
-      </DD_Permissible_Value>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Attribute>
-    <name>solar_component</name>
+    <name>solar_component_type</name>
     <version_id>1.0</version_id>
-    <local_identifier>solar_component</local_identifier>
+    <local_identifier>solar_component_type</local_identifier>
     <nillable_flag>false</nillable_flag>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Component of the Sun.</definition>
+    <definition>Solar component</definition>
     <DD_Value_Domain>
-      <enumeration_flag>true</enumeration_flag>
+      <enumeration_flag>false</enumeration_flag>
       <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
       <unit_of_measure_type>Units_of_None</unit_of_measure_type>
-      <DD_Permissible_Value>
-        <value>Heliosphere</value>
-        <value_meaning>Region of space dominated by the Sun</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Core</value>
-        <value_meaning>Innermost part of the Sun</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Radiative_Zone</value>
-        <value_meaning>Region where energy is transferred by radiation</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Convective_Zone</value>
-        <value_meaning>Region where energy is transferred by convection</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Photosphere</value>
-        <value_meaning>Visible surface of the Sun</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Chromosphere</value>
-        <value_meaning>Layer above the photosphere</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Corona</value>
-        <value_meaning>Outermost layer of the Sun's atmosphere</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Solar_Wind</value>
-        <value_meaning>Stream of charged particles from the Sun</value_meaning>
-      </DD_Permissible_Value>
-      <DD_Permissible_Value>
-        <value>Other</value>
-        <value_meaning>Any solar component not covered by other values</value_meaning>
-      </DD_Permissible_Value>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>solar_system_context</name>
+    <version_id>1.0</version_id>
+    <local_identifier>solar_system_context</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Solar system or planetary system as the target context</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>exoplanet_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>exoplanet_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Type of an exoplanet</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>feature_name</name>
+    <version_id>1.0</version_id>
+    <local_identifier>feature_name</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Name of the feature</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>feature_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>feature_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Type of the feature</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>material_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>material_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Material type of the object</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>process_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>process_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Type of process being studied.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>composition_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>composition_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Primary composition of the material being studied.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>temperature_regime</name>
+    <version_id>1.0</version_id>
+    <local_identifier>temperature_regime</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Temperature conditions at the study location.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>pressure_conditions</name>
+    <version_id>1.0</version_id>
+    <local_identifier>pressure_conditions</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Pressure conditions at the study location.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>radiation_environment</name>
+    <version_id>1.0</version_id>
+    <local_identifier>radiation_environment</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Radiation conditions at the study location.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>atmospheric_presence</name>
+    <version_id>1.0</version_id>
+    <local_identifier>atmospheric_presence</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Presence and nature of atmosphere at the study location.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>collection_method</name>
+    <version_id>1.0</version_id>
+    <local_identifier>collection_method</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Method used to collect the data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>instrument_type</name>
+    <version_id>1.0</version_id>
+    <local_identifier>instrument_type</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Type of instrument used to collect the data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>data_category</name>
+    <version_id>1.0</version_id>
+    <local_identifier>data_category</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>General category of the collected data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>data_format</name>
+    <version_id>1.0</version_id>
+    <local_identifier>data_format</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Format of the collected data.</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>earth_geologic_epoch</name>
+    <version_id>1.0</version_id>
+    <local_identifier>earth_geologic_epoch</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Temporal epoch of the Earth</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>moon_geologic_epoch</name>
+    <version_id>1.0</version_id>
+    <local_identifier>moon_geologic_epoch</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Temporal epoch of the Moon</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>mars_geologic_epoch</name>
+    <version_id>1.0</version_id>
+    <local_identifier>mars_geologic_epoch</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Temporal epoch of Mars</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>vesta_geologic_epoch</name>
+    <version_id>1.0</version_id>
+    <local_identifier>vesta_geologic_epoch</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Relative timescale for Vesta</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>ceres_geologic_epoch</name>
+    <version_id>1.0</version_id>
+    <local_identifier>ceres_geologic_epoch</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Relative timescale for Ceres</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>research_goals</name>
+    <version_id>1.0</version_id>
+    <local_identifier>research_goals</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>What was the goal of the research endeavor</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>related_publications</name>
+    <version_id>1.0</version_id>
+    <local_identifier>related_publications</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Related publications of the study</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>keywords</name>
+    <version_id>1.0</version_id>
+    <local_identifier>keywords</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Suggested keywords to describe your study</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>principal_investigator</name>
+    <version_id>1.0</version_id>
+    <local_identifier>principal_investigator</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Principal investigator of the project if different from the data set</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>institution</name>
+    <version_id>1.0</version_id>
+    <local_identifier>institution</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Institution of the study</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>data_visualization_software</name>
+    <version_id>1.0</version_id>
+    <local_identifier>data_visualization_software</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Visualization software which may include analysis tools</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>modeling_software</name>
+    <version_id>1.0</version_id>
+    <local_identifier>modeling_software</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Key modeling software</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>orbital_mechanics_software</name>
+    <version_id>1.0</version_id>
+    <local_identifier>orbital_mechanics_software</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Software used for navigation or modeling</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>digital_terrain_modeling_software</name>
+    <version_id>1.0</version_id>
+    <local_identifier>digital_terrain_modeling_software</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Key modeling software</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
+    </DD_Value_Domain>
+  </DD_Attribute>
+  <DD_Attribute>
+    <name>other_software</name>
+    <version_id>1.0</version_id>
+    <local_identifier>other_software</local_identifier>
+    <nillable_flag>false</nillable_flag>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Any software not covered by other values</definition>
+    <DD_Value_Domain>
+      <enumeration_flag>false</enumeration_flag>
+      <value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+      <unit_of_measure_type>Units_of_None</unit_of_measure_type>
     </DD_Value_Domain>
   </DD_Attribute>
   <DD_Class>
@@ -1545,60 +692,22 @@
     <definition>Information about the scientific discipline and research context.</definition>
     <element_flag>true</element_flag>
     <DD_Association>
-      <identifier_reference>primary_field</identifier_reference>
+      <identifier_reference>study_focus</identifier_reference>
       <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>scientific_field</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>investigation_technique</identifier_reference>
       <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>study_focus</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-  </DD_Class>
-  <DD_Class>
-    <name>Data_Collection</name>
-    <version_id>1.0</version_id>
-    <local_identifier>Data_Collection</local_identifier>
-    <submitter_name>Mike Drum</submitter_name>
-    <definition>Information about how the data was collected and its format.</definition>
-    <element_flag>true</element_flag>
-    <DD_Association>
-      <identifier_reference>collection_method</identifier_reference>
-      <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>instrument_type</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>data_category</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>data_format</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>temporal_epoch</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
   </DD_Class>
   <DD_Class>
@@ -1621,138 +730,212 @@
       <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>scope</identifier_reference>
+      <identifier_reference>target_scope</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>Body_Type</identifier_reference>
-      <reference_type>subclass_of</reference_type>
+      <identifier_reference>Object_Type</identifier_reference>
+      <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Feature</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>Physical_Properties</identifier_reference>
-      <reference_type>subclass_of</reference_type>
+      <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>Environmental_Context</identifier_reference>
-      <reference_type>subclass_of</reference_type>
+      <reference_type>component_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
   </DD_Class>
   <DD_Class>
-    <name>Body_Type</name>
+    <name>Object_Type</name>
     <version_id>1.0</version_id>
-    <local_identifier>Body_Type</local_identifier>
+    <local_identifier>Object_Type</local_identifier>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Classification of the celestial body.</definition>
+    <definition>Select the categories within which the data would fit into</definition>
     <element_flag>false</element_flag>
-    <DD_Association>
-      <identifier_reference>body_type</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>asteroid_type</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>tno_type</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>centaur_type</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>kbo_type</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>oort_cloud_type</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>comet_type</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>satellite_type</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
     <DD_Association>
       <identifier_reference>planet_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>feature_type</identifier_reference>
+      <identifier_reference>particles_and_fields_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>atmospheric_layer</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>field_type</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>dust_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>ring_section</identifier_reference>
+      <identifier_reference>solar_component_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>solar_system_context</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>exoplanet_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Small_Body</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Atmosphere</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Rings</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Small_Body</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Small_Body</local_identifier>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Small body</definition>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>asteroid_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>trans_neptunian_object_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>centaur_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>kuiper_belt_object_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>oort_cloud_object_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>comet_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>satellite_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Atmosphere</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Atmosphere</local_identifier>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Atmosphere of a celestial body</definition>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>atmospheric_layer</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>atmosphere_study_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Rings</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Rings</local_identifier>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Rings of an object</definition>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>ring_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>ring_division</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>ring_feature</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Feature</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Feature</local_identifier>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Feature</definition>
+    <element_flag>false</element_flag>
     <DD_Association>
-      <identifier_reference>solar_component</identifier_reference>
+      <identifier_reference>feature_name</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>feature_type</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
   </DD_Class>
   <DD_Class>
@@ -1765,32 +948,20 @@
     <DD_Association>
       <identifier_reference>material_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>feature_name</identifier_reference>
-      <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>feature_type</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>process_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>composition</identifier_reference>
+      <identifier_reference>composition_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
   </DD_Class>
   <DD_Class>
@@ -1804,63 +975,101 @@
       <identifier_reference>temperature_regime</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>pressure_conditions</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>radiation_environment</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>atmospheric_presence</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
   </DD_Class>
   <DD_Class>
-    <name>Analysis_Properties</name>
+    <name>Data_Collection</name>
     <version_id>1.0</version_id>
-    <local_identifier>Analysis_Properties</local_identifier>
+    <local_identifier>Data_Collection</local_identifier>
     <submitter_name>Mike Drum</submitter_name>
-    <definition>Information about the analysis methods and properties of the data.</definition>
+    <definition>Information about how the data was collected and its format.</definition>
     <element_flag>true</element_flag>
     <DD_Association>
-      <identifier_reference>analysis_method</identifier_reference>
-      <reference_type>attribute_of</reference_type>
-      <minimum_occurrences>1</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
-    </DD_Association>
-    <DD_Association>
-      <identifier_reference>software_used</identifier_reference>
+      <identifier_reference>collection_method</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>processing_steps</identifier_reference>
+      <identifier_reference>instrument_type</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>uncertainty_measurements</identifier_reference>
+      <identifier_reference>data_category</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
-      <identifier_reference>quality_indicators</identifier_reference>
+      <identifier_reference>data_format</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Temporal_Epoch</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Temporal_Epoch</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Temporal_Epoch</local_identifier>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>The temporal epoch of the data collection.</definition>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>earth_geologic_epoch</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>moon_geologic_epoch</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>mars_geologic_epoch</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>vesta_geologic_epoch</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>ceres_geologic_epoch</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
   </DD_Class>
   <DD_Class>
@@ -1874,31 +1083,75 @@
       <identifier_reference>research_goals</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>related_publications</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>keywords</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>principal_investigator</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
     <DD_Association>
       <identifier_reference>institution</identifier_reference>
       <reference_type>attribute_of</reference_type>
       <minimum_occurrences>0</minimum_occurrences>
-      <maximum_occurrences>1</maximum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>Software_Used</identifier_reference>
+      <reference_type>component_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+  </DD_Class>
+  <DD_Class>
+    <name>Software_Used</name>
+    <version_id>1.0</version_id>
+    <local_identifier>Software_Used</local_identifier>
+    <submitter_name>Mike Drum</submitter_name>
+    <definition>Software used to analyze the data.</definition>
+    <element_flag>false</element_flag>
+    <DD_Association>
+      <identifier_reference>data_visualization_software</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>modeling_software</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>orbital_mechanics_software</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>digital_terrain_modeling_software</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
+    </DD_Association>
+    <DD_Association>
+      <identifier_reference>other_software</identifier_reference>
+      <reference_type>attribute_of</reference_type>
+      <minimum_occurrences>0</minimum_occurrences>
+      <maximum_occurrences>*</maximum_occurrences>
     </DD_Association>
   </DD_Class>
 </Ingest_LDD>

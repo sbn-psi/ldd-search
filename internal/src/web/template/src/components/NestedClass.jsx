@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { data } from '../data';
+import MultiValueInput from './MultiValueInput';
 import { formatDisplayName } from '../utils/format';
 
 const NestedClass = ({ 
@@ -99,7 +100,7 @@ const NestedClass = ({
       }));
     }
   };
-  
+
   return (
     <div className={`class-item nested-class ${isSelected ? 'selected' : ''} ${isExpanded ? 'expanded' : ''}`}>
       <div className="class-header" onClick={handleHeaderClick}>
@@ -145,7 +146,6 @@ const NestedClass = ({
                 {isAttrSelected && isAttrExpanded && attrData.permissible_values && (
                   <div className="permissible-values">
                     {Object.entries(attrData.permissible_values)
-                      .filter(([value, description]) => value.toLowerCase() !== "other")
                       .map(([value, description]) => {
                       const isChecked = attributeValues[`${className}.${attrName}`]?.includes(value) || false;
                       return (
@@ -163,33 +163,16 @@ const NestedClass = ({
                         </label>
                       </div>
                     )})}
-                    <div className="value-option">
-                      <label>
-                        <input
-                          type="checkbox"
-                          name={`${className}.${attrName}`}
-                          value="other"
-                          checked={attributeValues[`${className}.${attrName}`]?.includes("other") || false}
-                          onChange={(e) => onValueChange(className, attrName, "other", e.target.checked)}
-                        />
-                        <span className="value-name">Other</span>
-                        <input
-                          type="text"
-                          value={attributeValues[`${className}.${attrName}`]?.includes("other") ? (attributeValues[`${className}.${attrName}.other`] || "") : ""}
-                          onChange={(e) => onValueChange(className, attrName, "other", true, e.target.value)}
-                          disabled={!attributeValues[`${className}.${attrName}`]?.includes("other")}
-                        />
-                      </label>
-                    </div>
                   </div>
                 )}
                 
                 {isAttrSelected && isAttrExpanded && !attrData.permissible_values && (
-                  <input
-                    type="text"
-                    value={attributeValues[`${className}.${attrName}`] || ""}
-                    onChange={(e) => onValueChange(className, attrName, e.target.value)}
-                    placeholder="Enter value"
+                  <MultiValueInput
+                    className={className}
+                    attrName={attrName}
+                    attrData={attrData}
+                    value={attributeValues[`${className}.${attrName}`]}
+                    onValueChange={onValueChange}
                   />
                 )}
               </div>
@@ -217,4 +200,4 @@ const NestedClass = ({
   );
 };
 
-export default NestedClass; 
+export default NestedClass;

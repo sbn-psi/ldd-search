@@ -259,6 +259,63 @@ body {
   overflow: hidden;
 }
 
+.multi-value-input {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.selected-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.selected-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border: 1px solid #cfd8e3;
+  border-radius: 4px;
+  background: #eef3f8;
+  font-size: 0.9em;
+}
+
+.remove-value {
+  padding: 0 4px;
+  border: none;
+  background: transparent;
+  color: #4a5568;
+  cursor: pointer;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.example-values {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.example-value {
+  align-items: flex-start;
+}
+
+.custom-value-form {
+  display: flex;
+  gap: 8px;
+  max-width: 420px;
+}
+
+.custom-value-form input[type="text"] {
+  flex: 1;
+}
+
+.custom-value-form button {
+  padding: 5px 12px;
+}
+
 .value-option {
   margin: 5px 0;
   transition: all 0.2s ease-out;
@@ -278,15 +335,6 @@ body {
   margin-right: 10px;
   width: 16px;
   height: 16px;
-}
-
-.other-option {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.2s ease-out;
-  animation: fadeIn 0.3s ease-out;
 }
 
 input[type="text"] {
@@ -593,4 +641,4 @@ h2 {
   .attribute-header:active {
     background-color: rgba(0, 0, 0, 0.05);
   }
-} 
+}

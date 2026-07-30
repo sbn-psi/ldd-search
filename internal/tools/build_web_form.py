@@ -2,13 +2,12 @@ import os
 import subprocess
 import shutil
 from pathlib import Path
-import yaml
 import json
 import glob
+from compile_model import load_model_dictionary
 
 def load_yaml_data():
-    with open('internal/src/data_dictionary.yaml', 'r') as file:
-        return yaml.safe_load(file)
+    return load_model_dictionary()
 
 def validate_yaml_data(data):
     required_keys = ['classes', 'attributes']
@@ -51,7 +50,7 @@ def get_class_hierarchy(data, class_name, hierarchy=None, processed=None):
     for assoc in class_data['associations']:
         if assoc['reference_type'] == 'attribute_of':
             attributes.append(assoc['identifier_reference'])
-        elif assoc['reference_type'] == 'subclass_of':
+        elif assoc['reference_type'] in ('component_of', 'subclass_of'):
             subclass_name = assoc['identifier_reference']
             if subclass_name not in processed:  # Skip if already processed
                 nested_classes[subclass_name] = {}
@@ -108,6 +107,9 @@ def process_yaml_data(data):
         attr_info = {
             'definition': attr_data['definition']
         }
+
+        if attr_data.get('examples'):
+            attr_info['examples'] = attr_data['examples']
         
         if attr_data.get('value_domain', {}).get('enumeration_flag', False):
             if 'permissible_values' in attr_data.get('value_domain', {}):
@@ -142,23 +144,28 @@ def build_web_form():
     attr_list = sorted(processed_data['attributes'].keys())
     # Build permissible values mapping
     permissible_values = {}
+    examples = {}
     for attr in attr_list:
         attr_info = processed_data['attributes'][attr]
         if 'permissible_values' in attr_info:
             # Store sorted list for stable bitfield mapping
             permissible_values[attr] = sorted(attr_info['permissible_values'].keys())
+        if 'examples' in attr_info:
+            examples[attr] = sorted(attr_info['examples'].keys())
     mapping_changed = (
         not latest_mapping or
         latest_mapping['classes'] != class_list or
         latest_mapping['attributes'] != attr_list or
-        latest_mapping.get('permissible_values', {}) != permissible_values
+        latest_mapping.get('permissible_values', {}) != permissible_values or
+        latest_mapping.get('examples', {}) != examples
     )
     new_version = latest_version + 1 if mapping_changed else latest_version
     new_mapping = {
         'version': new_version,
         'classes': class_list,
         'attributes': attr_list,
-        'permissible_values': permissible_values
+        'permissible_values': permissible_values,
+        'examples': examples
     }
 
     # Only save if changed or no mapping exists

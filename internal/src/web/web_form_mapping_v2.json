@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 2,
   "classes": [
     "Atmosphere",
     "Data_Collection",
@@ -75,6 +75,7 @@
       "Active",
       "Main_Belt",
       "Near_Earth",
+      "Other",
       "PHA",
       "Trojan"
     ],
@@ -86,6 +87,7 @@
     "atmospheric_layer": [
       "Exosphere",
       "Ionosphere",
+      "Other",
       "Stratosphere",
       "Troposphere"
     ],
@@ -94,12 +96,14 @@
       "High",
       "Low",
       "None",
+      "Other",
       "Trace",
       "Variable"
     ],
     "centaur_type": [
       "Active",
-      "Inactive"
+      "Inactive",
+      "Other"
     ],
     "ceres_geologic_epoch": [
       "Ernutet",
@@ -112,12 +116,14 @@
       "Lander",
       "Modeling",
       "Orbiter",
+      "Other",
       "Rover",
       "Sample_Return",
       "Telescope"
     ],
     "comet_type": [
       "Jupiter_Family",
+      "Other",
       "Single_Pass"
     ],
     "composition_type": [
@@ -126,6 +132,7 @@
       "Metal",
       "Mixed",
       "Organic",
+      "Other",
       "Silicate"
     ],
     "data_category": [
@@ -135,6 +142,7 @@
       "Image",
       "Map",
       "Model",
+      "Other",
       "Parameter_Data",
       "Photometry",
       "Simulation"
@@ -147,6 +155,7 @@
       "Gravity_Map",
       "Light_Curve",
       "Mosaic",
+      "Other",
       "Photometric_Properties",
       "Physical_Properties",
       "Shape_Model_DTM",
@@ -168,6 +177,7 @@
       "ISIS3",
       "JMARS",
       "MATLAB",
+      "Other",
       "PlanetaryPy",
       "Python",
       "QGIS",
@@ -176,6 +186,7 @@
     ],
     "digital_terrain_modeling_software": [
       "Ames Stereo Pipeline",
+      "Other",
       "SOCET Set",
       "SPC",
       "Shape_From_Modeling",
@@ -185,7 +196,8 @@
     "dust_type": [
       "Comet",
       "IPD",
-      "Meteoroids"
+      "Meteoroids",
+      "Other"
     ],
     "earth_geologic_epoch": [
       "Cenozoic",
@@ -195,6 +207,7 @@
       "Mesozoic",
       "Neoarchean",
       "Neoproterozoic",
+      "Other",
       "Paleoarchean",
       "Paleoproterozoic",
       "Paleozoic"
@@ -205,6 +218,7 @@
       "Lava Worlds",
       "Mini-Neptunes",
       "Ocean Worlds",
+      "Other",
       "Rogue Planets",
       "Super-Earths",
       "Terrestrial"
@@ -232,6 +246,7 @@
       "Mensa",
       "Mons",
       "Oceanus",
+      "Other",
       "Pingo",
       "Pits",
       "Planitia",
@@ -255,6 +270,7 @@
       "LiDAR",
       "Magnetometer",
       "Mass_Spectrometer",
+      "Other",
       "Radar",
       "Seismometer",
       "Spectrometer"
@@ -270,6 +286,7 @@
       "LiDAR",
       "Mapping",
       "Modeling",
+      "Other",
       "Radar",
       "Remote Sensing",
       "Seismology",
@@ -277,6 +294,7 @@
     ],
     "kuiper_belt_object_type": [
       "Classical",
+      "Other",
       "Resonant",
       "Scattered"
     ],
@@ -291,6 +309,7 @@
       "Gas",
       "Ice",
       "Liquid",
+      "Other",
       "Regolith",
       "Rock"
     ],
@@ -304,6 +323,7 @@
       "LSDYNA",
       "MYSTIC",
       "Melts",
+      "Other",
       "SPH",
       "SPLAT",
       "iSALE"
@@ -317,6 +337,7 @@
     ],
     "oort_cloud_object_type": [
       "Inner",
+      "Other",
       "Outer"
     ],
     "orbital_mechanics_software": [
@@ -324,6 +345,7 @@
       "GMAT",
       "Mercury",
       "Orekit",
+      "Other",
       "Rebound",
       "SPICE",
       "STK",
@@ -340,12 +362,14 @@
     "planet_type": [
       "Gas_Giant",
       "Interior",
+      "Other",
       "Terrestrial"
     ],
     "pressure_conditions": [
       "Earth_Like",
       "Extreme",
       "High",
+      "Other",
       "Vacuum",
       "Variable",
       "Very_Low"
@@ -354,6 +378,7 @@
       "Atmospheric",
       "Erosional",
       "Impact",
+      "Other",
       "Tectonic",
       "Volcanic"
     ],
@@ -362,7 +387,11 @@
       "High",
       "Low",
       "Moderate",
+      "Other",
       "Shielded"
+    ],
+    "research_goals": [
+      "Other"
     ],
     "ring_division": [
       "Cassini_Division",
@@ -388,6 +417,7 @@
       "Galilean_Moons",
       "Icy_Moons",
       "Irregular_Moons",
+      "Other",
       "Shepherding_Moon"
     ],
     "scientific_field": [
@@ -416,6 +446,7 @@
       "Magnetospheres",
       "Mathematics",
       "Modeling",
+      "Other",
       "Physics",
       "Space_Physics"
     ],
@@ -426,11 +457,13 @@
       "Corona",
       "Exoplanets",
       "Heliosphere",
+      "Other",
       "Photosphere",
       "Radiative_Zone",
       "Solar_Wind"
     ],
     "solar_system_context": [
+      "Other",
       "Solar_System"
     ],
     "study_focus": [
@@ -439,6 +472,7 @@
       "Interior",
       "Magnetosphere",
       "Orbital_Dynamics",
+      "Other",
       "Planetary Protection",
       "Plasma",
       "Resources",
@@ -449,18 +483,21 @@
     "target_scope": [
       "Global",
       "Local",
+      "Other",
       "Regional"
     ],
     "temperature_regime": [
       "Cold",
       "Cryogenic",
       "Hot",
+      "Other",
       "Temperate",
       "Warm"
     ],
     "trans_neptunian_object_type": [
       "Classical",
       "Detached",
+      "Other",
       "Resonant",
       "Scattered"
     ],

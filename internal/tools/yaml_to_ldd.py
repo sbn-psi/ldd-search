@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
 import sys
-import yaml
 import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
 from datetime import datetime
+from compile_model import load_model_dictionary
 
 def create_xml_element(parent, name, text=None, attributes=None):
     """Helper function to create XML elements with optional text and attributes."""
@@ -128,16 +128,12 @@ def prettify_xml(elem):
     return xml_declaration + schema_ref + xml_str
 
 def main():
-    if len(sys.argv) != 3:
-        print("Usage: python yaml_to_ldd.py input.yaml output.xml")
+    if len(sys.argv) != 2:
+        print("Usage: python yaml_to_ldd.py output.xml")
         sys.exit(1)
 
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
-
-    # Read YAML file
-    with open(input_file, 'r') as f:
-        yaml_data = yaml.safe_load(f)
+    output_file = sys.argv[1]
+    yaml_data = load_model_dictionary()
 
     # Convert to XML
     root = yaml_to_xml(yaml_data)

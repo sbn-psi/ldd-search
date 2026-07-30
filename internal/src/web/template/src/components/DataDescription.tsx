@@ -51,22 +51,11 @@ function transformData(selectedClasses: Record<string, boolean>, selectedAttribu
         const rawValue = attributeValues?.[`${className}.${attrName}`];
         if (rawValue) {
           if (Array.isArray(rawValue)) {
-            const formattedValues = rawValue
-              .filter(v => v !== 'other')
-              .map(v => formatDisplayName(v));
-            const other = attributeValues?.[`${className}.${attrName}.other`];
-            if (other && typeof other === 'string') {
-              formattedValues.push(other);
-            }
+            const formattedValues = rawValue.map(v => formatDisplayName(v));
             setNestedValue(data, `${className}.${attrName}`, formattedValues);
           } else {
             const formattedValue = formatDisplayName(rawValue);
-            const other = attributeValues?.[`${className}.${attrName}.other`];
-            if (other && typeof other === 'string') {
-              setNestedValue(data, `${className}.${attrName}`, [formattedValue, other]);
-            } else {
-              setNestedValue(data, `${className}.${attrName}`, [formattedValue]);
-            }
+            setNestedValue(data, `${className}.${attrName}`, [formattedValue]);
           }
         }
       }
@@ -106,4 +95,4 @@ const DataDescription: React.FC<DataDescriptionProps> = ({ selectedClasses, sele
   );
 };
 
-export default DataDescription; 
+export default DataDescription;

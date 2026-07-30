@@ -1,16 +1,12 @@
-import yaml
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-import os
-from pathlib import Path
+from compile_model import load_model_dictionary
 
 def load_yaml_data():
-    yaml_path = Path(__file__).parent.parent / "src" / "data_dictionary.yaml"
-    with open(yaml_path, 'r') as file:
-        return yaml.safe_load(file)
+    return load_model_dictionary()
 
 def validate_yaml_data(data):
     """Validate the YAML data structure and references."""
@@ -31,9 +27,9 @@ def validate_yaml_data(data):
             if ref_type == 'attribute_of':
                 if ref_name not in attribute_names:
                     errors.append(f"Class '{class_name}' references non-existent attribute '{ref_name}'")
-            elif ref_type == 'subclass_of':
+            elif ref_type in ('component_of', 'subclass_of'):
                 if ref_name not in class_names:
-                    errors.append(f"Class '{class_name}' references non-existent subclass '{ref_name}'")
+                    errors.append(f"Class '{class_name}' references non-existent nested class '{ref_name}'")
     
     # Validate attribute value domains
     for attr_name, attr_data in data['attributes'].items():
@@ -160,11 +156,6 @@ def draw_attribute(c, y, attr_name, attr_data, is_enum, indent_level=0):
             
             y -= 0.2*inch
         
-        # Add "Other" option text field
-        y -= 0.1*inch
-        y = check_margins(c, y, 0.2*inch)
-        draw_text_field(c, indent + 0.25*inch, y, 2*inch)
-        y -= 0.2*inch
     else:
         y -= 0.3*inch
         c.drawString(indent, y, "Value:")
@@ -189,7 +180,7 @@ def get_class_hierarchy(data, class_name, hierarchy=None):
     for assoc in class_data['associations']:
         if assoc['reference_type'] == 'attribute_of':
             attributes.append(assoc['identifier_reference'])
-        elif assoc['reference_type'] == 'subclass_of':
+        elif assoc['reference_type'] in ('component_of', 'subclass_of'):
             subclass_name = assoc['identifier_reference']
             nested_classes[subclass_name] = {}
             get_class_hierarchy(data, subclass_name, nested_classes[subclass_name])
@@ -254,4 +245,4 @@ def generate_pdf_form():
     c.save()
 
 if __name__ == "__main__":
-    generate_pdf_form() 
+    generate_pdf_form()

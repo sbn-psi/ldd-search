@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import NestedClass from './NestedClass';
+import MultiValueInput from './MultiValueInput';
 import { data } from '../data';
+import { formatDisplayName } from '../utils/format';
 
 function AttributesPanel({
   selectedClasses,
@@ -101,7 +103,7 @@ function AttributesPanel({
             className="class-attributes"
             ref={el => classRefs.current[className] = el}
           >
-            <h2>{className.replace(/_/g, ' ')}</h2>
+            <h2>{formatDisplayName(className)}</h2>
             
             {/* Display direct attributes */}
             {classData.attributes && classData.attributes.map(attrName => {
@@ -124,7 +126,7 @@ function AttributesPanel({
                         checked={isSelected || false}
                         readOnly
                       />
-                      <span className="attribute-name">{attrName.replace(/_/g, ' ')}</span>
+                      <span className="attribute-name">{formatDisplayName(attrName)}</span>
                       <span className="attribute-description">{attrData.definition}</span>
                     </label>
                   </div>
@@ -132,7 +134,6 @@ function AttributesPanel({
                   {isSelected && isExpanded && attrData.permissible_values && (
                     <div className="permissible-values">
                       {Object.entries(attrData.permissible_values)
-                        .filter(([value, description]) => value.toLowerCase() !== "other")
                         .map(([value, description]) => {
                           const isChecked = attributeValues[`${className}.${attrName}`]?.includes(value) || false;
                           return (
@@ -145,38 +146,21 @@ function AttributesPanel({
                               checked={isChecked}
                               onChange={(e) => onValueChange(className, attrName, value, e.target.checked)}
                             />
-                            <span className="value-name">{value.replace(/_/g, ' ')}</span>
+                            <span className="value-name">{formatDisplayName(value)}</span>
                             <span className="value-description">{description}</span>
                           </label>
                         </div>
                       )})}
-                      <div className="value-option">
-                        <label>
-                          <input
-                            type="checkbox"
-                            name={`${className}.${attrName}`}
-                            value="other"
-                            checked={attributeValues[`${className}.${attrName}`]?.includes("other") || false}
-                            onChange={(e) => onValueChange(className, attrName, "other", e.target.checked)}
-                          />
-                          <span className="value-name">Other</span>
-                          <input
-                            type="text"
-                            value={attributeValues[`${className}.${attrName}`]?.includes("other") ? (attributeValues[`${className}.${attrName}.other`] || "") : ""}
-                            onChange={(e) => onValueChange(className, attrName, "other", true, e.target.value)}
-                            disabled={!attributeValues[`${className}.${attrName}`]?.includes("other")}
-                          />
-                        </label>
-                      </div>
                     </div>
                   )}
                   
                   {isSelected && isExpanded && !attrData.permissible_values && (
-                    <input
-                      type="text"
-                      value={attributeValues[`${className}.${attrName}`] || ""}
-                      onChange={(e) => onValueChange(className, attrName, e.target.value)}
-                      placeholder="Enter value"
+                    <MultiValueInput
+                      className={className}
+                      attrName={attrName}
+                      attrData={attrData}
+                      value={attributeValues[`${className}.${attrName}`]}
+                      onValueChange={onValueChange}
                     />
                   )}
                 </div>
@@ -204,4 +188,4 @@ function AttributesPanel({
   );
 }
 
-export default AttributesPanel; 
+export default AttributesPanel;

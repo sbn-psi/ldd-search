@@ -6,9 +6,9 @@ export const data = {
       "definition": "Information about the scientific discipline and research context.",
       "element_flag": true,
       "attributes": [
-        "Study_Focus",
-        "Scientific_fields",
-        "Investigation_Technique"
+        "study_focus",
+        "scientific_field",
+        "investigation_technique"
       ],
       "nested_classes": {}
     },
@@ -16,44 +16,45 @@ export const data = {
       "definition": "Information about the target of observation, whether it is a celestial body, feature, or other object.",
       "element_flag": true,
       "attributes": [
-        "Object_Name",
-        "Parent_Body",
-        "Scope"
+        "object_name",
+        "parent_body",
+        "target_scope"
       ],
       "nested_classes": {
         "Object_Type": {
           "attributes": [
-            "Planet",
-            "Particles and Fields",
-            "Dust",
-            "Solar_Component",
-            "Exoplanet"
+            "planet_type",
+            "particles_and_fields_type",
+            "dust_type",
+            "solar_component_type",
+            "solar_system_context",
+            "exoplanet_type"
           ],
           "nested_classes": {
             "Small_Body": {
               "attributes": [
-                "Asteroid",
-                "TNO",
-                "Centaur",
-                "KBO",
-                "Oort_Cloud",
-                "Comet",
-                "Satellite"
+                "asteroid_type",
+                "trans_neptunian_object_type",
+                "centaur_type",
+                "kuiper_belt_object_type",
+                "oort_cloud_object_type",
+                "comet_type",
+                "satellite_type"
               ],
               "nested_classes": {}
             },
             "Atmosphere": {
               "attributes": [
-                "Layer",
-                "Study_Type"
+                "atmospheric_layer",
+                "atmosphere_study_type"
               ],
               "nested_classes": {}
             },
             "Rings": {
               "attributes": [
-                "Ring_Type",
-                "Ring_Division",
-                "Ring_Feature"
+                "ring_type",
+                "ring_division",
+                "ring_feature"
               ],
               "nested_classes": {}
             }
@@ -61,25 +62,25 @@ export const data = {
         },
         "Feature": {
           "attributes": [
-            "Name",
-            "Type"
+            "feature_name",
+            "feature_type"
           ],
           "nested_classes": {}
         },
         "Physical_Properties": {
           "attributes": [
-            "Material_Type",
-            "Process_Type",
-            "Composition"
+            "material_type",
+            "process_type",
+            "composition_type"
           ],
           "nested_classes": {}
         },
         "Environmental_Context": {
           "attributes": [
-            "Temperature_Regime",
-            "Pressure_Conditions",
-            "Radiation_Environment",
-            "Atmospheric_Presence"
+            "temperature_regime",
+            "pressure_conditions",
+            "radiation_environment",
+            "atmospheric_presence"
           ],
           "nested_classes": {}
         }
@@ -89,19 +90,19 @@ export const data = {
       "definition": "Information about how the data was collected and its format.",
       "element_flag": true,
       "attributes": [
-        "Collection_Method",
-        "Instrument_Type",
-        "Data_Category",
-        "Data_Format"
+        "collection_method",
+        "instrument_type",
+        "data_category",
+        "data_format"
       ],
       "nested_classes": {
         "Temporal_Epoch": {
           "attributes": [
-            "Earth",
-            "Moon",
-            "Mars",
-            "Vesta",
-            "Ceres"
+            "earth_geologic_epoch",
+            "moon_geologic_epoch",
+            "mars_geologic_epoch",
+            "vesta_geologic_epoch",
+            "ceres_geologic_epoch"
           ],
           "nested_classes": {}
         }
@@ -111,20 +112,20 @@ export const data = {
       "definition": "Information about the research context and associated metadata.",
       "element_flag": true,
       "attributes": [
-        "Research_Goals",
-        "Related_Publications",
-        "Keywords",
-        "Principal_Investigator",
-        "Institution"
+        "research_goals",
+        "related_publications",
+        "keywords",
+        "principal_investigator",
+        "institution"
       ],
       "nested_classes": {
         "Software_Used": {
           "attributes": [
-            "Data Visualization",
-            "Modeling",
-            "Orbital Mechanics & Mission Support",
-            "Digital Terrain Modeling",
-            "Other"
+            "data_visualization_software",
+            "modeling_software",
+            "orbital_mechanics_software",
+            "digital_terrain_modeling_software",
+            "other_software"
           ],
           "nested_classes": {}
         }
@@ -134,37 +135,38 @@ export const data = {
       "definition": "Select the categories within which the data would fit into",
       "element_flag": false,
       "attributes": [
-        "Planet",
-        "Particles and Fields",
-        "Dust",
-        "Solar_Component",
-        "Exoplanet"
+        "planet_type",
+        "particles_and_fields_type",
+        "dust_type",
+        "solar_component_type",
+        "solar_system_context",
+        "exoplanet_type"
       ],
       "nested_classes": {
         "Small_Body": {
           "attributes": [
-            "Asteroid",
-            "TNO",
-            "Centaur",
-            "KBO",
-            "Oort_Cloud",
-            "Comet",
-            "Satellite"
+            "asteroid_type",
+            "trans_neptunian_object_type",
+            "centaur_type",
+            "kuiper_belt_object_type",
+            "oort_cloud_object_type",
+            "comet_type",
+            "satellite_type"
           ],
           "nested_classes": {}
         },
         "Atmosphere": {
           "attributes": [
-            "Layer",
-            "Study_Type"
+            "atmospheric_layer",
+            "atmosphere_study_type"
           ],
           "nested_classes": {}
         },
         "Rings": {
           "attributes": [
-            "Ring_Type",
-            "Ring_Division",
-            "Ring_Feature"
+            "ring_type",
+            "ring_division",
+            "ring_feature"
           ],
           "nested_classes": {}
         }
@@ -174,13 +176,13 @@ export const data = {
       "definition": "Small body",
       "element_flag": false,
       "attributes": [
-        "Asteroid",
-        "TNO",
-        "Centaur",
-        "KBO",
-        "Oort_Cloud",
-        "Comet",
-        "Satellite"
+        "asteroid_type",
+        "trans_neptunian_object_type",
+        "centaur_type",
+        "kuiper_belt_object_type",
+        "oort_cloud_object_type",
+        "comet_type",
+        "satellite_type"
       ],
       "nested_classes": {}
     },
@@ -188,8 +190,8 @@ export const data = {
       "definition": "Atmosphere of a celestial body",
       "element_flag": false,
       "attributes": [
-        "Layer",
-        "Study_Type"
+        "atmospheric_layer",
+        "atmosphere_study_type"
       ],
       "nested_classes": {}
     },
@@ -197,9 +199,9 @@ export const data = {
       "definition": "Rings of an object",
       "element_flag": false,
       "attributes": [
-        "Ring_Type",
-        "Ring_Division",
-        "Ring_Feature"
+        "ring_type",
+        "ring_division",
+        "ring_feature"
       ],
       "nested_classes": {}
     },
@@ -207,8 +209,8 @@ export const data = {
       "definition": "Feature",
       "element_flag": false,
       "attributes": [
-        "Name",
-        "Type"
+        "feature_name",
+        "feature_type"
       ],
       "nested_classes": {}
     },
@@ -216,9 +218,9 @@ export const data = {
       "definition": "Information about the physical properties of the object under study.",
       "element_flag": false,
       "attributes": [
-        "Material_Type",
-        "Process_Type",
-        "Composition"
+        "material_type",
+        "process_type",
+        "composition_type"
       ],
       "nested_classes": {}
     },
@@ -226,10 +228,10 @@ export const data = {
       "definition": "Information about the environmental conditions at the study location.",
       "element_flag": false,
       "attributes": [
-        "Temperature_Regime",
-        "Pressure_Conditions",
-        "Radiation_Environment",
-        "Atmospheric_Presence"
+        "temperature_regime",
+        "pressure_conditions",
+        "radiation_environment",
+        "atmospheric_presence"
       ],
       "nested_classes": {}
     },
@@ -237,11 +239,11 @@ export const data = {
       "definition": "The temporal epoch of the data collection.",
       "element_flag": false,
       "attributes": [
-        "Earth",
-        "Moon",
-        "Mars",
-        "Vesta",
-        "Ceres"
+        "earth_geologic_epoch",
+        "moon_geologic_epoch",
+        "mars_geologic_epoch",
+        "vesta_geologic_epoch",
+        "ceres_geologic_epoch"
       ],
       "nested_classes": {}
     },
@@ -249,19 +251,19 @@ export const data = {
       "definition": "Software used to analyze the data.",
       "element_flag": false,
       "attributes": [
-        "Data Visualization",
-        "Modeling",
-        "Orbital Mechanics & Mission Support",
-        "Digital Terrain Modeling",
-        "Other"
+        "data_visualization_software",
+        "modeling_software",
+        "orbital_mechanics_software",
+        "digital_terrain_modeling_software",
+        "other_software"
       ],
       "nested_classes": {}
     }
   },
   "attributes": {
-    "Study_Focus": {
+    "study_focus": {
       "definition": "High-level research focus.",
-      "permissible_values": {
+      "examples": {
         "Surface": "Study focused on planetary geology such as features or properties",
         "Interior": "Study focused on internal structure or processes",
         "Atmosphere": "Study focused on atmospheric properties or dynamics",
@@ -272,24 +274,26 @@ export const data = {
         "Space Weather": "Study of the change in surfaces due to space weather effects",
         "Planetary Protection": "Study focused on planetary protection",
         "Rings": "Study focused on ring and ring-moon systems",
-        "Resources": "In-situ resource characterization and utilization",
-        "Other": "Any focus not covered by other values"
+        "Resources": "In-situ resource characterization and utilization"
       }
     },
-    "Scientific_fields": {
+    "scientific_field": {
       "definition": "What are the different scientific fields of study.",
-      "permissible_values": {
+      "examples": {
         "Astrobiology": "Study of life in the universe",
         "Astronomy_Observation": "Observation of celestial objects",
         "Astronomy_Radar": "Radar observations of celestial objects",
         "Astronomy_Exoplanets": "Study of exoplanets",
         "Astronomy_Spectroscopy": "Spectroscopy of celestial objects",
+        "Biology": "Study of life and living systems",
+        "Chemistry": "Study of chemical composition, reactions, and properties",
         "Geology_Geophysics": "Geophysics of the Earth and other planets",
         "Geology_Seismology": "Seismology of the Earth and other planets",
         "Geology_Surface": "Surface studies of the Earth and other planets",
         "Geology_Crater_Counting": "Crater counting of the Earth and other planets",
         "Geology_Interior_Studies": "Interior studies of the Earth and other planets",
         "Dynamics": "Dynamics of the Earth and other planets",
+        "Mathematics": "Mathematical analysis or methods",
         "Laboratory_Geochemistry": "Geochemistry of physical samples",
         "Laboratory_Cosmochemistry": "Cosmochemistry of physical samples",
         "Laboratory_Age_Dating": "Age dating of physical samples",
@@ -301,13 +305,13 @@ export const data = {
         "Exoplanets": "Detection and characterizing exoplanets",
         "Modeling": "Modeling of the Earth and other planets",
         "Magnetospheres": "Magnetospheres of the Earth and other planets",
-        "Space_Physics": "Space physics of the Earth and other planets",
-        "Other": "Any field not covered by other values"
+        "Physics": "Study of matter, energy, forces, and related physical processes",
+        "Space_Physics": "Space physics of the Earth and other planets"
       }
     },
-    "Investigation_Technique": {
+    "investigation_technique": {
       "definition": "What method of scientific investigations are used.",
-      "permissible_values": {
+      "examples": {
         "Spectroscopy": "Collection of spectra",
         "Modeling": "Computer-based simulation or modeling",
         "Mapping": "Collection of maps",
@@ -315,126 +319,115 @@ export const data = {
         "Seismology": "Collection of seismic data",
         "Ground based observation": "Data that was derived from Earth-based telescopes",
         "Gravimetry": "Collection of gravity data",
-        "Remove Sensing": "Various data collected via remote sensing techniques",
+        "Remote Sensing": "Various data collected via remote sensing techniques",
         "LiDAR": "Light Detection and Ranging",
-        "Geochemistry": "Collection of geochemical/cosmochmical data",
+        "Geochemistry": "Collection of geochemical/cosmochemical data",
         "Laboratory": "Various laboratory work",
         "Data analysis": "General analysis of data",
         "Artificial Intelligence": "AI and machine learning techniques",
-        "ICPMS": "Collection of inductively coupled plasma mass spectrometry data",
-        "Other": "Any investigation technique not covered by other values"
+        "ICPMS": "Collection of inductively coupled plasma mass spectrometry data"
       }
     },
-    "Object_Name": {
+    "object_name": {
       "definition": "Name of the object"
     },
-    "Parent_Body": {
+    "parent_body": {
       "definition": "Parent body of the object"
     },
-    "Scope": {
+    "target_scope": {
       "definition": "Scope of the data collection",
-      "permissible_values": {
+      "examples": {
         "Global": "Data collected from the entire object",
         "Regional": "Data collected from a large region of the object",
-        "Local": "Data collected from a small location on the object",
-        "Other": "Any scope not covered by other values"
+        "Local": "Data collected from a small location on the object"
       }
     },
-    "Asteroid": {
+    "asteroid_type": {
       "definition": "Asteroid",
-      "permissible_values": {
+      "examples": {
         "Near_Earth": "Asteroids with orbits that bring them close to Earth",
         "Trojan": "Asteroids that share an orbit with a planet",
         "Active": "Asteroids that show comet-like activity",
         "Main_Belt": "Asteroids in the main asteroid belt",
-        "PHA": "Potential Hazardous Asteroid",
-        "Other": "Any asteroid type not covered by other values"
+        "PHA": "Potential Hazardous Asteroid"
       }
     },
-    "TNO": {
+    "trans_neptunian_object_type": {
       "definition": "Trans-Neptunian Object",
-      "permissible_values": {
+      "examples": {
         "Classical": "Objects in the classical Kuiper belt",
         "Resonant": "Objects in orbital resonance with Neptune",
         "Scattered": "Objects scattered by Neptune",
-        "Detached": "Objects with orbits not strongly influenced by Neptune",
-        "Other": "Any TNO type not covered by other values"
+        "Detached": "Objects with orbits not strongly influenced by Neptune"
       }
     },
-    "Centaur": {
+    "centaur_type": {
       "definition": "Centaur",
-      "permissible_values": {
+      "examples": {
         "Active": "Centaurs showing comet-like activity",
-        "Inactive": "Centaurs without comet-like activity",
-        "Other": "Any centaur type not covered by other values"
+        "Inactive": "Centaurs without comet-like activity"
       }
     },
-    "KBO": {
+    "kuiper_belt_object_type": {
       "definition": "Kuiper Belt Object",
-      "permissible_values": {
+      "examples": {
         "Classical": "Objects in the classical Kuiper belt",
         "Resonant": "Objects in orbital resonance with Neptune",
-        "Scattered": "Objects scattered by Neptune",
-        "Other": "Any KBO type not covered by other values"
+        "Scattered": "Objects scattered by Neptune"
       }
     },
-    "Oort_Cloud": {
+    "oort_cloud_object_type": {
       "definition": "Oort Cloud Object",
-      "permissible_values": {
+      "examples": {
         "Inner": "Objects in the inner Oort cloud",
-        "Outer": "Objects in the outer Oort cloud",
-        "Other": "Any Oort cloud type not covered by other values"
+        "Outer": "Objects in the outer Oort cloud"
       }
     },
-    "Comet": {
+    "comet_type": {
       "definition": "Comet",
-      "permissible_values": {
+      "examples": {
         "Jupiter_Family": "Comets that orbit Jupiter",
-        "Single_Pass": "Comets that pass through the inner solar system",
-        "Other": "Any comet type not covered by other values"
+        "Single_Pass": "Comets that pass through the inner solar system"
       }
     },
-    "Satellite": {
+    "satellite_type": {
       "definition": "Satellite",
-      "permissible_values": {
+      "examples": {
         "Icy_Moons": "Icy moons of a planet",
         "Galilean_Moons": "Galilean moons of Jupiter",
         "Irregular_Moons": "Irregular moons of a planet",
         "Captured_Moons": "Captured moons of a planet",
-        "Shepherding_Moon": "Shepherding moon of a planet",
-        "Other": "Any satellite type not covered by other values"
+        "Shepherding_Moon": "Shepherding moon of a planet"
       }
     },
-    "Planet": {
+    "planet_type": {
       "definition": "Planet",
-      "permissible_values": {
+      "examples": {
         "Gas_Giant": "Large planets composed mainly of gas",
         "Terrestrial": "Rocky planets similar to Earth",
-        "Interior": "Planets closer to the Sun than Earth",
-        "Other": "Any planet type not covered by other values"
+        "Interior": "Planets closer to the Sun than Earth"
       }
     },
-    "Layer": {
+    "atmospheric_layer": {
       "definition": "Layer of the atmosphere",
-      "permissible_values": {
+      "examples": {
         "Troposphere": "Lowest layer of the atmosphere",
         "Stratosphere": "Layer above the troposphere",
         "Ionosphere": "Layer containing ions",
-        "Exosphere": "Outermost layer of the atmosphere",
-        "Other": "Any atmospheric layer not covered by other values"
+        "Exosphere": "Outermost layer of the atmosphere"
       }
     },
-    "Study_Type": {
+    "atmosphere_study_type": {
       "definition": "Type of study of the atmosphere",
-      "permissible_values": {
+      "examples": {
         "Temperature_Profile": "Temperature profile of the atmosphere",
         "Scale_Height": "Scale height of the atmosphere",
         "Density_Profile": "Density profile of the atmosphere"
       }
     },
-    "Particles and Fields": {
+    "particles_and_fields_type": {
       "definition": "Fields of an object",
-      "permissible_values": {
+      "examples": {
         "Particles": "Particles in the atmosphere",
         "Cosmic_Rays": "Cosmic rays in the atmosphere",
         "X-Rays": "X-rays in the atmosphere",
@@ -442,18 +435,17 @@ export const data = {
         "Electromagnetic_Waves": "Electromagnetic waves in the atmosphere"
       }
     },
-    "Dust": {
+    "dust_type": {
       "definition": "Dust",
-      "permissible_values": {
+      "examples": {
         "Meteoroids": "Dust from meteoroids",
         "IPD": "Interplanetary Dust",
-        "Comet": "Dust from comets",
-        "Other": "Other dust"
+        "Comet": "Dust from comets"
       }
     },
-    "Ring_Type": {
+    "ring_type": {
       "definition": "Type of ring",
-      "permissible_values": {
+      "examples": {
         "D": "D ring",
         "C": "C ring",
         "B": "B ring",
@@ -463,25 +455,25 @@ export const data = {
         "E": "E ring"
       }
     },
-    "Ring_Division": {
+    "ring_division": {
       "definition": "Division of the ring",
-      "permissible_values": {
+      "examples": {
         "Cassini_Division": "Cassini Division",
         "Encke": "Encke Division",
         "Keeler": "Keeler Division"
       }
     },
-    "Ring_Feature": {
+    "ring_feature": {
       "definition": "Feature of the ring",
-      "permissible_values": {
+      "examples": {
         "Spiral_Bending_Waves": "Spiral Bending Waves",
         "Spokes": "Spokes",
         "Spiral_Density_Waves": "Spiral Density Waves"
       }
     },
-    "Solar_Component": {
+    "solar_component_type": {
       "definition": "Solar component",
-      "permissible_values": {
+      "examples": {
         "Corona": "Corona",
         "Solar_Wind": "Solar Wind",
         "Exoplanets": "Exoplanets",
@@ -490,30 +482,34 @@ export const data = {
         "Radiative_Zone": "Radiative Zone",
         "Convective_Zone": "Convective Zone",
         "Photosphere": "Photosphere",
-        "Chromosphere": "Chromosphere",
-        "Other": "Any solar component not covered by other values"
+        "Chromosphere": "Chromosphere"
       }
     },
-    "Exoplanet": {
+    "solar_system_context": {
+      "definition": "Solar system or planetary system as the target context",
+      "examples": {
+        "Solar_System": "The solar system as an integrated target context"
+      }
+    },
+    "exoplanet_type": {
       "definition": "Type of an exoplanet",
-      "permissible_values": {
+      "examples": {
         "Terrestrial": "Rocky planets, up to 1.5 Earth radii",
         "Gas Giants": "Larger than 10 Earth radii",
         "Ice Giants": "4-6 Earth radii",
         "Super-Earths": "1.5 to 2 Earth radii",
-        "Mini-Neptunes": "2-04 Earth radii",
+        "Mini-Neptunes": "2-4 Earth radii",
         "Lava Worlds": "Molten rock",
         "Ocean Worlds": "Global oceans",
-        "Rogue Planets": "Planets not bound to a star",
-        "Other": "Other categories"
+        "Rogue Planets": "Planets not bound to a star"
       }
     },
-    "Name": {
+    "feature_name": {
       "definition": "Name of the feature"
     },
-    "Type": {
+    "feature_type": {
       "definition": "Type of the feature",
-      "permissible_values": {
+      "examples": {
         "Albedo": "Geographic area distinguished by amount of reflected light",
         "Arcus": "Arc-shaped feature",
         "Astronaut_Named_Feature": "Lunar features at or near Apollo landing sites",
@@ -551,134 +547,126 @@ export const data = {
         "Tholus": "Small domical mountain or hill",
         "Valley": "Vallis, Valles, Elongated depression",
         "Volcano": "Volcanic landform",
-        "Virga": "A streak or stripe or color",
-        "Other": "Any feature type not covered by other values"
+        "Virga": "A streak or stripe or color"
       }
     },
-    "Material_Type": {
+    "material_type": {
       "definition": "Material type of the object",
-      "permissible_values": {
+      "examples": {
         "Rock": "Solid mineral material",
         "Ice": "Frozen water or other volatiles",
         "Gas": "Gaseous material",
         "Dust": "Fine particulate material",
         "Regolith": "Surface layer of loose material",
-        "Liquid": "Liquid state material",
-        "Other": "Any material type not covered by other values"
+        "Liquid": "Liquid state material"
       }
     },
-    "Process_Type": {
+    "process_type": {
       "definition": "Type of process being studied.",
-      "permissible_values": {
+      "examples": {
         "Impact": "Collision processes",
         "Volcanic": "Volcanic activity",
         "Tectonic": "Crustal deformation processes",
         "Atmospheric": "Atmospheric processes",
-        "Erosional": "Surface degradation processes",
-        "Other": "Any process type not covered by other values"
+        "Erosional": "Surface degradation processes"
       }
     },
-    "Composition": {
+    "composition_type": {
       "definition": "Primary composition of the material being studied.",
-      "permissible_values": {
+      "examples": {
         "Silicate": "Composed primarily of silicate minerals",
         "Metal": "Composed primarily of metallic elements",
         "Organic": "Composed primarily of organic compounds",
         "Icy": "Composed primarily of water or other volatile ices",
         "Gaseous": "Composed primarily of gas",
-        "Mixed": "Composed of a mixture of different materials",
-        "Other": "Any composition not covered by other values"
+        "Mixed": "Composed of a mixture of different materials"
       }
     },
-    "Temperature_Regime": {
+    "temperature_regime": {
       "definition": "Temperature conditions at the study location.",
-      "permissible_values": {
+      "examples": {
         "Cryogenic": "Extremely low temperatures, typically below 120K",
         "Cold": "Below freezing but not extreme",
         "Temperate": "Near-surface temperatures typical of Earth",
         "Warm": "Above freezing and below boiling point",
-        "Hot": "Above boiling point",
-        "Other": "Any temperature regime not covered by other values"
+        "Hot": "Above boiling point"
       }
     },
-    "Pressure_Conditions": {
+    "pressure_conditions": {
       "definition": "Pressure conditions at the study location.",
-      "permissible_values": {
+      "examples": {
         "Vacuum": "Essentially no atmospheric pressure",
         "Very_Low": "Minimal atmospheric pressure like Mars",
         "Earth_Like": "Similar to Earth's atmospheric pressure",
         "High": "Higher than Earth's atmospheric pressure",
         "Extreme": "Very high pressure like Venus surface or gas giant interiors",
-        "Variable": "Significant pressure variations or gradients",
-        "Other": "Any pressure condition not covered by other values"
+        "Variable": "Significant pressure variations or gradients"
       }
     },
-    "Radiation_Environment": {
+    "radiation_environment": {
       "definition": "Radiation conditions at the study location.",
-      "permissible_values": {
+      "examples": {
         "Low": "Minimal radiation exposure like Earth surface",
         "Moderate": "Similar to Earth orbit or Mars surface",
         "High": "Significant radiation like Jupiter radiation belts",
         "Extreme": "Very high radiation levels",
-        "Shielded": "Protected or shielded from external radiation",
-        "Other": "Any radiation environment not covered by other values"
+        "Shielded": "Protected or shielded from external radiation"
       }
     },
-    "Atmospheric_Presence": {
+    "atmospheric_presence": {
       "definition": "Presence and nature of atmosphere at the study location.",
-      "permissible_values": {
+      "examples": {
         "None": "No atmosphere present",
         "Trace": "Very low atmospheric pressure",
         "Low": "Atmospheric pressure similar to Earth's",
         "High": "Atmospheric pressure similar to Earth's",
         "Extreme": "Very high atmospheric pressure like Venus surface",
-        "Variable": "Significant atmospheric pressure variations or gradients",
-        "Other": "Any atmospheric presence not covered by other values"
+        "Variable": "Significant atmospheric pressure variations or gradients"
       }
     },
-    "Collection_Method": {
+    "collection_method": {
       "definition": "Method used to collect the data.",
-      "permissible_values": {
+      "examples": {
         "Orbiter": "Data collected by an orbiting spacecraft",
         "Lander": "Data collected by a surface lander",
         "Rover": "Data collected by a mobile surface rover",
+        "Flyby": "Data collected by a cruising spacecraft during a target encounter",
         "Telescope": "Data collected by Earth-based or space telescopes",
         "Sample_Return": "Analysis of returned physical samples",
         "Laboratory": "Data collected in laboratory settings",
-        "Modeling": "Data generated by simulation",
-        "Other": "Any collection method not covered by other values"
+        "Modeling": "Data generated by simulation"
       }
     },
-    "Instrument_Type": {
+    "instrument_type": {
       "definition": "Type of instrument used to collect the data.",
-      "permissible_values": {
+      "examples": {
         "Spectrometer": "Instrument that measures spectra",
         "Imager": "Imaging device",
         "Radar": "Radio detection and ranging instrument",
         "LiDAR": "Light detection and ranging instrument",
         "Seismometer": "Instrument that measures ground motion",
         "Magnetometer": "Instrument that measures magnetic fields",
-        "Mass_Spectometer": "Instrument that measures mass of molecules",
-        "Dust_Particle_Detector": "Instrument that detects dust or particles",
-        "Other": "Any instrument type not covered by other values"
+        "Mass_Spectrometer": "Instrument that measures mass of molecules",
+        "Dust_Particle_Detector": "Instrument that detects dust or particles"
       }
     },
-    "Data_Category": {
+    "data_category": {
       "definition": "General category of the collected data.",
-      "permissible_values": {
+      "examples": {
         "Altimetry": "Elevation data",
         "Image": "Visual representation data",
         "Photometry": "Photometric measurement data",
         "Map": "Representation of higher ordered data in a spatial context",
         "Model": "Results from computational models",
+        "Simulation": "Results from computational simulations",
         "Database": "Flat rendering of existing data base",
-        "Parameter_Data": "Numerical data",
-        "Other": "Any data category not covered by other values"
+        "Big_Data": "Large-scale data collection or analysis products",
+        "Parameter_Data": "Numerical data"
       }
     },
-    "Data_Format": {
+    "data_format": {
       "definition": "Format of the collected data.",
-      "permissible_values": {
+      "examples": {
         "Shape_Model_DTM": "A 3D model of the surface of the object",
         "Geologic_Map": "A map of the geologic features of the object",
         "Thermal_Map": "A map of the thermal properties of the object",
@@ -693,13 +681,12 @@ export const data = {
         "Photometric_Properties": "A list of photometric properties of the object",
         "Gravity_Map": "A map of the gravity of the object",
         "Taxonomies": "A list of taxonomies of the object",
-        "Crater_Type": "A list of irregular crater types on the object",
-        "Other": "Any data format not covered by other values"
+        "Crater_Type": "A list of irregular crater types on the object"
       }
     },
-    "Earth": {
+    "earth_geologic_epoch": {
       "definition": "Temporal epoch of the Earth",
-      "permissible_values": {
+      "examples": {
         "Eoarchean": "Earth's 4,031 to 3,600 million years ago",
         "Paleoarchean": "Earth's 3,600 to 3,200 million years ago",
         "Mesoarchean": "Earth's 3,200 to 2,800 million years ago",
@@ -709,67 +696,63 @@ export const data = {
         "Neoproterozoic": "Earth's 1,000 to 538.8 million years ago",
         "Paleozoic": "Earth's 238.8 to 251.9 million years ago",
         "Mesozoic": "Earth's 251.9 to 66 million years ago",
-        "Cenozoic": "Earth's 66-0 million years ago",
-        "Ohter": "Earth's Paleozoic Era"
+        "Cenozoic": "Earth's 66-0 million years ago"
       }
     },
-    "Moon": {
+    "moon_geologic_epoch": {
       "definition": "Temporal epoch of the Moon",
-      "permissible_values": {
+      "examples": {
         "Pre-Nectarian": "Moon, 4,533 to 3,920 million years ago",
         "Nectarian": "Moon3,920 to 3,850 million years ago",
-        "Imbrian": "Moon 3,850 to 3,200 millino years ago",
+        "Imbrian": "Moon 3,850 to 3,200 million years ago",
         "Eratosthenian": "Moon 3,200 to 1,100 million years ago",
         "Copernican": "Moon 1,100 to 0 million years ago"
       }
     },
-    "Mars": {
+    "mars_geologic_epoch": {
       "definition": "Temporal epoch of Mars",
-      "permissible_values": {
+      "examples": {
         "Pre-Noachian": "Mars 4,500 to 4,100 million years ago",
         "Noachian": "Mars 4,100 to 3,700 million years ago",
         "Hesperian": "Mars 3,700 to 3,000 million years ago",
         "Amazonian": "Mars 3,000 to 0 million years ago"
       }
     },
-    "Vesta": {
+    "vesta_geologic_epoch": {
       "definition": "Relative timescale for Vesta",
-      "permissible_values": {
+      "examples": {
         "Pre-Veneneia": "~4,100 million years ago",
         "Veneneia": "~4,100 million years ago",
         "Rheasilvia": "~3,900 million years ago",
         "Marcia": "~3,500 million years ago"
       }
     },
-    "Ceres": {
+    "ceres_geologic_epoch": {
       "definition": "Relative timescale for Ceres",
-      "permissible_values": {
+      "examples": {
         "Pre-Kerwan": "~4,560 to 4,000 million years ago",
         "Kerwan": "4,000 to 2,500 million years ago",
         "Ernutet": "~ 2.500 to 0 million years ago"
       }
     },
-    "Research_Goals": {
-      "definition": "What was the goal of the research endeavor",
-      "permissible_values": {
-        "Other": "Any research goal not covered by other values"
-      }
+    "research_goals": {
+      "definition": "What was the goal of the research endeavor"
     },
-    "Related_Publications": {
+    "related_publications": {
       "definition": "Related publications of the study"
     },
-    "Keywords": {
+    "keywords": {
       "definition": "Suggested keywords to describe your study"
     },
-    "Principal_Investigator": {
+    "principal_investigator": {
       "definition": "Principal investigator of the project if different from the data set"
     },
-    "Institution": {
+    "institution": {
       "definition": "Institution of the study"
     },
-    "Data Visualization": {
+    "data_visualization_software": {
       "definition": "Visualization software which may include analysis tools",
-      "permissible_values": {
+      "examples": {
         "JMARS": "Java Mission-planning and Analysis for Remote Sensing",
         "ISIS3": "Integrated Software for Imagers and Spectrometers",
         "IDL": "Interactive Data Language",
@@ -779,21 +762,22 @@ export const data = {
         "R": "Data analysis tool",
         "MATLAB": "Matrix Laboratory",
         "SBMT": "Small Body Mapping Tool",
-        "Python": "To include SciPy, NumPyu, AstroPy, SpiceyPy",
+        "Python": "To include SciPy, NumPy, AstroPy, SpiceyPy",
+        "AstroPy": "Astronomy Python library",
+        "PlanetaryPy": "Planetary science Python library",
         "IRAF": "Image Reduction and Analysis Facility",
         "DS9": "FITS Image Display",
         "GDAL": "Geospatial Data Abstraction Library",
-        "GMT": "Generic Mapping Tools",
-        "Other": "Any visualization software"
+        "GMT": "Generic Mapping Tools"
       }
     },
-    "Modeling": {
+    "modeling_software": {
       "definition": "Key modeling software",
-      "permissible_values": {
+      "examples": {
         "GISS ROCKE-3D": "Java Mission-planning and Analysis for Remote Sensing",
         "GEODYN": "Integrated Software for Imagers and Spectrometers",
         "Melts": "Magmatic Equilibrium Liquidus Temperature Software for cosmochemistry",
-        "COMSOL Multiphyics": "Simulating physical processes",
+        "COMSOL Multiphysics": "Simulating physical processes",
         "FLASH": "FLASH/ Athena/PLUTO",
         "iSALE": "Shock physics code for impact cratering, planetary interior",
         "HYDRA": "multi-material Eulerian code",
@@ -801,13 +785,12 @@ export const data = {
         "CTH": "Collide, Track, Hydrodynamics",
         "LSDYNA": "Finite element analysis (FEA) code",
         "SPLAT": "SPectral Luminance and Temperature",
-        "MYSTIC": "Radiative transfer modeling",
-        "Other": "Any visualization software"
+        "MYSTIC": "Radiative transfer modeling"
       }
     },
-    "Orbital Mechanics & Mission Support": {
+    "orbital_mechanics_software": {
       "definition": "Software used for navigation or modeling",
-      "permissible_values": {
+      "examples": {
         "GMAT": "General Mission Analysis Tool",
         "STK": "Satellite/System Tool Kit",
         "SPICE": "SPICE Toolkit from NAIF",
@@ -816,23 +799,21 @@ export const data = {
         "Celestia": "Astronomy, orbital visualization",
         "Rebound": "N-body simulations",
         "Mercury": "N-body code",
-        "Swift": "N-body simulations",
-        "Other": "Any visualization software"
+        "Swift": "N-body simulations"
       }
     },
-    "Digital Terrain Modeling": {
+    "digital_terrain_modeling_software": {
       "definition": "Key modeling software",
-      "permissible_values": {
-        "SPC": "Sterophotoclinometry",
+      "examples": {
+        "SPC": "Stereophotoclinometry",
         "Stereo": "Photogrammetry",
         "Ames Stereo Pipeline": "Ames Pipeline",
         "SOCET Set": "SOCET Set",
         "Shape_From_Shading": "Shape from shading technique",
-        "Shape_From_Modeling": "DTM generated from shape from motion technique",
-        "Other": "Any visualization software"
+        "Shape_From_Modeling": "DTM generated from shape from motion technique"
       }
     },
-    "Other": {
+    "other_software": {
       "definition": "Any software not covered by other values"
     }
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { data } from '../data';
+import { formatDisplayName } from '../utils/format';
 
 function ClassesPanel({ selectedClasses, onClassSelect }) {
   return (
@@ -22,7 +23,7 @@ function ClassesPanel({ selectedClasses, onClassSelect }) {
                   checked={selectedClasses[className] || false}
                   readOnly
                 />
-                <span className="class-name">{className.replace(/_/g, ' ')}</span>
+                <span className="class-name">{formatDisplayName(className)}</span>
                 <span className="class-description">{classData.definition}</span>
               </label>
             </div>
@@ -32,4 +33,4 @@ function ClassesPanel({ selectedClasses, onClassSelect }) {
   );
 }
 
-export default ClassesPanel; 
+export default ClassesPanel;

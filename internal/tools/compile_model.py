@@ -1,25 +1,34 @@
 import yaml
 import collections
+import re
+from pathlib import Path
+
+MODEL_YAML_PATH = Path(__file__).parent.parent / 'src' / 'search-ldd-model.yaml'
 
 def load_yaml(file_path):
     with open(file_path, 'r') as file:
         return yaml.safe_load(file)
 
-def save_yaml(data, file_path):
-    # Convert OrderedDict to regular dict before saving
-    def convert_ordered_dict(obj):
-        if isinstance(obj, collections.OrderedDict):
-            return dict(obj)
-        elif isinstance(obj, dict):
-            return {k: convert_ordered_dict(v) for k, v in obj.items()}
-        elif isinstance(obj, list):
-            return [convert_ordered_dict(i) for i in obj]
-        else:
-            return obj
-    
-    data_to_save = convert_ordered_dict(data)
-    with open(file_path, 'w') as file:
-        yaml.dump(data_to_save, file, default_flow_style=False, sort_keys=False)
+def normalize_attribute_name(name):
+    """Convert user-facing facet names to stable PDS-style attribute names."""
+    normalized = name.strip().replace('&', ' and ')
+    normalized = re.sub(r'[^0-9A-Za-z]+', '_', normalized)
+    normalized = re.sub(r'_+', '_', normalized).strip('_').lower()
+    return normalized
+
+def normalize_class_name(name):
+    """Convert class-like YAML keys to stable PDS-style class names."""
+    normalized = name.strip().replace('&', ' and ')
+    normalized = re.sub(r'[^0-9A-Za-z]+', '_', normalized)
+    normalized = re.sub(r'_+', '_', normalized).strip('_')
+    return normalized
+
+def example_values(value):
+    if isinstance(value, dict):
+        return value
+    if isinstance(value, list):
+        return {str(item): '' for item in value}
+    return {}
 
 def transform_model_to_dictionary(model):
     data_dictionary = {
@@ -29,7 +38,7 @@ def transform_model_to_dictionary(model):
         'full_name': 'Drum, Mike',
         'steward_id': 'drum',
         'namespace_id': 'search',
-        'last_modification_date_time': '2030-04-10T18:00:00Z',
+        'last_modification_date_time': '2026-06-17T00:00:00Z',
         'attributes': {},
         'classes': collections.OrderedDict()
     }
@@ -49,12 +58,14 @@ def transform_model_to_dictionary(model):
             for key, value in element.items():
                 if value is not None and isinstance(value, dict) and 'children' in value and isinstance(value['children'], list):
                     # It's a class
+                    class_name = normalize_class_name(key)
+
                     # Keep track of class order
-                    class_order.append(key)
+                    class_order.append(class_name)
                     
                     class_info = {
                         'version_id': '1.0',
-                        'local_identifier': key,
+                        'local_identifier': class_name,
                         'submitter_name': 'Mike Drum',
                         'definition': value.get('definition', ''),
                         'element_flag': is_top_level,
@@ -65,37 +76,46 @@ def transform_model_to_dictionary(model):
                     if parent_class:
                         if parent_class not in parent_child_map:
                             parent_child_map[parent_class] = []
-                        parent_child_map[parent_class].append(key)
+                        parent_child_map[parent_class].append(class_name)
                     
-                    data_dictionary['classes'][key] = class_info
+                    data_dictionary['classes'][class_name] = class_info
                     
                     # Store children for later association processing
-                    class_children[key] = []
+                    class_children[class_name] = []
                     
                     # Process children, getting their keys
                     for child in value['children']:
                         for child_key in child.keys():
-                            class_children[key].append(child_key)
+                            child_value = child[child_key]
+                            if isinstance(child_value, dict) and 'children' in child_value:
+                                class_children[class_name].append(normalize_class_name(child_key))
+                            else:
+                                class_children[class_name].append(normalize_attribute_name(child_key))
                     
                     # Process children recursively
-                    extract_elements(value['children'], key, False)
+                    extract_elements(value['children'], class_name, False)
                 elif value is not None and isinstance(value, dict):
                     # It's an attribute
+                    attr_name = normalize_attribute_name(key)
+                    examples = example_values(value.get('examples', value.get('values', {})))
+                    fixed_values = bool(value.get('fixed_values', False))
                     attribute_info = {
                         'version_id': '1.0',
-                        'local_identifier': key,
+                        'local_identifier': attr_name,
                         'nillable_flag': False,
                         'submitter_name': 'Mike Drum',
                         'definition': value.get('definition', ''),
                         'value_domain': {
-                            'enumeration_flag': 'values' in value,
+                            'enumeration_flag': fixed_values,
                             'value_data_type': 'ASCII_Short_String_Collapsed',
                             'unit_of_measure_type': 'Units_of_None'
                         }
                     }
-                    if 'values' in value and isinstance(value['values'], dict):
-                        attribute_info['value_domain']['permissible_values'] = value['values']
-                    data_dictionary['attributes'][key] = attribute_info
+                    if examples:
+                        attribute_info['examples'] = examples
+                    if fixed_values and examples:
+                        attribute_info['value_domain']['permissible_values'] = examples
+                    data_dictionary['attributes'][attr_name] = attribute_info
                 else:
                     print(f"Error: Expected a dictionary for '{key}', but got {type(value).__name__} instead.")
         elif isinstance(element, list):
@@ -116,7 +136,7 @@ def transform_model_to_dictionary(model):
                         'identifier_reference': child_key,
                         'reference_type': 'attribute_of',
                         'minimum_occurrences': 0,
-                        'maximum_occurrences': 1
+                        'maximum_occurrences': '\\*'
                     })
         
         # Add parent-child associations (parent references its child classes)
@@ -125,9 +145,9 @@ def transform_model_to_dictionary(model):
                 if child_class in data_dictionary['classes']:
                     data_dictionary['classes'][parent_class]['associations'].append({
                         'identifier_reference': child_class,
-                        'reference_type': 'subclass_of',
+                        'reference_type': 'component_of',
                         'minimum_occurrences': 0,
-                        'maximum_occurrences': 1
+                        'maximum_occurrences': '\\*'
                     })
     
     # Execute both passes
@@ -149,13 +169,5 @@ def transform_model_to_dictionary(model):
     
     return data_dictionary
 
-# Load the model YAML
-model_yaml_path = 'internal/src/search-ldd-model.yaml'
-model_data = load_yaml(model_yaml_path)
-
-# Transform the model to data dictionary
-data_dictionary = transform_model_to_dictionary(model_data)
-
-# Save the data dictionary YAML
-data_dictionary_yaml_path = 'internal/src/data_dictionary.yaml'
-save_yaml(data_dictionary, data_dictionary_yaml_path)
+def load_model_dictionary(model_yaml_path=MODEL_YAML_PATH):
+    return transform_model_to_dictionary(load_yaml(model_yaml_path))

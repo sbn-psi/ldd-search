@@ -59,15 +59,11 @@ function ReviewClass({ className, selectedClasses, selectedAttributes, attribute
 function formatAttributeValue(className, attrName, attributeValues) {
   let val = attributeValues?.[`${className}.${attrName}`];
   if(Array.isArray(val)) {
-    val = val.filter(v => v !== 'other').map(v => formatDisplayName(v)).join(', ');
+    val = val.map(v => formatDisplayName(v)).join(', ');
   } else if (val) {
     val = formatDisplayName(val);
   }
-  const other = attributeValues?.[`${className}.${attrName}.other`];
-  if(val && other) {
-    return `${val}, ${other}`;
-  }
-  return val || other || '';
+  return val || '';
 }
 
 const ReviewPage = ({
@@ -149,4 +145,4 @@ const ReviewPage = ({
   );
 };
 
-export default ReviewPage; 
+export default ReviewPage;

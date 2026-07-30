@@ -63,20 +63,12 @@ function App() {
     }));
   };
 
-  const handleValueChange = (className, attributeName, value, isChecked, otherValue) => {
+  const handleValueChange = (className, attributeName, value, isChecked) => {
+    const key = `${className}.${attributeName}`;
     if (data.attributes[attributeName]?.permissible_values) {
       // For permissible values (checkboxes)
       setAttributeValues(prev => {
-        const key = `${className}.${attributeName}`;
         let values = prev[key] || [];
-        
-        if (value === "other" && otherValue !== undefined) {
-          // Handle "Other" text input
-          return {
-            ...prev,
-            [`${key}.other`]: otherValue
-          };
-        }
         
         // Add or remove the value from the array
         if (isChecked) {
@@ -93,10 +85,10 @@ function App() {
         };
       });
     } else {
-      // For text inputs (free text)
+      // For free text and YAML example suggestions
       setAttributeValues(prev => ({
         ...prev,
-        [`${className}.${attributeName}`]: value
+        [key]: Array.isArray(value) ? value : (value ? [value] : [])
       }));
     }
   };
